@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/type-aliases/RuntimePreset",
+  "title": "RuntimePreset",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/type-aliases/RuntimePreset.md",
+  "sourceDirName": "guides/api/type-aliases",
+  "slug": "/guides/api/type-aliases/RuntimePreset",
+  "permalink": "/docs/guides/api/type-aliases/RuntimePreset",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "RetryOpts",
+    "permalink": "/docs/guides/api/type-aliases/RetryOpts"
+  },
+  "next": {
+    "title": "RuntimePresetFunction",
+    "permalink": "/docs/guides/api/type-aliases/RuntimePresetFunction"
+  }
+}

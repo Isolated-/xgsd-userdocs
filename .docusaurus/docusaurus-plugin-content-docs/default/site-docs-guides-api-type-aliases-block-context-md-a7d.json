@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/type-aliases/BlockContext",
+  "title": "BlockContext",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/type-aliases/BlockContext.md",
+  "sourceDirName": "guides/api/type-aliases",
+  "slug": "/guides/api/type-aliases/BlockContext",
+  "permalink": "/docs/guides/api/type-aliases/BlockContext",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Block",
+    "permalink": "/docs/guides/api/type-aliases/Block"
+  },
+  "next": {
+    "title": "Builder",
+    "permalink": "/docs/guides/api/type-aliases/Builder"
+  }
+}

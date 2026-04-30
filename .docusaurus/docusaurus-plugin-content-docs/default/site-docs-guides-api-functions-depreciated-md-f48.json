@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/functions/depreciated",
+  "title": "depreciated",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/functions/depreciated.md",
+  "sourceDirName": "guides/api/functions",
+  "slug": "/guides/api/functions/depreciated",
+  "permalink": "/docs/guides/api/functions/depreciated",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "createContext",
+    "permalink": "/docs/guides/api/functions/createContext"
+  },
+  "next": {
+    "title": "dispatchToManagers",
+    "permalink": "/docs/guides/api/functions/dispatchToManagers"
+  }
+}

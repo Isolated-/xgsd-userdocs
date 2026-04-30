@@ -1,0 +1,171 @@
+---
+title: Getting started
+sidebar_position: 0
+---
+
+:::tip
+**Did you know?**
+
+You can use **Hooks** as a lighter alternative to plugins by exporting lifecycle functions like `onProjectEnd`. See [**Hooks**](hooks) for more details.
+:::
+
+---
+
+### Concept
+
+**Plugins** extend xGSD without changing your functions or config.
+
+They run automatically during execution and are used for logging, integrations, and custom runtime behaviour.
+
+---
+
+### 1. Lifecycle
+
+Plugins run at specific points during a project’s execution.
+
+A typical run looks like this:
+
+1. **Before run starts**
+   - Plugins can inspect or modify initial data
+
+2. **Before each block**
+   - Plugins can observe input before a function runs
+
+3. **After each block**
+   - Plugins can read output from a function
+
+4. **After run completes**
+   - Plugins can handle final results, logging, or external actions
+
+---
+
+### 2. Create a Plugin
+
+Define your **Plugin** inside your `index.js`:
+
+```javascript
+class MyPlugin {
+  async on(event, payload) {
+    // your logic here
+  }
+}
+```
+
+You can limit which events it receives:
+
+```javascript
+class MyPlugin {
+  events = ["project.started"];
+
+  // rest of your plugin
+}
+```
+
+See [**Events**](Reference/events) for the full list of available events.
+
+---
+
+### 3. Register it
+
+Register your plugin in your `setup` function:
+
+```javascript
+export async function setup(xgsd) {
+  xgsd.use(MyPlugin);
+}
+```
+
+Once registered, the plugin will receive events during execution.
+
+---
+
+### 4. Errors
+
+If a plugin throws an error, it is skipped and execution continues.
+
+For reliability, plugins should handle their own errors.
+
+---
+
+### 5. Example plugin: Webhooks
+
+This plugin sends a webhook when a project completes.
+
+```javascript
+import axios from "axios";
+import { retry } from "@xgsd/runtime";
+
+const sendWebhook = async ({ url, payload }) => {
+  const res = await axios.post(url, payload);
+  return res.data;
+};
+
+export class WebhookPlugin {
+  events = ["project.ended"];
+
+  constructor(context) {
+    this.context = context;
+  }
+
+  async on(event, payload) {
+    if (event === "project.ended") {
+      await this.handleProjectEnded(payload);
+    }
+  }
+
+  async handleProjectEnded(payload) {
+    const webhookUrl = payload.context.data.webhook_url;
+
+    console.log(`dispatching webhook → ${webhookUrl}`);
+
+    const result = await retry(
+      sendWebhook,
+      {
+        url: webhookUrl,
+        payload,
+      },
+      {
+        retries: 3,
+        timeout: 1000,
+        backoff: "exponential",
+      },
+      (attempt) => {
+        if (!attempt.finalAttempt) {
+          console.error(`retrying in ${attempt.nextMs}ms...`);
+        }
+      },
+    );
+
+    if (result.error) {
+      console.error("webhook failed after retries");
+      return;
+    }
+
+    console.log("webhook sent successfully");
+  }
+}
+```
+
+Register the plugin:
+
+```javascript
+export async function setup(xgsd) {
+  xgsd.use(WebhookPlugin);
+}
+```
+
+Add a webhook URL to your config:
+
+```yaml
+data:
+  webhook_url: https://webhook.site/fa2b3b46-b601-4fa3-aae4-d525b0e29d64
+```
+
+After the project completes:
+
+```txt
+dispatching webhook → https://webhook.site/fa2b3b46-b601-4fa3-aae4-d525b0e29d64
+webhook sent successfully
+```
+
+---

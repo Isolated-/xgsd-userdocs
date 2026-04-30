@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/type-aliases/EventBusAdapter",
+  "title": "EventBusAdapter",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/type-aliases/EventBusAdapter.md",
+  "sourceDirName": "guides/api/type-aliases",
+  "slug": "/guides/api/type-aliases/EventBusAdapter",
+  "permalink": "/docs/guides/api/type-aliases/EventBusAdapter",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Context",
+    "permalink": "/docs/guides/api/type-aliases/Context"
+  },
+  "next": {
+    "title": "EventEnvelope",
+    "permalink": "/docs/guides/api/type-aliases/EventEnvelope"
+  }
+}

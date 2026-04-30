@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/classes/ConfigBuilderLoadStage",
+  "title": "ConfigBuilderLoadStage",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/classes/ConfigBuilderLoadStage.md",
+  "sourceDirName": "guides/api/classes",
+  "slug": "/guides/api/classes/ConfigBuilderLoadStage",
+  "permalink": "/docs/guides/api/classes/ConfigBuilderLoadStage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ConfigBuilderFinalStage",
+    "permalink": "/docs/guides/api/classes/ConfigBuilderFinalStage"
+  },
+  "next": {
+    "title": "ConfigBuilderParseStage",
+    "permalink": "/docs/guides/api/classes/ConfigBuilderParseStage"
+  }
+}

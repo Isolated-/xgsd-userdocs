@@ -1,0 +1,19 @@
+{
+  "id": "guides/project/setup",
+  "title": "setup",
+  "description": "",
+  "source": "@site/docs/guides/project/setup.mdx",
+  "sourceDirName": "guides/project",
+  "slug": "/guides/project/setup",
+  "permalink": "/docs/guides/project/setup",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "concepts",
+    "permalink": "/docs/guides/old/concepts"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/enumerations/LoggerLevel",
+  "title": "LoggerLevel",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/enumerations/LoggerLevel.md",
+  "sourceDirName": "guides/api/enumerations",
+  "slug": "/guides/api/enumerations/LoggerLevel",
+  "permalink": "/docs/guides/api/enumerations/LoggerLevel",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "FatalErrorCode",
+    "permalink": "/docs/guides/api/enumerations/FatalErrorCode"
+  },
+  "next": {
+    "title": "ProjectEvent",
+    "permalink": "/docs/guides/api/enumerations/ProjectEvent"
+  }
+}

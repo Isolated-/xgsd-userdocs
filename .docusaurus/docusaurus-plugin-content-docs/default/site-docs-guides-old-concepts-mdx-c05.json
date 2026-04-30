@@ -1,0 +1,19 @@
+{
+  "id": "guides/old/concepts",
+  "title": "concepts",
+  "description": "",
+  "source": "@site/docs/guides/old/concepts.mdx",
+  "sourceDirName": "guides/old",
+  "slug": "/guides/old/concepts",
+  "permalink": "/docs/guides/old/concepts",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Plugins",
+    "permalink": "/docs/guides/old/plugins"
+  }
+}

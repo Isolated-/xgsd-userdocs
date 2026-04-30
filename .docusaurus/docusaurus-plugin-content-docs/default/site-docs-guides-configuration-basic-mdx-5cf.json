@@ -1,0 +1,27 @@
+{
+  "id": "guides/Configuration/basic",
+  "title": "Basic",
+  "description": "",
+  "source": "@site/docs/guides/Configuration/basic.mdx",
+  "sourceDirName": "guides/Configuration",
+  "slug": "/guides/Configuration/basic",
+  "permalink": "/docs/guides/Configuration/basic",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "Basic",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Using Plugins",
+    "permalink": "/docs/guides/using-plugins"
+  },
+  "next": {
+    "title": "What's changed in v0.5?",
+    "permalink": "/docs/guides/old/what-changed-v0.5"
+  }
+}

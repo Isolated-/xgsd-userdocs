@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/classes/FatalError",
+  "title": "FatalError",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/classes/FatalError.md",
+  "sourceDirName": "guides/api/classes",
+  "slug": "/guides/api/classes/FatalError",
+  "permalink": "/docs/guides/api/classes/FatalError",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "EventBus",
+    "permalink": "/docs/guides/api/classes/EventBus"
+  },
+  "next": {
+    "title": "InProcessExecutor",
+    "permalink": "/docs/guides/api/classes/InProcessExecutor"
+  }
+}

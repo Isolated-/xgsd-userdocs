@@ -1,0 +1,27 @@
+{
+  "id": "guides/Advanced/executors",
+  "title": "Working with Executors",
+  "description": "---",
+  "source": "@site/docs/guides/Advanced/executors.mdx",
+  "sourceDirName": "guides/Advanced",
+  "slug": "/guides/Advanced/executors",
+  "permalink": "/docs/guides/Advanced/executors",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "title": "Working with Executors",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Using Plugins",
+    "permalink": "/docs/guides/using-plugins"
+  },
+  "next": {
+    "title": "Reference",
+    "permalink": "/docs/guides/Configuration/reference"
+  }
+}

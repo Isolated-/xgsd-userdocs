@@ -1,0 +1,27 @@
+{
+  "id": "guides/old/extensions",
+  "title": "Extensions",
+  "description": "Overview",
+  "source": "@site/docs/guides/old/extensions.mdx",
+  "sourceDirName": "guides/old",
+  "slug": "/guides/old/extensions",
+  "permalink": "/docs/guides/old/extensions",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Extensions",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Configuration",
+    "permalink": "/docs/guides/old/configuration"
+  },
+  "next": {
+    "title": "Plugins",
+    "permalink": "/docs/guides/old/plugins"
+  }
+}

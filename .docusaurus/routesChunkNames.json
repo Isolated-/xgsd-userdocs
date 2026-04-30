@@ -1,0 +1,86 @@
+{
+  "/xgsd-docs/__docusaurus/debug-e25": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/xgsd-docs/__docusaurus/debug/config-fbd": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/xgsd-docs/__docusaurus/debug/content-e78": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---xgsd-docs-docusaurus-debug-content-8-de-8e9"
+  },
+  "/xgsd-docs/__docusaurus/debug/globalData-240": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/xgsd-docs/__docusaurus/debug/metadata-2c5": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/xgsd-docs/__docusaurus/debug/registry-90d": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/xgsd-docs/__docusaurus/debug/routes-773": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/xgsd-docs/-b46": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---aba-d70"
+    }
+  },
+  "/xgsd-docs/-5c6": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---xgsd-docs-981-b01"
+  },
+  "/xgsd-docs/-c21": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/xgsd-docs/guides/Configuration/env-vars-f05": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-configuration-env-varsd-08-044"
+  },
+  "/xgsd-docs/guides/Configuration/reference-4fa": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-configuration-referencee-39-fb7"
+  },
+  "/xgsd-docs/guides/Configuration/templating-a01": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-configuration-templating-90-a-3fd"
+  },
+  "/xgsd-docs/guides/Plugins/getting-started-603": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-plugins-getting-startede-1-a-8b8"
+  },
+  "/xgsd-docs/guides/project-config-basics-390": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-project-config-basics-156-72e"
+  },
+  "/xgsd-docs/guides/project-setup-e3f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-project-setupf-6-b-f26"
+  },
+  "/xgsd-docs/-793": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---guides-getting-started-4-dc-410"
+  }
+}

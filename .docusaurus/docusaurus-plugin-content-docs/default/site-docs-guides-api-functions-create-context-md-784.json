@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/functions/createContext",
+  "title": "createContext",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/functions/createContext.md",
+  "sourceDirName": "guides/api/functions",
+  "slug": "/guides/api/functions/createContext",
+  "permalink": "/docs/guides/api/functions/createContext",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "createConfig",
+    "permalink": "/docs/guides/api/functions/createConfig"
+  },
+  "next": {
+    "title": "depreciated",
+    "permalink": "/docs/guides/api/functions/depreciated"
+  }
+}

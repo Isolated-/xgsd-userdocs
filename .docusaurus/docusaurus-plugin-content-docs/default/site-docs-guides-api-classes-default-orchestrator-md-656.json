@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/classes/DefaultOrchestrator",
+  "title": "DefaultOrchestrator",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/classes/DefaultOrchestrator.md",
+  "sourceDirName": "guides/api/classes",
+  "slug": "/guides/api/classes/DefaultOrchestrator",
+  "permalink": "/docs/guides/api/classes/DefaultOrchestrator",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ContextSetupStage",
+    "permalink": "/docs/guides/api/classes/ContextSetupStage"
+  },
+  "next": {
+    "title": "EventBus",
+    "permalink": "/docs/guides/api/classes/EventBus"
+  }
+}

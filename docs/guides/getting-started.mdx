@@ -1,0 +1,104 @@
+---
+title: Getting started
+sidebar_position: 0
+slug: /
+---
+
+---
+
+You can use xGSD for anything from hardware tinkering to cloud-style workflows. It's a lightweight, local-first alternative to services like AWS Lambda or GCS Functions — but without the overhead of wiring everything together.
+
+xGSD is:
+
+- **Local-first** — runs inside your Node.js project
+- **Function-driven** — every unit is a function with a consistent shape
+- **Predictable** — built-in execution rules (retry, timeout) remove guesswork
+- **Extensible** — add behaviour through plugins, not config hacks
+- **Low learning curve** — no frameworks, just Node.js with `xgsd run`
+
+Get started in 3 steps.
+
+---
+
+### Concept
+
+At its core, xGSD runs functions inside your Node.js project.
+
+Each function:
+
+- accepts a single argument
+- returns an object, `null` or `undefined`
+
+```typescript
+type RunFn<T, R> = (data: T): Promise<R>
+```
+
+---
+
+### 1. Install
+
+Install xGSD globally using npm:
+
+```bash
+npm install -g @xgsd/cli
+```
+
+Verify the installation:
+
+```bash
+xgsd version
+```
+
+You should see something like:
+
+```bash
+@xgsd/cli/0.5.0 linux-x64 node-v24.4.1
+```
+
+---
+
+### 2. Create a function
+
+Create an `index.js` file and export a function:
+
+```javascript
+// index.js
+export async function greet({ name }) {
+  return { message: `Hello ${name}` };
+}
+```
+
+If you're using CommonJS:
+
+```javascript
+// index.js
+function greet({ name }) {
+  return { message: `Hello ${name}` };
+}
+
+module.exports = { greet };
+```
+
+xGSD loads functions from your project's entry point (usually defined in `package.json`).
+
+---
+
+### 3. Call it
+
+Run the function with:
+
+```bash
+xgsd call greet -d '{"name":"World"}'
+```
+
+Output:
+
+```bash
+{
+  "message": "Hello World"
+}
+```
+
+---
+
+In the next chapter, you’ll turn this into a full **Project**.

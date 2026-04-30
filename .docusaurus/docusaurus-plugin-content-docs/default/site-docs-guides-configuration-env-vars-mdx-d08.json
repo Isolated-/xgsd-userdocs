@@ -1,0 +1,27 @@
+{
+  "id": "guides/Configuration/env-vars",
+  "title": "Environment variables",
+  "description": "---",
+  "source": "@site/docs/guides/Configuration/env-vars.mdx",
+  "sourceDirName": "guides/Configuration",
+  "slug": "/guides/Configuration/env-vars",
+  "permalink": "/xgsd-docs/guides/Configuration/env-vars",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "title": "Environment variables",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Templating",
+    "permalink": "/xgsd-docs/guides/Configuration/templating"
+  },
+  "next": {
+    "title": "Reference",
+    "permalink": "/xgsd-docs/guides/Configuration/reference"
+  }
+}

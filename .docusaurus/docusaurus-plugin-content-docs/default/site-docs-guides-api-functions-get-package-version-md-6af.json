@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/functions/getPackageVersion",
+  "title": "getPackageVersion",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/functions/getPackageVersion.md",
+  "sourceDirName": "guides/api/functions",
+  "slug": "/guides/api/functions/getPackageVersion",
+  "permalink": "/docs/guides/api/functions/getPackageVersion",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "execute",
+    "permalink": "/docs/guides/api/functions/execute"
+  },
+  "next": {
+    "title": "interpolate",
+    "permalink": "/docs/guides/api/functions/interpolate"
+  }
+}

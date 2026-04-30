@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/classes/ConfigBuilderFinalStage",
+  "title": "ConfigBuilderFinalStage",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/classes/ConfigBuilderFinalStage.md",
+  "sourceDirName": "guides/api/classes",
+  "slug": "/guides/api/classes/ConfigBuilderFinalStage",
+  "permalink": "/docs/guides/api/classes/ConfigBuilderFinalStage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "BlockContextBuilderRunStage",
+    "permalink": "/docs/guides/api/classes/BlockContextBuilderRunStage"
+  },
+  "next": {
+    "title": "ConfigBuilderLoadStage",
+    "permalink": "/docs/guides/api/classes/ConfigBuilderLoadStage"
+  }
+}

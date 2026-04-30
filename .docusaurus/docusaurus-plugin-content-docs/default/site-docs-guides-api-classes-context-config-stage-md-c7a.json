@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/classes/ContextConfigStage",
+  "title": "ContextConfigStage",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/classes/ContextConfigStage.md",
+  "sourceDirName": "guides/api/classes",
+  "slug": "/guides/api/classes/ContextConfigStage",
+  "permalink": "/docs/guides/api/classes/ContextConfigStage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ContextBusStage",
+    "permalink": "/docs/guides/api/classes/ContextBusStage"
+  },
+  "next": {
+    "title": "ContextEntryStage",
+    "permalink": "/docs/guides/api/classes/ContextEntryStage"
+  }
+}

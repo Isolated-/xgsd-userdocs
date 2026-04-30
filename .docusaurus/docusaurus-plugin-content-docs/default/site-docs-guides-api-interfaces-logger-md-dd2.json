@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/interfaces/Logger",
+  "title": "Logger",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/interfaces/Logger.md",
+  "sourceDirName": "guides/api/interfaces",
+  "slug": "/guides/api/interfaces/Logger",
+  "permalink": "/docs/guides/api/interfaces/Logger",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "globals",
+    "permalink": "/docs/guides/api/globals"
+  },
+  "next": {
+    "title": "Plugin",
+    "permalink": "/docs/guides/api/interfaces/Plugin"
+  }
+}

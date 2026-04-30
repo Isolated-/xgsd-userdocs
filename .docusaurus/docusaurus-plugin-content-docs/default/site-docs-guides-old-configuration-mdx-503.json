@@ -1,0 +1,27 @@
+{
+  "id": "guides/old/configuration",
+  "title": "Configuration",
+  "description": "Environmental Variables",
+  "source": "@site/docs/guides/old/configuration.mdx",
+  "sourceDirName": "guides/old",
+  "slug": "/guides/old/configuration",
+  "permalink": "/docs/guides/old/configuration",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Configuration",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "What's changed in v0.5?",
+    "permalink": "/docs/guides/old/what-changed-v0.5"
+  },
+  "next": {
+    "title": "Extensions",
+    "permalink": "/docs/guides/old/extensions"
+  }
+}

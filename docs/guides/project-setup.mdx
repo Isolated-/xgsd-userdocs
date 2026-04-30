@@ -1,0 +1,126 @@
+---
+title: Creating a Project
+sidebar_position: 1
+---
+
+---
+
+### Concept
+
+A **Project** defines how functions are executed in sequence through configuration.
+
+It controls how data flows between them and how execution is managed.
+
+---
+
+In [**Getting Started**](getting-started), you created and called a single function with `xgsd call`.
+
+Now you'll turn that into a full project using **chain** mode.
+
+### 1. Create a project folder
+
+Create a project folder:
+
+```bash
+mkdir my-project
+cd my-project
+```
+
+Create a `config.yaml`:
+
+```bash
+touch config.yaml
+```
+
+Minimal configuration (see [**Configuration**](configuration) for more options):
+
+```yaml
+mode: chain
+data:
+  name: World
+blocks:
+  - run: greet
+  - run: save
+```
+
+---
+
+### 2. Add a new function
+
+Create an `index.js` file inside your project folder. Make sure `greet` is exported:
+
+```javascript
+// index.js
+export async function greet({ name }) {
+  return { message: `Hello ${name}` };
+}
+```
+
+Now create a new exported function: `save`:
+
+```javascript
+export async function save({ message }) {
+  writeFileSync("message.txt", message);
+}
+```
+
+In **chain** mode, each function receives the output of the previous one.
+
+So `save` automatically receives the `message` from `greet`.
+
+---
+
+### 3. Run it
+
+Run the project:
+
+```bash
+xgsd run
+```
+
+Optionally override the config data:
+
+```bash
+xgsd run -d '{"name": "Me"}'
+```
+
+---
+
+### 4. View the result
+
+xGSD stores run results in your project's `runs` folder.
+
+After execution you'll see:
+
+- `greet` produced a message
+- `save` wrote it to `message.txt`
+
+Open `message.txt`:
+
+```txt
+Hello World
+```
+
+That's your first chained result.
+
+---
+
+### 5. Templating alternative
+
+You don't need a function for every step.
+
+Instead of using `greet`, you can use [**Templating**](Configuration/templating) directly:
+
+```yaml
+mode: chain
+data:
+  name: World
+blocks:
+  - run: save
+    input:
+      message: Hello {{ctx.data.name}}
+```
+
+This produces the same result — without introducing an extra function.
+
+---

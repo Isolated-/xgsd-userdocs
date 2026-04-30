@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/classes/ContextFinalStage",
+  "title": "ContextFinalStage",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/classes/ContextFinalStage.md",
+  "sourceDirName": "guides/api/classes",
+  "slug": "/guides/api/classes/ContextFinalStage",
+  "permalink": "/docs/guides/api/classes/ContextFinalStage",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ContextEntryStage",
+    "permalink": "/docs/guides/api/classes/ContextEntryStage"
+  },
+  "next": {
+    "title": "ContextSetupStage",
+    "permalink": "/docs/guides/api/classes/ContextSetupStage"
+  }
+}

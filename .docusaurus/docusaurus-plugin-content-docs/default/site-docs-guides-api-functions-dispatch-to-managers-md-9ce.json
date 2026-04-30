@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/functions/dispatchToManagers",
+  "title": "dispatchToManagers",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/functions/dispatchToManagers.md",
+  "sourceDirName": "guides/api/functions",
+  "slug": "/guides/api/functions/dispatchToManagers",
+  "permalink": "/docs/guides/api/functions/dispatchToManagers",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "depreciated",
+    "permalink": "/docs/guides/api/functions/depreciated"
+  },
+  "next": {
+    "title": "execute",
+    "permalink": "/docs/guides/api/functions/execute"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "guides/api/functions/composePresetWithOpts",
+  "title": "composePresetWithOpts",
+  "description": "@xgsd/runtime",
+  "source": "@site/docs/guides/api/functions/composePresetWithOpts.md",
+  "sourceDirName": "guides/api/functions",
+  "slug": "/guides/api/functions/composePresetWithOpts",
+  "permalink": "/docs/guides/api/functions/composePresetWithOpts",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "composePreset",
+    "permalink": "/docs/guides/api/functions/composePreset"
+  },
+  "next": {
+    "title": "execute",
+    "permalink": "/docs/guides/api/functions/execute"
+  }
+}

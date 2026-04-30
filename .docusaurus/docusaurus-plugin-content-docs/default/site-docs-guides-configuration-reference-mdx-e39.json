@@ -1,0 +1,27 @@
+{
+  "id": "guides/Configuration/reference",
+  "title": "Reference",
+  "description": "---",
+  "source": "@site/docs/guides/Configuration/reference.mdx",
+  "sourceDirName": "guides/Configuration",
+  "slug": "/guides/Configuration/reference",
+  "permalink": "/xgsd-docs/guides/Configuration/reference",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "title": "Reference",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Environment variables",
+    "permalink": "/xgsd-docs/guides/Configuration/env-vars"
+  },
+  "next": {
+    "title": "Getting started",
+    "permalink": "/xgsd-docs/guides/Plugins/getting-started"
+  }
+}

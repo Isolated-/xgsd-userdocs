@@ -1,0 +1,27 @@
+{
+  "id": "guides/project-config-basics",
+  "title": "Configuring a Project",
+  "description": "---",
+  "source": "@site/docs/guides/project-config-basics.mdx",
+  "sourceDirName": "guides",
+  "slug": "/guides/project-config-basics",
+  "permalink": "/xgsd-docs/guides/project-config-basics",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "title": "Configuring a Project",
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Creating a Project",
+    "permalink": "/xgsd-docs/guides/project-setup"
+  },
+  "next": {
+    "title": "Templating",
+    "permalink": "/xgsd-docs/guides/Configuration/templating"
+  }
+}

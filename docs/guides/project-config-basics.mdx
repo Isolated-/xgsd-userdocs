@@ -1,0 +1,63 @@
+---
+title: Configuring a Project
+sidebar_position: 2
+---
+
+---
+
+### Concept
+
+A **Project** is defined by its configuration file.
+
+It controls how functions are executed in sequence and how data flows between them.
+
+---
+
+### 1. Project
+
+Most fields in the project config are optional and used for your own context.
+
+```yaml
+# basic metadata
+name: My Project
+description: A description of my project
+version: v1
+
+# execution mode: async | chain
+mode: async
+
+# concurrency (ignored in chain mode)
+concurrency: 4
+
+# initial input data
+data:
+  name: World
+```
+
+---
+
+### 2. Blocks
+
+Blocks define how functions are executed.
+
+You can control retries, timeouts, and environment variables per function.
+
+```yaml
+blocks:
+  - run: greet
+    input:
+      name: another world
+    env:
+      MY_VAR: "1234578"
+    options:
+      timeout: 1s
+      retries: 3
+```
+
+---
+
+### 3. Learn more
+
+For all configuration options, see the [**Configuration**](Configuration/reference) reference.
+
+---

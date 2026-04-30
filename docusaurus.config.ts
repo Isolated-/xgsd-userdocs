@@ -16,12 +16,12 @@ const config: Config = {
   url: "https://Isolated-.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/xgsd-userdocs/",
+  baseUrl: "/xgsd-docs/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Isolated-", // Usually your GitHub org/user name.
-  projectName: "xgsd-userdocs", // Usually your repo name.
+  projectName: "xgsd-docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
 

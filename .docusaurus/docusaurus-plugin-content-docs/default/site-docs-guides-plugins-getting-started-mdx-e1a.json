@@ -1,7 +1,7 @@
 {
   "id": "guides/Plugins/getting-started",
   "title": "Getting started",
-  "description": "Did you know?",
+  "description": "---",
   "source": "@site/docs/guides/Plugins/getting-started.mdx",
   "sourceDirName": "guides/Plugins",
   "slug": "/guides/Plugins/getting-started",

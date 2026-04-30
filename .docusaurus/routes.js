@@ -3,41 +3,6 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/xgsd-docs/__docusaurus/debug',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug', 'e25'),
-    exact: true
-  },
-  {
-    path: '/xgsd-docs/__docusaurus/debug/config',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug/config', 'fbd'),
-    exact: true
-  },
-  {
-    path: '/xgsd-docs/__docusaurus/debug/content',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug/content', 'e78'),
-    exact: true
-  },
-  {
-    path: '/xgsd-docs/__docusaurus/debug/globalData',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug/globalData', '240'),
-    exact: true
-  },
-  {
-    path: '/xgsd-docs/__docusaurus/debug/metadata',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug/metadata', '2c5'),
-    exact: true
-  },
-  {
-    path: '/xgsd-docs/__docusaurus/debug/registry',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug/registry', '90d'),
-    exact: true
-  },
-  {
-    path: '/xgsd-docs/__docusaurus/debug/routes',
-    component: ComponentCreator('/xgsd-docs/__docusaurus/debug/routes', '773'),
-    exact: true
-  },
-  {
     path: '/xgsd-docs/',
     component: ComponentCreator('/xgsd-docs/', 'b46'),
     routes: [

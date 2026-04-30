@@ -6,6 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "xGSD",
+  favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -16,12 +17,12 @@ const config: Config = {
   url: "https://Isolated-.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/xgsd-docs/",
+  baseUrl: "/xgsd-userdocs/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "Isolated-", // Usually your GitHub org/user name.
-  projectName: "xgsd-docs", // Usually your repo name.
+  projectName: "xgsd-userdocs", // Usually your repo name.
 
   onBrokenLinks: "throw",
 

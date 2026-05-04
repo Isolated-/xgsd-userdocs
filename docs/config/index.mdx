@@ -4,6 +4,7 @@ sidebar_position: 0
 ---
 
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
+import Block from "@site/src/components/Block.tsx";
 
 ---
 
@@ -190,40 +191,38 @@ Resolved values are injected into the runtime environment. Read variables like n
 
 This does not affect projects ran with `--dev` or `--local`.
 
----
-
 ## Reference
 
 Here is a complete list of every option currently supported:
 
-| Property          | Scope       | Type                 | Required | Default                      | Note                                                                                                            |
-| ----------------- | ----------- | -------------------- | -------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `name`            | **project** | `string`             | no       | `name` or "unknown"          | `name` from `package.json`                                                                                      |
-| `description`     | **project** | `string`             | no       | `description` or `undefined` | `description` from `package.json`                                                                               |
-| `version`         | **project** | `string` or `number` | no       | `version` or `undefined`     | `version` from `package.json`                                                                                   |
-| `entry`           | **project** | `string`             | no       | `main` or `index.js`         | `main` from `package.json`                                                                                      |
-| `metadata`        | **project** | `object`             | no       | `null`                       | user metadata (unused by xGSD)                                                                                  |
-| `metrics.enabled` | **project** | `boolean`            | no       | `undefined`                  | enable/disable anonymous performance data (leave undefined to control with `--no-metrics` or `--metrics=false`) |
-| `mode`            | **project** | `enum`               | no       | `async`                      | can be either `chain` or `async`                                                                                |
-| `concurrency`     | **project** | `number`             | no       | `4`                          | `chain` will set this to 1 automatically                                                                        |
-| `data`            | **project** | `object`             | no       | `null`                       | `data` is sent to all blocks regardless of mode                                                                 |
-| `blocks`          | **project** | `Block[]`            | no       | `[]`                         | block config (see [**Blocks**](#blocks))                                                                        |
+| Property          | Since  | Type                 | Required | Default                      | Note                                                                                                            |
+| ----------------- | ------ | -------------------- | -------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `name`            | `v0.3` | `string`             | no       | `name` or "unknown"          | `name` from `package.json`                                                                                      |
+| `description`     | `v0.3` | `string`             | no       | `description` or `undefined` | `description` from `package.json`                                                                               |
+| `version`         | `v0.3` | `string` or `number` | no       | `version` or `undefined`     | `version` from `package.json`                                                                                   |
+| `entry`           | `v0.5` | `string`             | no       | `main` or `index.js`         | `main` from `package.json`                                                                                      |
+| `metadata`        | `v0.4` | `object`             | no       | `null`                       | user metadata (unused by xGSD)                                                                                  |
+| `metrics.enabled` | `v0.5` | `boolean`            | no       | `undefined`                  | enable/disable anonymous performance data (leave undefined to control with `--no-metrics` or `--metrics=false`) |
+| `mode`            | `v0.2` | `enum`               | no       | `async`                      | can be either `chain` or `async`                                                                                |
+| `concurrency`     | `v0.3` | `number`             | no       | `4`                          | `chain` will set this to 1 automatically                                                                        |
+| `data`            | `v0.2` | `object`             | no       | `null`                       | `data` is sent to all blocks regardless of mode                                                                 |
+| `blocks`          | `v0.5` | `Block[]`            | no       | `[]`                         | block config (see [**Blocks**](#blocks))                                                                        |
 
 ### Blocks
 
-| Property               | Scope     | Type      | Required | Default     | Note                                                                    |
-| ---------------------- | --------- | --------- | -------- | ----------- | ----------------------------------------------------------------------- |
-| `blocks[].name`        | **block** | `string`  | no       | `run`       | defaults to function name (`run`)                                       |
-| `blocks[].description` | **block** | `string`  | no       | `undefined` | used for config readability - not used by xGSD                          |
-| `blocks[].run`         | **block** | `string`  | yes      | N/A         | must match exported function name (e.g. `greet`)                        |
-| `blocks[].input`       | **block** | `object`  | no       | `null`      | merges with project `data` (if present)                                 |
-| `blocks[].env`         | **block** | `object`  | no       | `null`      | see [**Environmental Variables**](#environment-variables) for more info |
-| `blocks[].options`     | **block** | `Options` | no       | N/A         | see [**Options**](#options) for more information                        |
+| Property               | Since  | Type      | Required | Default     | Note                                                                    |
+| ---------------------- | ------ | --------- | -------- | ----------- | ----------------------------------------------------------------------- |
+| `blocks[].name`        | `v0.5` | `string`  | no       | `run`       | defaults to function name (`run`)                                       |
+| `blocks[].description` | `v0.5` | `string`  | no       | `undefined` | used for config readability - not used by xGSD                          |
+| `blocks[].run`         | `v0.5` | `string`  | yes      | N/A         | must match exported function name (e.g. `greet`)                        |
+| `blocks[].input`       | `v0.5` | `object`  | no       | `null`      | merges with project `data` (if present)                                 |
+| `blocks[].env`         | `v0.5` | `object`  | no       | `null`      | see [**Environmental Variables**](#environment-variables) for more info |
+| `blocks[].options`     | `v0.5` | `Options` | no       | N/A         | see [**Options**](#options) for more information                        |
 
 ### Options
 
-| Property          | Scope     | Type                 | Required | Default       | Note                                          |
-| ----------------- | --------- | -------------------- | -------- | ------------- | --------------------------------------------- |
-| `options.timeout` | **block** | `number` or `string` | no       | `5s`          | can be number (5000) or string (5s)           |
-| `options.retries` | **block** | `number`             | no       | `3`           | number of retries                             |
-| `options.backoff` | **block** | `enum`               | no       | `exponential` | can be `linear`, `exponential`, or `squaring` |
+| Property          | Since  | Type                 | Required | Default       | Note                                          |
+| ----------------- | ------ | -------------------- | -------- | ------------- | --------------------------------------------- |
+| `options.timeout` | `v0.3` | `number` or `string` | no       | `5s`          | can be number (5000) or string (5s)           |
+| `options.retries` | `v0.3` | `number`             | no       | `3`           | number of retries                             |
+| `options.backoff` | `v0.3` | `enum`               | no       | `exponential` | can be `linear`, `exponential`, or `squaring` |

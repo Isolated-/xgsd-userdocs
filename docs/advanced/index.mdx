@@ -3,4 +3,30 @@ title: Getting started
 sidebar_position: 0
 ---
 
+import ApiTabs from "@site/src/components/ApiTabs.tsx";
+
 Advanced user guides covering **Orchestrators**, **Executors**, and **Plugins** (everything outside of projects/blocks)
+
+---
+
+## Setup
+
+The guides in this section will reference a `setup` function.
+
+This is a function you export in your code. You use it to register plugins, executors, and orchestrators:
+
+<ApiTabs
+  js={`export function setup(xgsd) {
+    xgsd.use(MyPlugin)
+
+    // or pass instance
+    xgsd.use(new MyPlugin())
+
+    xgsd.executor(MyExecutor)
+    xgsd.orchestrator(MyOrchestrator)
+
+}`}
+
+/>
+
+---

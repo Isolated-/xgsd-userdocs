@@ -5,17 +5,22 @@ sidebar_position: 1
 
 ---
 
-### Concept
-
-A **Project** defines how functions are executed in sequence through configuration.
-
-It controls how data flows between them and how execution is managed.
-
----
+import Concept from "@site/src/components/Concept.tsx";
+import Block from "@site/src/components/Block.tsx";
+import ApiTabs from "@site/src/components/ApiTabs.tsx";
 
 In [**Getting Started**](/), you created and called a single function with `xgsd call`.
 
 Now you'll turn that into a full project using **chain** mode.
+
+<Concept>
+A **Project** defines how functions are executed in sequence through configuration.
+
+It controls how data flows between them and how execution is managed.
+
+**Chain** mode ensures the next block receives the output of the last.
+
+</Concept>
 
 ### 1. Create a project folder
 
@@ -26,43 +31,56 @@ mkdir my-project
 cd my-project
 ```
 
-Create a `config.yaml`:
-
-```bash
-touch config.yaml
-```
-
-Minimal configuration.
-
-```yaml
-mode: chain
-data:
-  name: World
-blocks:
-  - run: greet
-  - run: save
-```
+<ApiTabs
+  yaml={`mode: chain
+  data:
+    name: World
+  blocks:
+    - run: greet
+    - run: save
+`}
+  json={`{
+    "mode": "chain",
+    "data": {
+      "name": "World"
+    },
+    "blocks": [
+      {
+        "run": "greet"
+      },
+      {
+        "run": "save"
+      }
+    ]
+  }`}
+  filename="config"
+>
+  Create a config file and copy and paste the following:
+</ApiTabs>
 
 ---
 
 ### 2. Add a new function
 
-Create an `index.js` file inside your project folder. Make sure `greet` is exported:
+Create an `index.js` file inside your project folder.
 
-```javascript
-// index.js
-export async function greet({ name }) {
-  return { message: `Hello ${name}` };
-}
-```
+<ApiTabs
+  js={`export async function greet({name}) {
+    return { message: \`Hello \$\{name\}\`}
+  }`}
+  filename="index"
+>
+  Make sure `greet` is exported:
+</ApiTabs>
 
-Now create a new exported function: `save`:
-
-```javascript
-export async function save({ message }) {
-  writeFileSync("message.txt", message);
-}
-```
+<ApiTabs
+  js={`export async function save({message}) {
+    writeFileSync("message.txt", message);
+  }`}
+  filename="index"
+>
+  Now create a new exported function `save`:
+</ApiTabs>
 
 In **chain** mode, each function receives the output of the previous one.
 
@@ -74,15 +92,11 @@ So `save` automatically receives the `message` from `greet`.
 
 Run the project:
 
-```bash
-xgsd run
-```
+<Block language="bash">xgsd run</Block>
 
 Optionally override the config data:
 
-```bash
-xgsd run -d '{"name": "Me"}'
-```
+<Block language="bash">{`xgsd run -d '{"name":"Me"}'`}</Block>
 
 ---
 
@@ -97,9 +111,9 @@ After execution you'll see:
 
 Open `message.txt`:
 
-```txt
-Hello World
-```
+<Block language="text" filename="message.txt">
+  {`Hello World`}
+</Block>
 
 That's your first chained result.
 
@@ -120,6 +134,30 @@ blocks:
     input:
       message: Hello {{ctx.data.name}}
 ```
+
+<ApiTabs yaml={`mode: chain
+  data:
+    name: World
+  blocks:
+    - run: save
+      input: 
+        message: Hello {{ctx.data.name}}
+`} json={`{
+    "mode": "chain",
+    "data": {
+      "name": "World"
+    },
+    "blocks": [
+      {
+        "run": "save",
+        "input": {
+          "message": "Hello {{ctx.data.name}}"
+        }
+      }
+    ]
+}`} filename="config">
+
+</ApiTabs>
 
 This produces the same result — without introducing an extra function.
 

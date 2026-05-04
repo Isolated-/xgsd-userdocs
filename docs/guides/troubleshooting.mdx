@@ -1,0 +1,29 @@
+---
+title: Troubleshooting
+sidebar_position: 8
+---
+
+---
+
+Things don't always go to plan. Use this guide if you get stuck.
+
+## WrappedError
+
+When your application throws an error it will be wrapped as a `WrappedError`. View the `original` to understand more about what's happening with these errors.
+
+## FatalError
+
+A `FatalError` is thrown when something has gone wrong and xGSD is unable to continue.
+
+| error code                | description                                                                                  | fix                                                                                                                 |
+| ------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `CODE_FATAL_ERROR`        | when some unrecoverable error occurs (generic)                                               | varies                                                                                                              |
+| `CODE_HARD_TIMEOUT`       | occurs when a block has exceeded hard timeout limit (only applicable to `ProcessExecutor`)   | increase timeout limit                                                                                              |
+| `CODE_HARD_DATA_SIZE`     | occurs when a block returned data exceeding hard data limit (unused currently)               | reduce data returned by your block                                                                                  |
+| `CODE_MODULE_NOT_FOUND`   | occurs when your module (usually `index.js`) wasn't resolved or an error occured during load | ensure no errors prevent your module loading (test with `node {file}`) and that `entry` or `main` are set correctly |
+| `CODE_FUNCTION_NOT_FOUND` | occurs when your module does not export the function expected by `run`                       | ensure your module exports the function correctly and that `run` matches the name of your exported function         |
+| `CODE_NO_ORCHESTRATOR`    | occurs when xGSD has not been configured with an **Orchestrator**                            | configure an Orchestrator with `xgsd.orchestrator` in `setup()`                                                     |
+| `CODE_NO_EXECUTOR`        | occurs when xGSD has not been configured with an **Executor**                                | configure an Executor with `xgsd.executor` in `setup()`                                                             |
+| `CODE_ENV_VAR_LOAD_FAIL`  | occurs when env vars couldn't be resolved properly                                           | ensure variable is set (`export MY_VAR=1234`) and that files exist with expected keys                               |
+
+With the exception of `CODE_FUNCTION_NOT_FOUND`, any of these errors will result in your project failing.

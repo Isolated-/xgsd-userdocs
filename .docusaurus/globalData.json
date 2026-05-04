@@ -51,6 +51,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "guides/troubleshooting",
+              "path": "/xgsd-userdocs/guides/troubleshooting",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "guides/using-hooks",
               "path": "/xgsd-userdocs/guides/using-hooks",
               "sidebar": "tutorialSidebar"

@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '2e0'),
+    component: ComponentCreator('/xgsd-userdocs/', 'a7d'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', '26c'),
+        component: ComponentCreator('/xgsd-userdocs/', '909'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', '7b0'),
+            component: ComponentCreator('/xgsd-userdocs/', '000'),
             routes: [
               {
                 path: '/xgsd-userdocs/advanced/',
@@ -78,6 +78,12 @@ export default [
                 component: ComponentCreator('/xgsd-userdocs/config/', 'dfd'),
                 exact: true,
                 sidebar: "configSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/guides/modes',
+                component: ComponentCreator('/xgsd-userdocs/guides/modes', '87c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
               },
               {
                 path: '/xgsd-userdocs/guides/project-setup',

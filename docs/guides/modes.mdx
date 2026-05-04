@@ -1,0 +1,23 @@
+---
+title: Understanding Modes
+sidebar_position: 3
+---
+
+---
+
+We used `chain` mode in [**Creating a Project**](project-setup).
+
+You'll learn the difference between `async` and `chain` mode and when to use them in this guide.
+
+By default `async` mode is used. You can override it by setting `mode` in `config.yaml`.
+
+## Comparison
+
+| feature           | `async`                                                                                                   | `chain`                                                                |
+| ----------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **process limit** | configurable with `concurrency`                                                                           | maximum of one                                                         |
+| **data handling** | `data` available                                                                                          | `data` available + previous `block.output`                             |
+| **ordering**      | none                                                                                                      | strict                                                                 |
+| **performance**   | best                                                                                                      | good                                                                   |
+| **when to use**   | when ordering doesn't matter, blocks benefit from concurrency, or when blocks don't depend on each other. | when ordering matters and/or blocks require data from previous blocks. |
+| **use cases**     | notifications, analytics, async tooling                                                                   | ETL, automation, and workflows                                         |

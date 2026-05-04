@@ -41,6 +41,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "guides/modes",
+              "path": "/xgsd-userdocs/guides/modes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "guides/project-setup",
               "path": "/xgsd-userdocs/guides/project-setup",
               "sidebar": "tutorialSidebar"

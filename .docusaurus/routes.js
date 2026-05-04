@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '975'),
+    component: ComponentCreator('/xgsd-userdocs/', '6c1'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', '56f'),
+        component: ComponentCreator('/xgsd-userdocs/', 'ec1'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', '510'),
+            component: ComponentCreator('/xgsd-userdocs/', '255'),
             routes: [
               {
                 path: '/xgsd-userdocs/advanced/',
@@ -106,6 +106,12 @@ export default [
               {
                 path: '/xgsd-userdocs/labs/',
                 component: ComponentCreator('/xgsd-userdocs/labs/', '399'),
+                exact: true,
+                sidebar: "labsSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/labs/code-bundler',
+                component: ComponentCreator('/xgsd-userdocs/labs/code-bundler', '098'),
                 exact: true,
                 sidebar: "labsSidebar"
               },

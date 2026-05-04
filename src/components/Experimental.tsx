@@ -6,8 +6,7 @@ export default function Experimental({ children, feature, version }: any) {
     <Admonition type="warning" title="Experimental Feature">
       {version && (
         <p>
-          This <b>experimental feature</b> was added in <b>v1.0</b>. Learn more
-          about <Link to="/config">experimental features</Link>.
+          This <b>experimental feature</b> was added in <b>{version}</b>.
         </p>
       )}
       {children}

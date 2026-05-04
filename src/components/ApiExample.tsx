@@ -27,10 +27,10 @@ ApiExample.Section = function Section({ title, children }: any) {
   );
 };
 
-ApiExample.Footer = function Footer({ since, link }: any) {
+ApiExample.Footer = function Footer({ since, link, experimental }: any) {
   return (
     <div>
-      {since && (
+      {since && !experimental && (
         <small>
           <i>
             This feature was added in <b>{since}</b>
@@ -44,6 +44,15 @@ ApiExample.Footer = function Footer({ since, link }: any) {
               </span>
             )}
             .
+          </i>
+        </small>
+      )}
+
+      {experimental && (
+        <small>
+          <i>
+            This <b>experimental feature</b> was added in <b>{since}</b>.<br />
+            Experimental features may change or be removed without notice.
           </i>
         </small>
       )}

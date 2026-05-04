@@ -1,0 +1,59 @@
+---
+title: Bundling your project
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+import Experimental from "@site/src/components/Experimental.tsx";
+
+---
+
+<ApiExample>
+
+## Run TypeScript and JavaScript without worrying about build tools
+
+Most JavaScript projects require you to configure a build step before running code.
+
+This usually means dealing with:
+
+- ESM vs CommonJS compatibility issues
+- TypeScript compilation setup
+- Bundlers like Webpack, Vite, or esbuild
+- Separate development and runtime environments
+
+xGSD removes this requirement entirely.
+
+---
+
+You can write:
+
+```javascript
+export async function greet({ name }) {
+  console.log(`Hello ${name}`);
+}
+```
+
+Or:
+
+```javascript
+module.exports = {
+  myAction: ({ name }) => {
+    console.log(`Hello ${name}`);
+  },
+};
+```
+
+Or even:
+
+```typescript
+export async function greet({ name }: { name: string }) {
+  console.log(`Hello ${name}`);
+}
+```
+
+All formats run directly without a manual build step.
+
+Under the hood, xGSD automatically normalises your code using a bundling layer (powered by esbuild) so you can execute mixed module formats consistently.
+
+<ApiExample.Footer since="v0.5.1" experimental />
+
+</ApiExample>

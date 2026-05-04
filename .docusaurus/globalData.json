@@ -61,6 +61,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "labs/code-bundler",
+              "path": "/xgsd-userdocs/labs/code-bundler",
+              "sidebar": "labsSidebar"
+            },
+            {
               "id": "labs/index",
               "path": "/xgsd-userdocs/labs/",
               "sidebar": "labsSidebar"

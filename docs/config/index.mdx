@@ -5,7 +5,7 @@ sidebar_position: 0
 
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
 
-Below is a reference of _most_ configuration options supported by xGSD.
+---
 
 A minimal valid config looks like:
 
@@ -218,7 +218,7 @@ Here is a complete list of every option currently supported:
 | `blocks[].run`         | **block** | `string`  | yes      | N/A         | must match exported function name (e.g. `greet`)                        |
 | `blocks[].input`       | **block** | `object`  | no       | `null`      | merges with project `data` (if present)                                 |
 | `blocks[].env`         | **block** | `object`  | no       | `null`      | see [**Environmental Variables**](#environment-variables) for more info |
-| `block[].options`      | **block** | `Options` | no       | N/A         | see [**Options**](#options) for more information                        |
+| `blocks[].options`     | **block** | `Options` | no       | N/A         | see [**Options**](#options) for more information                        |
 
 ### Options
 

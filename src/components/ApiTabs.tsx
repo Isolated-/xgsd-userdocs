@@ -2,6 +2,7 @@ import React from "react";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import CodeBlock from "@theme/CodeBlock";
+import Block from "./Block";
 
 type TabConfig = {
   value: string;
@@ -21,15 +22,27 @@ function renderTab(
     <TabItem key={value} value={value} label={label}>
       {children && <div style={{ marginBottom: "1rem" }}>{children}</div>}
 
-      <CodeBlock language={language} title={filename}>
+      <Block language={language} filename={filename}>
         {code}
-      </CodeBlock>
+      </Block>
     </TabItem>
   );
 }
 
 export default function ApiTabs({ children, ...opts }: any) {
-  const { defaultValue, filename, bash, npm, yarn, cli, curl, js, ts } = opts;
+  const {
+    defaultValue,
+    filename,
+    bash,
+    npm,
+    yarn,
+    cli,
+    curl,
+    js,
+    ts,
+    yaml,
+    json,
+  } = opts;
 
   const tabs: TabConfig[] = [
     { value: "bash", label: "Bash", language: "bash", code: bash },
@@ -50,6 +63,20 @@ export default function ApiTabs({ children, ...opts }: any) {
       language: "typescript",
       code: ts,
       filename: filename ? filename + ".ts" : undefined,
+    },
+    {
+      value: "yaml",
+      label: "yaml",
+      language: "yaml",
+      code: yaml,
+      filename: filename ? filename + ".yaml" : undefined,
+    },
+    {
+      value: "json",
+      label: "JSON",
+      language: "json",
+      code: json,
+      filename: filename ? filename + ".json" : undefined,
     },
   ];
 

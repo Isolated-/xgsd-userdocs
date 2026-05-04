@@ -5,8 +5,10 @@ sidebar_position: 0
 
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
 import Block from "@site/src/components/Block.tsx";
+import ApiExample from "@site/src/components/ApiExample.tsx";
 
----
+<ApiExample>
+## Overview
 
 A minimal valid config looks like:
 
@@ -26,13 +28,13 @@ A minimal valid config looks like:
 
 Everything else is optional.
 
-:::warning
+<ApiExample.Status type="warning">
 
 By default `config.yaml` is assumed to be your project config file. If you're using JSON or have renamed your file, you'll need to use `xgsd run -c {file}`.
 
 It's recommended to use `config.yaml` for simplicity.
 
-:::
+</ApiExample.Status>
 
 ---
 
@@ -73,20 +75,12 @@ Example:
 }
 ```
 
-:::info
-In **v0.5**, **Helpers** were replaced with **Templates** to remove logic from config and make xGSD more predictable.
+<ApiExample.Status type="tip">
+**Helpers** were replaced with **Templates** to remove logic from config and make xGSD more predictable.
 
-Instead of:
+Instead of `${{ctx.data | some-helper}}` use `{{ctx.data}}`.
 
-`${{ctx.data}}`
-
-Use:
-
-`{{ctx.data}}`
-
-Any functions like `censor` or `slice` have been removed.
-
-:::
+</ApiExample.Status>
 
 ### Available data (context)
 
@@ -239,3 +233,6 @@ Here's a list of options xGSD supports:
 | `options.timeout` | `v0.3` | `number` or `string` | no       | `5s`          | can be number (5000) or string (5s)           |
 | `options.retries` | `v0.3` | `number`             | no       | `3`           | number of retries                             |
 | `options.backoff` | `v0.3` | `enum`               | no       | `exponential` | can be `linear`, `exponential`, or `squaring` |
+
+  <ApiExample.Footer since="v0.5"/>
+</ApiExample>

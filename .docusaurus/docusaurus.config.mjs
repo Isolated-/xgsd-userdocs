@@ -70,7 +70,7 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Guides"
+          "label": "Basics"
         },
         {
           "type": "docSidebar",

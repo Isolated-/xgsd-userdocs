@@ -36,23 +36,8 @@
               "sidebar": "configSidebar"
             },
             {
-              "id": "guides/Configuration/env-vars",
-              "path": "/xgsd-userdocs/guides/Configuration/env-vars",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "guides/Configuration/templating",
-              "path": "/xgsd-userdocs/guides/Configuration/templating",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "guides/getting-started",
               "path": "/xgsd-userdocs/",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "guides/project-config-basics",
-              "path": "/xgsd-userdocs/guides/project-config-basics",
               "sidebar": "tutorialSidebar"
             },
             {

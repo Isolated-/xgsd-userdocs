@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '8cc'),
+    component: ComponentCreator('/xgsd-userdocs/', '2e0'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', '5b8'),
+        component: ComponentCreator('/xgsd-userdocs/', '26c'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', 'ca8'),
+            component: ComponentCreator('/xgsd-userdocs/', '7b0'),
             routes: [
               {
                 path: '/xgsd-userdocs/advanced/',
@@ -78,24 +78,6 @@ export default [
                 component: ComponentCreator('/xgsd-userdocs/config/', 'dfd'),
                 exact: true,
                 sidebar: "configSidebar"
-              },
-              {
-                path: '/xgsd-userdocs/guides/Configuration/env-vars',
-                component: ComponentCreator('/xgsd-userdocs/guides/Configuration/env-vars', '865'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/xgsd-userdocs/guides/Configuration/templating',
-                component: ComponentCreator('/xgsd-userdocs/guides/Configuration/templating', '4d6'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/xgsd-userdocs/guides/project-config-basics',
-                component: ComponentCreator('/xgsd-userdocs/guides/project-config-basics', '063'),
-                exact: true,
-                sidebar: "tutorialSidebar"
               },
               {
                 path: '/xgsd-userdocs/guides/project-setup',

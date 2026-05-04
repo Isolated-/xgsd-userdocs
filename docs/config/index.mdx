@@ -3,4 +3,229 @@ title: Getting started
 sidebar_position: 0
 ---
 
-Everything to do with project/server configuration.
+import ApiTabs from "@site/src/components/ApiTabs.tsx";
+
+Below is a reference of _most_ configuration options supported by xGSD.
+
+Whilst the list is exhaustive, a `config.yaml` is valid even when empty.
+
+A minimal (useful) config file looks like:
+
+<ApiTabs
+  yaml={`blocks:
+    - run: greet
+`}
+  json={`{
+    "blocks": [
+      {
+          "run": "greet"
+      }
+    ]
+  }`}
+  filename="config"
+></ApiTabs>
+
+Everything else is optional.
+
+:::warning
+
+By default `config.yaml` is assumed to be your project config file. If you're using JSON or have renamed your file, you'll need to use `xgsd run -c {file}`.
+
+It's recommended to use `config.yaml` for simplicity.
+
+:::
+
+---
+
+## Templating
+
+Templates can be used in `input` and `env`.
+
+Example:
+
+```yaml
+data:
+  name: World
+blocks:
+  - run: greet
+    input:
+      message: "Hello {{ctx.data.name}}"
+```
+
+`greet` will receive:
+
+```json
+{
+  "name": "World",
+  "message": "Hello World"
+}
+```
+
+:::info
+In **v0.5**, **Helpers** were replaced with **Templates** to remove logic from config and make xGSD more predictable.
+
+Instead of:
+
+`${{ctx.data}}`
+
+Use:
+
+`{{ctx.data}}`
+
+Any functions like `censor` or `slice` have been removed.
+
+:::
+
+### Available data (context)
+
+Templates can access the following values:
+
+| property          | note                                          |
+| ----------------- | --------------------------------------------- |
+| `ctx.id`          | unique run identifier                         |
+| `ctx.name`        | project name (or `unknown`)                   |
+| `ctx.hash`        | config hash                                   |
+| `ctx.projectPath` | absolute path to the project folder           |
+| `ctx.entry`       | absolute path to the entry file               |
+| `ctx.start`       | ISO timestamp when the run started            |
+| `ctx.data`        | project input data (including `-d` overrides) |
+| `ctx.mode`        | execution mode (`chain` or `async`)           |
+| `ctx.concurrency` | concurrency limit                             |
+| `block.idx`       | position in the sequence                      |
+| `block.run`       | exported function name                        |
+| `block.name`      | block name (defaults to `block.run`)          |
+
+Templates can only access the values listed above. Internal runtime state is not available.
+
+### Full vs inline templates
+
+If a value is entirely a template, the original type is preserved:
+
+```yaml
+input:
+  data: "{{ctx.data}}"
+```
+
+If a template is part of a string, it is converted to a string:
+
+```yaml
+input:
+  message: "Hello {{ctx.data.name}}"
+```
+
+---
+
+## Environment Variables
+
+### Static variables
+
+Static values can be defined directly in your `config.yaml`:
+
+```yaml
+# inside your blocks:
+env:
+  MY_VAR: 1234
+```
+
+<ApiTabs
+  yaml={`# inside your blocks:
+env:
+    MY_VAR: 1234
+`}
+  json={`{
+    "env": {
+      "MY_VAR": 1234
+    }
+}`}
+  filename="config"
+/>
+
+This is suitable for non-sensitive configuration.
+
+### Resolved variables
+
+Sensitive values can be resolved at runtime instead of being stored in your config.
+
+<ApiTabs
+  yaml={`# inside your blocks:
+env:
+    MY_VAR:
+      source: env
+      ref: SENSITIVE
+`}
+  json={`{
+    "env": {
+      "MY_VAR": { "source": "env", "ref": "SENSITIVE"}
+    }
+}`}
+  filename="config"
+/>
+
+This reads from `process.env.SENSITIVE`.
+
+You can also load them from files:
+
+<ApiTabs
+  yaml={`# inside your blocks:
+env:
+    # dotenv style
+    MY_VAR_ENV:
+      source: file
+      path: myvars.env
+      ref: my_var
+    # json
+    MY_VAR_JSON
+      source: file
+      path: myvars.json
+      ref: my_var
+`}
+  json={`{
+    "env": {
+      "MY_VAR_ENV": { "source": "file", "ref": "my_var", "path": "myvars.env" },
+      "MY_VAR_JSON": { "source": "env", "ref": "my_var", "path": "myvars.json" }
+    }
+}`}
+  filename="config"
+/>
+
+Resolved values are injected into the runtime environment. Read variables like normal with `process.env.MY_VAR`.
+
+This does not affect projects ran with `--dev` or `--local`.
+
+---
+
+## Reference
+
+Here is a complete list of every option currently supported:
+
+| Property          | Scope       | Type                 | Required | Default                      | Note                                                                                                            |
+| ----------------- | ----------- | -------------------- | -------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `name`            | **project** | `string`             | no       | `name` or "unknown"          | `name` from `package.json`                                                                                      |
+| `description`     | **project** | `string`             | no       | `description` or `undefined` | `description` from `package.json`                                                                               |
+| `version`         | **project** | `string` or `number` | no       | `version` or `undefined`     | `version` from `package.json`                                                                                   |
+| `entry`           | **project** | `string`             | no       | `main` or `index.js`         | `main` from `package.json`                                                                                      |
+| `metadata`        | **project** | `object`             | no       | `null`                       | user metadata (unused by xGSD)                                                                                  |
+| `metrics.enabled` | **project** | `boolean`            | no       | `undefined`                  | enable/disable anonymous performance data (leave undefined to control with `--no-metrics` or `--metrics=false`) |
+| `mode`            | **project** | `enum`               | no       | `async`                      | can be either `chain` or `async`                                                                                |
+| `concurrency`     | **project** | `number`             | no       | `4`                          | `chain` will set this to 1 automatically                                                                        |
+| `data`            | **project** | `object`             | no       | `null`                       | `data` is sent to all blocks regardless of mode                                                                 |
+| `blocks`          | **project** | `Block[]`            | no       | `[]`                         | block config (see [**Blocks**](#blocks))                                                                        |
+
+### Blocks
+
+| Property               | Scope     | Type      | Required | Default     | Note                                                                    |
+| ---------------------- | --------- | --------- | -------- | ----------- | ----------------------------------------------------------------------- |
+| `blocks[].name`        | **block** | `string`  | no       | `run`       | defaults to function name (`run`)                                       |
+| `blocks[].description` | **block** | `string`  | no       | `undefined` | used for config readability - not used by xGSD                          |
+| `blocks[].run`         | **block** | `string`  | yes      | N/A         | must match exported function name (e.g. `greet`)                        |
+| `blocks[].input`       | **block** | `object`  | no       | `null`      | merges with project `data` (if present)                                 |
+| `blocks[].env`         | **block** | `object`  | no       | `null`      | see [**Environmental Variables**](#environment-variables) for more info |
+| `block[].options`      | **block** | `Options` | no       | N/A         | see [**Options**](#options) for more information                        |
+
+### Options
+
+| Property          | Scope     | Type                 | Required | Default       | Note                                          |
+| ----------------- | --------- | -------------------- | -------- | ------------- | --------------------------------------------- |
+| `options.timeout` | **block** | `number` or `string` | no       | `5s`          | can be number (5000) or string (5s)           |
+| `options.retries` | **block** | `number`             | no       | `3`           | number of retries                             |
+| `options.backoff` | **block** | `enum`               | no       | `exponential` | can be `linear`, `exponential`, or `squaring` |

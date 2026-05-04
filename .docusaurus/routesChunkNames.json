@@ -42,17 +42,17 @@
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-8cc": {
+  "/xgsd-userdocs/-2e0": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-5b8": {
+  "/xgsd-userdocs/-26c": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---xgsd-userdocs-0-b-4-147"
   },
-  "/xgsd-userdocs/-ca8": {
+  "/xgsd-userdocs/-7b0": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/xgsd-userdocs/advanced/-ec8": {
@@ -74,18 +74,6 @@
   "/xgsd-userdocs/config/-dfd": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-config-bd-7-ef4"
-  },
-  "/xgsd-userdocs/guides/Configuration/env-vars-865": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-guides-configuration-env-varsd-08-03e"
-  },
-  "/xgsd-userdocs/guides/Configuration/templating-4d6": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-guides-configuration-templating-90-a-97d"
-  },
-  "/xgsd-userdocs/guides/project-config-basics-063": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-guides-project-config-basics-156-2b7"
   },
   "/xgsd-userdocs/guides/project-setup-6db": {
     "__comp": "__comp---theme-doc-item-178-a40",

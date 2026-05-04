@@ -5,7 +5,7 @@
   "source": "@site/docs/guides/getting-started.mdx",
   "sourceDirName": "guides",
   "slug": "/",
-  "permalink": "/xgsd-docs/",
+  "permalink": "/xgsd-userdocs/",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -19,6 +19,6 @@
   "sidebar": "tutorialSidebar",
   "next": {
     "title": "Creating a Project",
-    "permalink": "/xgsd-docs/guides/project-setup"
+    "permalink": "/xgsd-userdocs/guides/project-setup"
   }
 }

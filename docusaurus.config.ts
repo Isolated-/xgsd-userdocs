@@ -40,9 +40,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           routeBasePath: "/",
         },
         blog: false,
@@ -66,7 +63,31 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Docs",
+          label: "Guides",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "configSidebar",
+          position: "left",
+          label: "Configuration",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "apiSidebar",
+          position: "left",
+          label: "API",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "labsSidebar",
+          position: "left",
+          label: "Labs",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "advancedSidebar",
+          position: "left",
+          label: "Advanced",
         },
         {
           href: "https://github.com/Isolated-/xgsd-cli",

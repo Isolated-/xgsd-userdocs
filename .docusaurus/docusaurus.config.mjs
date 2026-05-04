@@ -5,6 +5,7 @@
  */
 export default {
   "title": "xGSD",
+  "favicon": "img/favicon.ico",
   "future": {
     "v4": {
       "removeLegacyPostBuildHeadAttribute": true,
@@ -28,10 +29,10 @@ export default {
     }
   },
   "url": "https://Isolated-.github.io",
-  "baseUrl": "/xgsd-docs/",
+  "baseUrl": "/xgsd-userdocs/",
   "organizationName": "Isolated-",
-  "projectName": "xgsd-docs",
-  "onBrokenLinks": "throw",
+  "projectName": "xgsd-userdocs",
+  "onBrokenLinks": "ignore",
   "i18n": {
     "defaultLocale": "en",
     "locales": [
@@ -69,7 +70,31 @@ export default {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
           "position": "left",
-          "label": "Docs"
+          "label": "Guides"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "configSidebar",
+          "position": "left",
+          "label": "Configuration"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "apiSidebar",
+          "position": "left",
+          "label": "API"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "labsSidebar",
+          "position": "left",
+          "label": "Labs"
+        },
+        {
+          "type": "docSidebar",
+          "sidebarId": "advancedSidebar",
+          "position": "left",
+          "label": "Advanced"
         },
         {
           "href": "https://github.com/Isolated-/xgsd-cli",

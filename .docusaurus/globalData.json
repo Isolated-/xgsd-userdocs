@@ -1,57 +1,101 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/xgsd-docs/",
+      "path": "/xgsd-userdocs/",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/xgsd-docs/",
+          "path": "/xgsd-userdocs/",
           "mainDocId": "guides/getting-started",
           "docs": [
             {
-              "id": "guides/Configuration/env-vars",
-              "path": "/xgsd-docs/guides/Configuration/env-vars",
-              "sidebar": "tutorialSidebar"
+              "id": "advanced/index",
+              "path": "/xgsd-userdocs/advanced/",
+              "sidebar": "advancedSidebar"
             },
             {
-              "id": "guides/Configuration/reference",
-              "path": "/xgsd-docs/guides/Configuration/reference",
+              "id": "api/index",
+              "path": "/xgsd-userdocs/api/",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "config/index",
+              "path": "/xgsd-userdocs/config/",
+              "sidebar": "configSidebar"
+            },
+            {
+              "id": "guides/Configuration/env-vars",
+              "path": "/xgsd-userdocs/guides/Configuration/env-vars",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "guides/Configuration/templating",
-              "path": "/xgsd-docs/guides/Configuration/templating",
+              "path": "/xgsd-userdocs/guides/Configuration/templating",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "guides/getting-started",
-              "path": "/xgsd-docs/",
+              "path": "/xgsd-userdocs/",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "guides/Plugins/getting-started",
-              "path": "/xgsd-docs/guides/Plugins/getting-started",
+              "path": "/xgsd-userdocs/guides/Plugins/getting-started",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "guides/project-config-basics",
-              "path": "/xgsd-docs/guides/project-config-basics",
+              "path": "/xgsd-userdocs/guides/project-config-basics",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "guides/project-setup",
-              "path": "/xgsd-docs/guides/project-setup",
+              "path": "/xgsd-userdocs/guides/project-setup",
               "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "labs/http-server",
+              "path": "/xgsd-userdocs/labs/http-server",
+              "sidebar": "labsSidebar"
+            },
+            {
+              "id": "labs/index",
+              "path": "/xgsd-userdocs/labs/",
+              "sidebar": "labsSidebar"
             }
           ],
           "draftIds": [],
           "sidebars": {
             "tutorialSidebar": {
               "link": {
-                "path": "/xgsd-docs/",
+                "path": "/xgsd-userdocs/",
                 "label": "guides/getting-started"
+              }
+            },
+            "apiSidebar": {
+              "link": {
+                "path": "/xgsd-userdocs/api/",
+                "label": "api/index"
+              }
+            },
+            "configSidebar": {
+              "link": {
+                "path": "/xgsd-userdocs/config/",
+                "label": "config/index"
+              }
+            },
+            "labsSidebar": {
+              "link": {
+                "path": "/xgsd-userdocs/labs/",
+                "label": "labs/index"
+              }
+            },
+            "advancedSidebar": {
+              "link": {
+                "path": "/xgsd-userdocs/advanced/",
+                "label": "advanced/index"
               }
             }
           }

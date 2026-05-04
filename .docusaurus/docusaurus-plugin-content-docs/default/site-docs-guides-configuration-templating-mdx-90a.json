@@ -5,7 +5,7 @@
   "source": "@site/docs/guides/Configuration/templating.mdx",
   "sourceDirName": "guides/Configuration",
   "slug": "/guides/Configuration/templating",
-  "permalink": "/xgsd-docs/guides/Configuration/templating",
+  "permalink": "/xgsd-userdocs/guides/Configuration/templating",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Configuring a Project",
-    "permalink": "/xgsd-docs/guides/project-config-basics"
+    "permalink": "/xgsd-userdocs/guides/project-config-basics"
   },
   "next": {
     "title": "Environment variables",
-    "permalink": "/xgsd-docs/guides/Configuration/env-vars"
+    "permalink": "/xgsd-userdocs/guides/Configuration/env-vars"
   }
 }

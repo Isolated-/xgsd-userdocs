@@ -5,7 +5,7 @@
   "source": "@site/docs/guides/Configuration/reference.mdx",
   "sourceDirName": "guides/Configuration",
   "slug": "/guides/Configuration/reference",
-  "permalink": "/xgsd-docs/guides/Configuration/reference",
+  "permalink": "/xgsd-userdocs/guides/Configuration/reference",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Environment variables",
-    "permalink": "/xgsd-docs/guides/Configuration/env-vars"
+    "permalink": "/xgsd-userdocs/guides/Configuration/env-vars"
   },
   "next": {
-    "title": "Getting started",
-    "permalink": "/xgsd-docs/guides/Plugins/getting-started"
+    "title": "Experimental features/Labs",
+    "permalink": "/xgsd-userdocs/guides/Labs/experimental-features"
   }
 }

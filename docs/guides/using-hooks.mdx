@@ -4,6 +4,7 @@ sidebar_position: 4
 ---
 
 import Block from "@site/src/components/Block.tsx";
+import ApiTabs from "@site/src/components/ApiTabs.tsx";
 
 ---
 
@@ -38,3 +39,26 @@ Here's how events map to handlers:
 | `block.failed`     | `onBlockFail`       | `{block}`          |
 | `extension.loaded` | `onExtensionLoad`   | `{name, version}`  |
 | `extension.loaded` | `onExtensionUnload` | `{name, version}`  |
+
+## Example
+
+<ApiTabs
+  js={`export async function onProjectEnd({ context }) {
+    const basePath = join(context.projectPath, "my-runs");
+    ensureDirSync(basePath);
+    writeJsonSync(join(basePath, \`\$\{context.end\}.json\`), context, {
+      spaces: 2,
+    });
+}`}
+  ts={`import {Context} from '@xgsd/runtime'
+  export async function onProjectEnd({context}: {context: Context}) {
+    const basePath = join(context.projectPath, "my-runs");
+    ensureDirSync(basePath);
+    writeJsonSync(join(basePath, \`\$\{context.end\}.json\`), context, {
+      spaces: 2,
+    });
+  }`}
+  filename="index"
+>
+  Here's how you can use `project.end` to create your own report:
+</ApiTabs>

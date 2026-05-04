@@ -16,6 +16,16 @@
               "sidebar": "advancedSidebar"
             },
             {
+              "id": "advanced/Plugins/index",
+              "path": "/xgsd-userdocs/advanced/Plugins/",
+              "sidebar": "advancedSidebar"
+            },
+            {
+              "id": "advanced/Plugins/webhooks",
+              "path": "/xgsd-userdocs/advanced/Plugins/webhooks",
+              "sidebar": "advancedSidebar"
+            },
+            {
               "id": "api/index",
               "path": "/xgsd-userdocs/api/",
               "sidebar": "apiSidebar"
@@ -41,11 +51,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "guides/Plugins/getting-started",
-              "path": "/xgsd-userdocs/guides/Plugins/getting-started",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "guides/project-config-basics",
               "path": "/xgsd-userdocs/guides/project-config-basics",
               "sidebar": "tutorialSidebar"
@@ -56,9 +61,9 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "labs/http-server",
-              "path": "/xgsd-userdocs/labs/http-server",
-              "sidebar": "labsSidebar"
+              "id": "guides/using-hooks",
+              "path": "/xgsd-userdocs/guides/using-hooks",
+              "sidebar": "tutorialSidebar"
             },
             {
               "id": "labs/index",

@@ -1,0 +1,40 @@
+---
+title: What are Hooks?
+sidebar_position: 4
+---
+
+import Block from "@site/src/components/Block.tsx";
+
+---
+
+In this guide you'll learn about **Hooks** and how to take advantage of them to extend xGSD behaviour with new loggers, reporters, debuggers, and more.
+
+**Hooks** are designed to be quick to setup with no configuration - simply export the handler and you're good to go.
+
+Basic usage:
+
+<Block language="javascript" filename="index.js">
+  {`// called when a project finishes
+  export async function onProjectEnd({context}) {
+    // do something with final context
+  }`}
+</Block>
+
+If you're building something more complicated, you'll want a [**Plugin**](../advanced/Plugins) instead.
+
+## Events
+
+Here's how events map to handlers:
+
+| event              | handler             | payload            |
+| ------------------ | ------------------- | ------------------ |
+| `project.start`    | `onProjectStart`    | `{context}`        |
+| `project.end`      | `onProjectEnd`      | `{context}`        |
+| `block.start`      | `onBlockStart`      | `{block}`          |
+| `block.end`        | `onBlockEnd`        | `{block}`          |
+| `block.retry`      | `onBlockRetry`      | `{block, attempt}` |
+| `block.skipped`    | `onBlockSkip`       | `{block}`          |
+| `block.waiting`    | `onBlockWait`       | `{block}`          |
+| `block.failed`     | `onBlockFail`       | `{block}`          |
+| `extension.loaded` | `onExtensionLoad`   | `{name, version}`  |
+| `extension.loaded` | `onExtensionUnload` | `{name, version}`  |

@@ -1,23 +1,23 @@
 {
   "id": "guides/Plugins/using-plugins",
-  "title": "Using Plugins",
-  "description": "Did you know?",
+  "title": "Getting started",
+  "description": "---",
   "source": "@site/docs/guides/Plugins/using-plugins.mdx",
   "sourceDirName": "guides/Plugins",
   "slug": "/guides/Plugins/using-plugins",
-  "permalink": "/docs/guides/Plugins/using-plugins",
+  "permalink": "/xgsd-userdocs/guides/Plugins/using-plugins",
   "draft": false,
   "unlisted": false,
   "tags": [],
   "version": "current",
-  "sidebarPosition": 3,
+  "sidebarPosition": 0,
   "frontMatter": {
-    "title": "Using Plugins",
-    "sidebar_position": 3
+    "title": "Getting started",
+    "sidebar_position": 0
   },
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Environment variables",
-    "permalink": "/docs/guides/Configuration/env-vars"
+    "permalink": "/xgsd-userdocs/guides/Configuration/env-vars"
   }
 }

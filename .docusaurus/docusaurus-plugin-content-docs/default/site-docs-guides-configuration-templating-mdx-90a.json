@@ -17,8 +17,8 @@
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Configuring a Project",
-    "permalink": "/xgsd-userdocs/guides/project-config-basics"
+    "title": "What are Hooks?",
+    "permalink": "/xgsd-userdocs/guides/using-hooks"
   },
   "next": {
     "title": "Environment variables",

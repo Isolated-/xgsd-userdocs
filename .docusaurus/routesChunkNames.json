@@ -42,30 +42,38 @@
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-bb1": {
+  "/xgsd-userdocs/-8cc": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-a4a": {
+  "/xgsd-userdocs/-5b8": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---xgsd-userdocs-0-b-4-147"
   },
-  "/xgsd-userdocs/-b6f": {
+  "/xgsd-userdocs/-ca8": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/xgsd-userdocs/advanced/-0ff": {
+  "/xgsd-userdocs/advanced/-ec8": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-advanced-99-f-eab"
+    "content": "content---xgsd-userdocs-advanced-d-72-2a4"
+  },
+  "/xgsd-userdocs/advanced/Plugins/-536": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-advanced-plugins-41-f-198"
+  },
+  "/xgsd-userdocs/advanced/Plugins/webhooks-398": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-advanced-plugins-webhooksc-8-d-05c"
   },
   "/xgsd-userdocs/api/-be2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-api-5-e-8-5d7"
   },
-  "/xgsd-userdocs/config/-4da": {
+  "/xgsd-userdocs/config/-dfd": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-config-96-e-668"
+    "content": "content---xgsd-userdocs-config-bd-7-ef4"
   },
   "/xgsd-userdocs/guides/Configuration/env-vars-865": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -75,10 +83,6 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-configuration-templating-90-a-97d"
   },
-  "/xgsd-userdocs/guides/Plugins/getting-started-41d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-guides-plugins-getting-startede-1-a-de2"
-  },
   "/xgsd-userdocs/guides/project-config-basics-063": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-project-config-basics-156-2b7"
@@ -87,13 +91,13 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-project-setupf-6-b-b5a"
   },
+  "/xgsd-userdocs/guides/using-hooks-d31": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-guides-using-hooks-1-af-770"
+  },
   "/xgsd-userdocs/labs/-399": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-labs-05-a-80b"
-  },
-  "/xgsd-userdocs/labs/http-server-03f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-labs-http-server-3-f-7-637"
   },
   "/xgsd-userdocs/-551": {
     "__comp": "__comp---theme-doc-item-178-a40",

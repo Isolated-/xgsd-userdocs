@@ -39,19 +39,31 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', 'bb1'),
+    component: ComponentCreator('/xgsd-userdocs/', '8cc'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', 'a4a'),
+        component: ComponentCreator('/xgsd-userdocs/', '5b8'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', 'b6f'),
+            component: ComponentCreator('/xgsd-userdocs/', 'ca8'),
             routes: [
               {
                 path: '/xgsd-userdocs/advanced/',
-                component: ComponentCreator('/xgsd-userdocs/advanced/', '0ff'),
+                component: ComponentCreator('/xgsd-userdocs/advanced/', 'ec8'),
+                exact: true,
+                sidebar: "advancedSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/advanced/Plugins/',
+                component: ComponentCreator('/xgsd-userdocs/advanced/Plugins/', '536'),
+                exact: true,
+                sidebar: "advancedSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/advanced/Plugins/webhooks',
+                component: ComponentCreator('/xgsd-userdocs/advanced/Plugins/webhooks', '398'),
                 exact: true,
                 sidebar: "advancedSidebar"
               },
@@ -63,7 +75,7 @@ export default [
               },
               {
                 path: '/xgsd-userdocs/config/',
-                component: ComponentCreator('/xgsd-userdocs/config/', '4da'),
+                component: ComponentCreator('/xgsd-userdocs/config/', 'dfd'),
                 exact: true,
                 sidebar: "configSidebar"
               },
@@ -80,12 +92,6 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/xgsd-userdocs/guides/Plugins/getting-started',
-                component: ComponentCreator('/xgsd-userdocs/guides/Plugins/getting-started', '41d'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
                 path: '/xgsd-userdocs/guides/project-config-basics',
                 component: ComponentCreator('/xgsd-userdocs/guides/project-config-basics', '063'),
                 exact: true,
@@ -98,14 +104,14 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/',
-                component: ComponentCreator('/xgsd-userdocs/labs/', '399'),
+                path: '/xgsd-userdocs/guides/using-hooks',
+                component: ComponentCreator('/xgsd-userdocs/guides/using-hooks', 'd31'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "tutorialSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/http-server',
-                component: ComponentCreator('/xgsd-userdocs/labs/http-server', '03f'),
+                path: '/xgsd-userdocs/labs/',
+                component: ComponentCreator('/xgsd-userdocs/labs/', '399'),
                 exact: true,
                 sidebar: "labsSidebar"
               },

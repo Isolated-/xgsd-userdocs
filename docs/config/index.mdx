@@ -42,14 +42,27 @@ Templates can be used in `input` and `env`.
 
 Example:
 
-```yaml
-data:
-  name: World
-blocks:
-  - run: greet
-    input:
-      message: "Hello {{ctx.data.name}}"
-```
+<ApiTabs
+  yaml={`data: 
+    name: World
+  blocks:
+    - run: greet
+      input:
+        message: Hello {{ctx.data.name}}
+`}
+  json={`{
+    "data": {"name": "World"}
+    "blocks": [
+      {
+        "run": "greet",
+        "input": {
+          "message": "Hello {{ctx.data.name}}"
+        }
+      }
+    ]
+  }`}
+  filename="config"
+></ApiTabs>
 
 `greet` will receive:
 
@@ -98,19 +111,23 @@ Templates can only access the values listed above. Internal runtime state is not
 
 ### Full vs inline templates
 
-If a value is entirely a template, the original type is preserved:
+<ApiTabs
+  yaml={`input:
+    data: "{{ctx.data}}" # data is an object
+`}
+  filename="config"
+>
+  If a value is entirely a template, the original type is preserved:
+</ApiTabs>
 
-```yaml
-input:
-  data: "{{ctx.data}}"
-```
-
-If a template is part of a string, it is converted to a string:
-
-```yaml
-input:
-  message: "Hello {{ctx.data.name}}"
-```
+<ApiTabs
+  yaml={`input:
+    name: "{{ctx.data.name}}" # name is a string (e.g. "World")
+`}
+  filename="config"
+>
+  If a template is part of a string, it is converted to a string:
+</ApiTabs>
 
 ---
 
@@ -119,12 +136,6 @@ input:
 ### Static variables
 
 Static values can be defined directly in your `config.yaml`:
-
-```yaml
-# inside your blocks:
-env:
-  MY_VAR: 1234
-```
 
 <ApiTabs
   yaml={`# inside your blocks:

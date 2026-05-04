@@ -52,7 +52,11 @@ After creating a function, you can use `xgsd call` or `xgsd run` to call it.
   Install xGSD globally:
 </ApiTabs>
 
-<ApiTabs cli={`xgsd version`}>To verify the installation:</ApiTabs>
+To verify the installation:
+
+```bash
+xgsd version
+```
 
 You should see something like:
 
@@ -90,9 +94,11 @@ xGSD loads functions from your project's entry point (usually defined in `packag
 
 ### 3. Call it
 
-<ApiTabs bash={`xgsd call greet -d '{"name": "World"}'`}>
-  Run your function with:
-</ApiTabs>
+Run your function with:
+
+```bash
+xgsd call greet -d '{"name": "World"}'
+```
 
 Output:
 

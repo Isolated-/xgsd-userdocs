@@ -125,16 +125,6 @@ You don't need a function for every step.
 
 Instead of using `greet`, you can use [**Templating**](Configuration/templating) directly:
 
-```yaml
-mode: chain
-data:
-  name: World
-blocks:
-  - run: save
-    input:
-      message: Hello {{ctx.data.name}}
-```
-
 <ApiTabs yaml={`mode: chain
   data:
     name: World

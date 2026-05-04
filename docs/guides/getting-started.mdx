@@ -4,6 +4,10 @@ sidebar_position: 0
 slug: /
 ---
 
+import ApiTabs from "@site/src/components/ApiTabs.tsx";
+import Concept from "@site/src/components/Concept.tsx";
+import Experimental from "@site/src/components/Experimental.tsx";
+
 ---
 
 :::info
@@ -24,10 +28,7 @@ xGSD is:
 - **Extensible** — add behaviour through plugins, not config hacks
 - **Low learning curve** — no frameworks, just Node.js with `xgsd run`
 
----
-
-### Concept
-
+<Concept>
 At its core, xGSD runs functions inside your Node.js project.
 
 Each function:
@@ -39,23 +40,19 @@ Each function:
 type RunFn<T, R> = (data: T): Promise<R>
 ```
 
-Get started in 3 steps.
+After creating a function, you can use `xgsd call` or `xgsd run` to call it.
+
+</Concept>
 
 ---
 
 ### 1. Install
 
-Install xGSD globally using npm:
+<ApiTabs npm={`npm install -g @xgsd/cli`} yarn={`yarn global add @xgsd/cli`}>
+  Install xGSD globally:
+</ApiTabs>
 
-```bash
-npm install -g @xgsd/cli
-```
-
-Verify the installation:
-
-```bash
-xgsd version
-```
+<ApiTabs cli={`xgsd version`}>To verify the installation:</ApiTabs>
 
 You should see something like:
 
@@ -67,37 +64,35 @@ You should see something like:
 
 ### 2. Create a function
 
-Create an `index.js` file and export a function:
+:::info
 
-```javascript
-// index.js
-export async function greet({ name }) {
-  return { message: `Hello ${name}` };
-}
-```
+You can use **ESM**, **CommonJS**, or **TypeScript** for your functions.
 
-If you're using CommonJS:
+If you're using **TypeScript**, ensure you import files with the full extension (e.g. `file.ts` not `file`).
 
-```javascript
-// index.js
-function greet({ name }) {
-  return { message: `Hello ${name}` };
-}
+:::
 
-module.exports = { greet };
-```
+<ApiTabs
+  js={`export async function greet({ name }) {
+    return { message: \`Hello \$\{name\}\` }
+}`}
+  ts={`export async function greet({name}: { name: string }) {
+    return { message: \`Hello \$\{name\}\` }
+  }`}
+  filename="index"
+>
+  Export a function:
+</ApiTabs>
 
-xGSD loads functions from your project's entry point (usually defined in `package.json`).
+xGSD loads functions from your project's entry point (usually defined in `package.json` or `config.yaml`).
 
 ---
 
 ### 3. Call it
 
-Run the function with:
-
-```bash
-xgsd call greet -d '{"name":"World"}'
-```
+<ApiTabs bash={`xgsd call greet -d '{"name": "World"}'`}>
+  Run your function with:
+</ApiTabs>
 
 Output:
 

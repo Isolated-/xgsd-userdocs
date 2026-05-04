@@ -22,9 +22,7 @@ function renderTab(
     <TabItem key={value} value={value} label={label}>
       {children && <div style={{ marginBottom: "1rem" }}>{children}</div>}
 
-      <Block language={language} filename={filename}>
-        {code}
-      </Block>
+      <Block language={language} filename={filename} code={code} />
     </TabItem>
   );
 }

@@ -1,9 +1,10 @@
 ---
-title: Getting started
+title: Overview
 sidebar_position: 0
 ---
 
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
+import Block from "@site/src/components/Block.tsx";
 
 Advanced user guides covering **Orchestrators**, **Executors**, and **Plugins** (everything outside of projects/blocks)
 
@@ -15,18 +16,55 @@ The guides in this section will reference a `setup` function.
 
 This is a function you export in your code. You use it to register plugins, executors, and orchestrators:
 
-<ApiTabs
-  js={`export function setup(xgsd) {
-    xgsd.use(MyPlugin)
+```javascript title="index.js"
+export function setup(xgsd) {
+  xgsd.use(MyPlugin);
+  xgsd.executor(MyExecutor);
+  xgsd.orchestrator(MyOrchestrator);
 
-    // or pass instance
-    xgsd.use(new MyPlugin())
+  // you can also provide instances:
+  xgsd.use(new MyPlugin(opts));
 
-    xgsd.executor(MyExecutor)
-    xgsd.orchestrator(MyOrchestrator)
+  // or factory:
+  xgsd.use((ctx) => new MyPlugin(ctx));
+}
+```
 
-}`}
+---
 
-/>
+## Bootstrap
+
+When building your own apps to run projects (replacing the CLI/API) you may want to use `bootstrap()` directly.
+
+Here's how to do it (simplified):
+
+```javascript title="index.js"
+// imports
+import {
+  bootstrap,
+  createConfig,
+  DefaultOrchestrator,
+  ProcessExecutor,
+} from "@xgsd/runtime";
+
+// inside some async function
+const config = createConfig({
+  packageJsonPath: "/path/to/project/package.json",
+  configPath: "/path/to/project/config.yaml",
+  validator: (input) => input,
+});
+
+// run the project with bootstrap()
+const result = await bootstrap({
+  projectPath: "/path/to/project",
+  config,
+  activation: "custom",
+  preset: {
+    plugins: [],
+    executor: ProcessExecutor,
+    orchestrator: DefaultOrchestrator,
+  },
+});
+```
 
 ---

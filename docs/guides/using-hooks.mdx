@@ -3,23 +3,23 @@ title: What are Hooks?
 sidebar_position: 4
 ---
 
-import ApiTabs from "@site/src/components/ApiTabs.tsx";
+import ApiExample from "@site/src/components/ApiExample.tsx";
 
----
+<ApiExample>
 
-In this guide you'll learn about **Hooks** and how to take advantage of them to extend xGSD behaviour with new loggers, reporters, debuggers, and more.
+## Using lifecycle events
 
-**Hooks** are designed to be quick to setup with no configuration - simply export the handler and you're good to go.
+**Hooks** are used to extend xGSD with custom behaviour like your loggers, reporters, debuggers, and more.
 
-Basic usage:
+Export the event you want to listen to:
 
 ```javascript title="index.js"
-export async function onProjectEnd({ context }) {
-  // do something with final context
-}
+export async function onProjectEnd({ context }) {}
 ```
 
-If you're building something more complicated, you'll want a [**Plugin**](../advanced/Plugins) instead.
+And you're done.
+
+When you only depend on a single event use a **Hook**. If you need more, use a [**Plugin**]().
 
 ## Events
 
@@ -53,3 +53,7 @@ export async function onProjectEnd({ context }) {
   });
 }
 ```
+
+<ApiExample.Footer since="v0.5" />
+
+</ApiExample>

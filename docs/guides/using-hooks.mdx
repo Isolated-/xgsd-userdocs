@@ -3,7 +3,6 @@ title: What are Hooks?
 sidebar_position: 4
 ---
 
-import Block from "@site/src/components/Block.tsx";
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
 
 ---
@@ -14,12 +13,11 @@ In this guide you'll learn about **Hooks** and how to take advantage of them to 
 
 Basic usage:
 
-<Block language="javascript" filename="index.js">
-  {`// called when a project finishes
-  export async function onProjectEnd({context}) {
-    // do something with final context
-  }`}
-</Block>
+```javascript title="index.js"
+export async function onProjectEnd({ context }) {
+  // do something with final context
+}
+```
 
 If you're building something more complicated, you'll want a [**Plugin**](../advanced/Plugins) instead.
 
@@ -42,23 +40,16 @@ Here's how events map to handlers:
 
 ## Example
 
-<ApiTabs
-  js={`export async function onProjectEnd({ context }) {
-    const basePath = join(context.projectPath, "my-runs");
-    ensureDirSync(basePath);
-    writeJsonSync(join(basePath, \`\$\{context.end\}.json\`), context, {
-      spaces: 2,
-    });
-}`}
-  ts={`import {Context} from '@xgsd/runtime'
-  export async function onProjectEnd({context}: {context: Context}) {
-    const basePath = join(context.projectPath, "my-runs");
-    ensureDirSync(basePath);
-    writeJsonSync(join(basePath, \`\$\{context.end\}.json\`), context, {
-      spaces: 2,
-    });
-  }`}
-  filename="index"
->
-  Here's how you can use `project.end` to create your own report:
-</ApiTabs>
+Here's how you can use `project.end` to create your own report:
+
+```javascript title="index.js"
+export async function onProjectEnd({ context }) {
+  const basePath = join(context.projectPath, "my-runs");
+
+  ensureDirSync(basePath);
+
+  writeJsonSync(join(basePath, `${context.end}.json`), context, {
+    spaces: 2,
+  });
+}
+```

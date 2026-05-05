@@ -6,16 +6,9 @@ slug: /
 
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
 import Concept from "@site/src/components/Concept.tsx";
+import ApiExample from "@site/src/components/ApiExample.tsx";
 
 ---
-
-:::info
-
-Documentation is a **work in progress** some pages are incomplete or are used as a placeholder.
-
-This will be improved ASAP.
-
-:::
 
 You can use xGSD for anything from hardware tinkering to cloud-style workflows. It's a lightweight, local-first alternative to services like AWS Lambda or GCS Functions — but without the overhead of wiring everything together.
 
@@ -27,21 +20,11 @@ xGSD is:
 - **Extensible** — add behaviour through plugins, not config hacks
 - **Low learning curve** — no frameworks, just Node.js with `xgsd run`
 
-<Concept>
-At its core, xGSD runs functions inside your Node.js project.
+:::info
 
-Each function:
+Documentation is a **work in progress**.
 
-- accepts a single argument
-- returns an object, `null` or `undefined`
-
-```typescript
-type RunFn<T, R> = (data: T): Promise<R>
-```
-
-After creating a function, you can use `xgsd call` or `xgsd run` to call it.
-
-</Concept>
+:::
 
 ---
 

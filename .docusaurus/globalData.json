@@ -31,9 +31,9 @@
               "sidebar": "apiSidebar"
             },
             {
-              "id": "config/index",
-              "path": "/xgsd-userdocs/config/",
-              "sidebar": "configSidebar"
+              "id": "guides/configuration",
+              "path": "/xgsd-userdocs/guides/configuration",
+              "sidebar": "tutorialSidebar"
             },
             {
               "id": "guides/getting-started",
@@ -83,12 +83,6 @@
               "link": {
                 "path": "/xgsd-userdocs/api/",
                 "label": "api/index"
-              }
-            },
-            "configSidebar": {
-              "link": {
-                "path": "/xgsd-userdocs/config/",
-                "label": "config/index"
               }
             },
             "labsSidebar": {

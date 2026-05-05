@@ -1,6 +1,6 @@
 ---
-title: Getting started
-sidebar_position: 0
+title: Configuration
+sidebar_position: 4
 ---
 
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
@@ -8,7 +8,7 @@ import Block from "@site/src/components/Block.tsx";
 import ApiExample from "@site/src/components/ApiExample.tsx";
 
 <ApiExample>
-## Overview
+## Customise behaviour with configuration
 
 A minimal valid config looks like:
 
@@ -82,6 +82,8 @@ Instead of `${{ctx.data | some-helper}}` use `{{ctx.data}}`.
 
 </ApiExample.Status>
 
+---
+
 ### Available data (context)
 
 Templates can access the following values:
@@ -103,25 +105,21 @@ Templates can access the following values:
 
 Templates can only access the values listed above. Internal runtime state is not available.
 
+---
+
 ### Full vs inline templates
 
-<ApiTabs
-  yaml={`input:
-    data: "{{ctx.data}}" # data is an object
-`}
-  filename="config"
->
-  If a value is entirely a template, the original type is preserved:
-</ApiTabs>
+```yaml title="config.yaml"
+input:
+  data: "{{ctx.data}}" # data is an object
+```
 
-<ApiTabs
-  yaml={`input:
-    name: "{{ctx.data.name}}" # name is a string (e.g. "World")
-`}
-  filename="config"
->
-  If a template is part of a string, it is converted to a string:
-</ApiTabs>
+If a template is part of a string, it is converted to a string:
+
+```yaml title="config.yaml"
+input:
+  name: "{{ctx.data.name}}" # name is a string (e.g. "World")
+```
 
 ---
 
@@ -145,6 +143,8 @@ env:
 />
 
 This is suitable for non-sensitive configuration.
+
+---
 
 ### Resolved variables
 
@@ -196,6 +196,8 @@ Resolved values are injected into the runtime environment. Read variables like n
 
 This does not affect projects ran with `--dev` or `--local`.
 
+---
+
 ## Reference
 
 ### Project
@@ -215,6 +217,8 @@ Here's a list of options xGSD supports:
 | `data`            | `v0.2` | `object`             | no       | `null`                       | `data` is sent to all blocks regardless of mode                                                                 |
 | `blocks`          | `v0.5` | `Block[]`            | no       | `[]`                         | block config (see [**Blocks**](#blocks))                                                                        |
 
+---
+
 ### Blocks
 
 | Property               | Since  | Type      | Required | Default     | Note                                                                    |
@@ -226,6 +230,8 @@ Here's a list of options xGSD supports:
 | `blocks[].env`         | `v0.5` | `object`  | no       | `null`      | see [**Environmental Variables**](#environment-variables) for more info |
 | `blocks[].options`     | `v0.5` | `Options` | no       | N/A         | see [**Options**](#options) for more information                        |
 
+---
+
 ### Options
 
 | Property          | Since  | Type                 | Required | Default       | Note                                          |
@@ -234,5 +240,5 @@ Here's a list of options xGSD supports:
 | `options.retries` | `v0.3` | `number`             | no       | `3`           | number of retries                             |
 | `options.backoff` | `v0.3` | `enum`               | no       | `exponential` | can be `linear`, `exponential`, or `squaring` |
 
-  <ApiExample.Footer since="v0.5"/>
+  <ApiExample.Footer since="v0.2"/>
 </ApiExample>

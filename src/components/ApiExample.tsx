@@ -1,7 +1,6 @@
 import React from "react";
 import clsx from "clsx";
 import Admonition from "@theme/Admonition";
-import Link from "@docusaurus/Link";
 
 type Props = {
   title?: string;

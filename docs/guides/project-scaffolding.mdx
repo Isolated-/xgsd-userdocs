@@ -1,0 +1,47 @@
+---
+title: Project Scaffolding
+sidebar_position: 7
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+## Speed up project creation
+
+To speed up creating projects, `xgsd new` was added in **v0.6**.
+
+Instead of repeating:
+
+```bash
+mkdir my-project
+cd my-project
+touch config.yaml
+touch index.js
+yarn init -y
+```
+
+You can now use:
+
+```bash
+xgsd new my-project -y
+```
+
+And you'll see:
+
+```bash
+created /your/account/my-project/package.json (146.00 B)
+created /your/account/my-project/index.js (77.00 B)
+created /your/account/my-project/config.yaml (115.00 B)
+created /your/account/my-project/README.md (407.00 B)
+```
+
+It'll automatically set up your project based on the `greet` examples.
+
+If you'd prefer an empty setup, use `--template blank`.
+
+See `xgsd new --help` for available options.
+
+<ApiExample.Footer since="v0.6" experimental />
+
+</ApiExample>

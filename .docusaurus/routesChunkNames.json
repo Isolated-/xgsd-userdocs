@@ -42,17 +42,17 @@
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-9c4": {
+  "/xgsd-userdocs/-968": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-765": {
+  "/xgsd-userdocs/-363": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---xgsd-userdocs-0-b-4-147"
   },
-  "/xgsd-userdocs/-c92": {
+  "/xgsd-userdocs/-007": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/xgsd-userdocs/advanced/-ec8": {
@@ -79,6 +79,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-modesacf-6a2"
   },
+  "/xgsd-userdocs/guides/project-scaffolding-058": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-guides-project-scaffolding-96-d-090"
+  },
   "/xgsd-userdocs/guides/project-setup-6db": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-project-setupf-6-b-b5a"
@@ -101,6 +105,6 @@
   },
   "/xgsd-userdocs/-551": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-4-dc-e4e"
+    "content": "content---xgsd-userdocs-guides-getting-started-4-dc-07a"
   }
 }

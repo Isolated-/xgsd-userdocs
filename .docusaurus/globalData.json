@@ -46,6 +46,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "guides/project-scaffolding",
+              "path": "/xgsd-userdocs/guides/project-scaffolding",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "guides/project-setup",
               "path": "/xgsd-userdocs/guides/project-setup",
               "sidebar": "tutorialSidebar"

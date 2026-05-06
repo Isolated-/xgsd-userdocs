@@ -3,23 +3,23 @@ title: Creating a Project
 sidebar_position: 1
 ---
 
----
-
 import Concept from "@site/src/components/Concept.tsx";
 import ApiTabs from "@site/src/components/ApiTabs.tsx";
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+---
+
+## Turn your functions into Projects
 
 In [**Getting Started**](/), you created and called a single function with `xgsd call`.
 
 Now you'll turn that into a full project using **chain** mode.
 
-<Concept>
-A **Project** defines how functions are executed in sequence through configuration.
+A **Project** is how you'll mainly use xGSD.
 
-It controls how data flows between them and how execution is managed.
-
-**Chain** mode ensures the next block receives the output of the last.
-
-</Concept>
+---
 
 ### Create a project folder
 
@@ -154,4 +154,8 @@ Instead of using `greet`, you can use [**Templating**](../config/#templating) di
 
 This produces the same result — without introducing an extra function.
 
----
+### Project scaffolding
+
+In this guide you set up a project manually, see [**Project Scaffolding**](project-scaffolding) to make this faster.
+
+</ApiExample>

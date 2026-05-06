@@ -204,18 +204,17 @@ This does not affect projects ran with `--dev` or `--local`.
 
 Here's a list of options xGSD supports:
 
-| Property          | Since  | Type                 | Required | Default                      | Note                                                                                                            |
-| ----------------- | ------ | -------------------- | -------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `name`            | `v0.3` | `string`             | no       | `name` or "unknown"          | `name` from `package.json`                                                                                      |
-| `description`     | `v0.3` | `string`             | no       | `description` or `undefined` | `description` from `package.json`                                                                               |
-| `version`         | `v0.3` | `string` or `number` | no       | `version` or `undefined`     | `version` from `package.json`                                                                                   |
-| `entry`           | `v0.5` | `string`             | no       | `main` or `index.js`         | `main` from `package.json`                                                                                      |
-| `metadata`        | `v0.4` | `object`             | no       | `null`                       | user metadata (unused by xGSD)                                                                                  |
-| `metrics.enabled` | `v0.5` | `boolean`            | no       | `undefined`                  | enable/disable anonymous performance data (leave undefined to control with `--no-metrics` or `--metrics=false`) |
-| `mode`            | `v0.2` | `enum`               | no       | `async`                      | can be either `chain` or `async`                                                                                |
-| `concurrency`     | `v0.3` | `number`             | no       | `4`                          | `chain` will set this to 1 automatically                                                                        |
-| `data`            | `v0.2` | `object`             | no       | `null`                       | `data` is sent to all blocks regardless of mode                                                                 |
-| `blocks`          | `v0.5` | `Block[]`            | no       | `[]`                         | block config (see [**Blocks**](#blocks))                                                                        |
+| Property      | Since  | Type                 | Required | Default                      | Note                                            |
+| ------------- | ------ | -------------------- | -------- | ---------------------------- | ----------------------------------------------- |
+| `name`        | `v0.3` | `string`             | no       | `name` or "unknown"          | `name` from `package.json`                      |
+| `description` | `v0.3` | `string`             | no       | `description` or `undefined` | `description` from `package.json`               |
+| `version`     | `v0.3` | `string` or `number` | no       | `version` or `undefined`     | `version` from `package.json`                   |
+| `entry`       | `v0.5` | `string`             | no       | `main` or `index.js`         | `main` from `package.json`                      |
+| `metadata`    | `v0.4` | `object`             | no       | `null`                       | user metadata (unused by xGSD)                  |
+| `mode`        | `v0.2` | `enum`               | no       | `async`                      | can be either `chain` or `async`                |
+| `concurrency` | `v0.3` | `number`             | no       | `4`                          | `chain` will set this to 1 automatically        |
+| `data`        | `v0.2` | `object`             | no       | `null`                       | `data` is sent to all blocks regardless of mode |
+| `blocks`      | `v0.5` | `Block[]`            | no       | `[]`                         | block config (see [**Blocks**](#blocks))        |
 
 ---
 

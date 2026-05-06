@@ -16,6 +16,11 @@
               "sidebar": "advancedSidebar"
             },
             {
+              "id": "advanced/overrides",
+              "path": "/xgsd-userdocs/advanced/overrides",
+              "sidebar": "advancedSidebar"
+            },
+            {
               "id": "advanced/Plugins/index",
               "path": "/xgsd-userdocs/advanced/Plugins/",
               "sidebar": "advancedSidebar"

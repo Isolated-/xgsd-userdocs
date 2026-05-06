@@ -39,19 +39,25 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '968'),
+    component: ComponentCreator('/xgsd-userdocs/', '944'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', '363'),
+        component: ComponentCreator('/xgsd-userdocs/', 'e9e'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', '007'),
+            component: ComponentCreator('/xgsd-userdocs/', '182'),
             routes: [
               {
                 path: '/xgsd-userdocs/advanced/',
                 component: ComponentCreator('/xgsd-userdocs/advanced/', 'ec8'),
+                exact: true,
+                sidebar: "advancedSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/advanced/overrides',
+                component: ComponentCreator('/xgsd-userdocs/advanced/overrides', 'dab'),
                 exact: true,
                 sidebar: "advancedSidebar"
               },

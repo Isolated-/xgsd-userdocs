@@ -42,17 +42,17 @@
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-944": {
+  "/xgsd-userdocs/-85a": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-e9e": {
+  "/xgsd-userdocs/-46f": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---xgsd-userdocs-0-b-4-147"
   },
-  "/xgsd-userdocs/-182": {
+  "/xgsd-userdocs/-e0f": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/xgsd-userdocs/advanced/-ec8": {
@@ -106,6 +106,10 @@
   "/xgsd-userdocs/labs/code-bundler-098": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-labs-code-bundler-292-351"
+  },
+  "/xgsd-userdocs/labs/workers-70b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-labs-workers-09-f-8b3"
   },
   "/xgsd-userdocs/-551": {
     "__comp": "__comp---theme-doc-item-178-a40",

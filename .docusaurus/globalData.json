@@ -79,6 +79,11 @@
               "id": "labs/index",
               "path": "/xgsd-userdocs/labs/",
               "sidebar": "labsSidebar"
+            },
+            {
+              "id": "labs/workers",
+              "path": "/xgsd-userdocs/labs/workers",
+              "sidebar": "labsSidebar"
             }
           ],
           "draftIds": [],

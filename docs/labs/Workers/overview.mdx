@@ -1,0 +1,190 @@
+---
+title: Start using Workers
+sidebar_position: 0
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+**Workers** are a new way of building with xGSD.
+
+It keeps what `@xgsd/runtime` got right and loses everything else ([**Learn more**](background)).
+
+Built on the same principles of process isolation and local-first execution.
+
+---
+
+## Install
+
+Install the `@xgsd/workers` package with npm or Yarn:
+
+```bash
+# using npm
+npm i @xgsd/workers @xgsd/engine --save
+
+# using yarn
+yarn add @xgsd/workers @xgsd/engine
+```
+
+---
+
+## Quickstart
+
+Create a new folder for your code:
+
+```bash
+mkdir my-worker
+cd my-worker
+```
+
+Create a `worker.js` (or whatever your `entry` is):
+
+```js title="worker.js"
+export default async function worker() {
+  const url = "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London";
+
+  const res = await fetch(url);
+
+  return res.json();
+}
+```
+
+Somewhere in your transport layer:
+
+```js title="myapp.js"
+import { createHandler } from "@xgsd/workers";
+
+// this will depend on your app needs
+const cwd = process.cwd();
+const handler = createHandler({
+  entry: "worker.js",
+});
+
+// inside your transport (e.g. Express route):
+async function callback(req, res) {
+  return handler({
+    data: req.data,
+    env,
+    cwd,
+  });
+}
+```
+
+You can install `@xgsd/worker-cli` for HTTP + dev/test transports (not intended for production use).
+
+---
+
+## Schema
+
+Workers are designed around a schema:
+
+```json title="schema.json"
+{
+  "version": "v1",
+  "ok": true,
+  "result": {
+    // data
+  },
+  "error": {
+    // error
+  },
+  "duration": 0
+}
+```
+
+Serialisation and wrapping return values is managed by xGSD.
+
+You can override how data is returned by setting the mode to either `raw` or `wrapped`.
+
+---
+
+## Events
+
+Logs, errors, and other events are streamed to `{dist}/events.jsonl` as your worker runs.
+
+```json title="events.jsonl"
+{
+  "message": "[runtime] finished running worker took 587.10 ms",
+  "timestamp": 1778318464737,
+  "type": "log",
+  "id": "b0d16af1-7ea8-4b54-9a37-3426c5a0473b"
+}
+```
+
+:::warning
+
+This is still being formalised but will result in a consistent log format for all events.
+
+:::
+
+---
+
+## Activations
+
+You can view all activations for your worker in `{dist}/activations.jsonl`.
+
+Example entry:
+
+```json title="activations.jsonl"
+{
+  "id": "d9c94425-89da-45d0-bf0c-d70402e6779d",
+  "version": "0.1.0-beta.0",
+  "ttl": 60000,
+  "memory": 64,
+  "concurrency": 32,
+  "ok": false,
+  "duration": 3051.468702,
+  "error": "something went wrong",
+  "timestamp": "2026-05-09T10:00:37.842Z"
+}
+```
+
+`version` is the `@xgsd/workers` version used to run your worker.
+
+No `result` is available in `activations.jsonl` but error message is if its available.
+
+---
+
+## Options
+
+Some of these may not be fully supported yet.
+
+| Property                 | Type        | Default     | Note                                                       |
+| ------------------------ | ----------- | ----------- | ---------------------------------------------------------- |
+| `entry`                  | **string**  | none        | **does not** default to `main` in `package.json`           |
+| `dist`                   | **string**  | `.xgsd`     | built files/events/activation logs go here                 |
+| `bundler.enabled`        | **boolean** | `undefined` | uses esbuild to prebuild code (increases portability)      |
+| `bundler.cache.strategy` | **enum**    | `never`     | cache `bundle.js` to speed up runs                         |
+| `limits.ttl`             | **number**  | `1000`      | ttl for process (hard limit, will ungracefully exit)       |
+| `limits.memory`          | **number**  | `128`       | limit memory usage (uses heap usage)                       |
+| `limits.concurrency`     | **number**  | `32`        | prevents too many processes spawning (not implemented yet) |
+| `output.mode`            | **enum**    | `wrapped`   | output format (include/exclude schema)                     |
+
+### Example
+
+An example `worker.json`:
+
+```json title="worker.json"
+{
+  "entry": "worker.js",
+  "dist": ".xgsd",
+  "bundler": {
+    "enabled": false,
+    "cache": {
+      "strategy": "change"
+    }
+  },
+  "limits": {
+    "ttl": 10000,
+    "memory": 64,
+    "concurrency": 32
+  },
+  "output": {
+    "mode": "wrapped"
+  }
+}
+```
+
+<ApiExample.Footer since="@xgsd/workers-cli@v0.1.0" experimental/>
+</ApiExample>

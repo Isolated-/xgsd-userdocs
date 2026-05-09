@@ -1,0 +1,130 @@
+---
+title: Troubleshooting Workers
+sidebar_position: 2
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+When troubleshooting ensure your config looks like:
+
+```json
+{
+  "entry": "worker.js", // explict
+  "dist": ".xgsd", // explict
+  "bundler": {
+    "enabled": false, // optional set bundler to false
+    "cache": {
+      "strategy": "never" // set cache to never
+    }
+  },
+  "limits": {
+    "ttl": 5000,
+    "mem": 64
+  }
+}
+```
+
+Just remember to **set cache to `never`** before you start troubleshooting.
+
+Seriously.
+
+A surprising amount of "xGSD is broken" moments turned out to be:
+
+- stale bundles
+- stale config
+- stale output
+- or me forgetting cache was enabled (usually this!)
+
+---
+
+## Debugger
+
+Need to debug inside the process?
+
+Create simple middleware like:
+
+```js
+const debug = (ctx, next) => {
+  // do something with ctx (before)
+  console.log('after', ctx);
+
+  await next()
+
+  console.log('after', ctx)
+
+  if (ctx.error) {
+    console.error(ctx.error.message ?? 'unknown error')
+  }
+
+  // ...
+};
+
+export const middleware = () => [debug]
+```
+
+Avoid debugging with lots of middleware registered.
+
+If you're debugging middleware failures then register them in layers to isolate the problem.
+
+---
+
+## Errors
+
+**Workers** are fault-tolerant by design but unexpected things happen.
+
+### System
+
+System errors are thrown when something goes wrong _before_ or _after_ your code has finished running.
+
+- `CODE_WORKER_GUARD` - this error is thrown whenever your process limits are exceeded (`ttl`/`memory`).
+- `CODE_INVALID_ENTRY_FILE` - thrown when your entry file is missing, or an error prevents load.
+- `CODE_INVALID_DEFAULT_FUNCTION` - thrown when you don't export a default function, or if your default export is not a function.
+- `CODE_INVALID_MIDDLEWARE_FUNCTION` - thrown when one or more of your middleware functions are invalid (e.g. not functions).
+- `CODE_BUNDLE_ERROR` - thrown when bundling errors occur (currently unused).
+- `CODE_FATAL_ERROR` - thrown when an unhandled exception/rejection is caught (currently unused)
+
+These will be tagged with `{type:"user|system|unknown"}`.
+
+### Usercode
+
+When there's an error in your application, it'll be wrapped:
+
+```json
+{
+  "version": "v1",
+  "ok": false,
+  "result": null,
+  "error": {
+    "original": {},
+    "name": "Error",
+    "message": "bad things happen",
+    "stack": "..."
+  },
+  "duration": 820.5204840000006
+}
+```
+
+:::warning
+`error.original` may only be available inside your process. Use middleware to intercept and handle it if needed.
+:::
+
+These will be untagged and instead make best effort to normalise and serialise the error thrown.
+
+---
+
+## Serialisation/Deserialisation
+
+If you're seeing `{}` in a `result` or `error` that most likely means either:
+
+1. You're returning an instance or other unserialisable type.
+2. The value you're returning is too large for serialisation.
+
+A trade off to using child processes is that information isn't passed in like arguments to a function. Instead data is serialised and sent over IPC.
+
+As a result, values _must_ be serialised or they'll be reduced to `{}`.
+
+---
+
+</ApiExample>

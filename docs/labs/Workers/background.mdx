@@ -1,0 +1,176 @@
+---
+title: xGSD vs Workers?
+---
+
+:::tip
+
+Unless you want to learn about the history of xGSD and workers you may want our other guides, see [**Overview**](overview).
+
+:::
+
+## Background
+
+xGSD was introduced with the idea of running a generic function:
+
+```typescript
+type RunFn<T, R> = (data: T) => Promise<R>;
+```
+
+Predictably and safely.
+
+Over time this concept grew into "workflows" (later "projects") which became overly complicated for most use cases.
+
+1. `< v0.5` focused on defining everything for the user.
+2. `< v0.7` focused on introducing extensions: plugins, executors, and orchestrators.
+
+Until v0.5 the only way to run a project was via the CLI with partial API support being bolted on between v0.5 and v0.6.
+
+Refactoring v0.5 made me notice there's an architectural flaw in xGSD so I decided to take a different approach.
+
+I outlined the core concerns:
+
+- **execute functions in isolation/containment**
+- **logging/reporting/feedback from system**
+- **user extension points beyond main function**
+- **controlling complexity**
+
+And defined how `@xgsd/workers` would compare to `@xgsd/runtime` (see [**Full Comparison**](#full-comparison) for more):
+
+| **Feature**          | **`@xgsd/runtime`**              | **`@xgsd/workers`**                          |
+| -------------------- | -------------------------------- | -------------------------------------------- |
+| **Local-first**      | Yes                              | Yes                                          |
+| **Purpose**          | Full orchestration of "projects" | Serverless / isolated execution of functions |
+| **Scope**            | Project-level systems            | Single execution                             |
+| **Complexity**       | Higher                           | Minimal                                      |
+| **Extensibility**    | High (plugins/events)            | Simple middleware system                     |
+| **Execution model**  | Stateful workflow runtime        | Stateless worker runtime                     |
+| **Fault tolerance**  | High                             | Very high                                    |
+| **Primary strength** | Coordination & structure         | Speed & isolation                            |
+| **User experience**  | _Almost_ everything built in     | Nothing built in                             |
+
+It keeps what the runtime got right and loses everything else.
+
+It not be pretty but a worker will always end by the expected time-to-live and for the most part outputs are formalised.
+
+---
+
+## Middleware vs Extensions
+
+One of the biggest differences is the new middleware system.
+
+Instead of worrying about what an **Executor** is and how that aligns with an **Orchestrator** to override behaviour like retries, you can define middleware:
+
+```javascript title="worker.js"
+import { retry, withTimeout } from "@xgsd/engine";
+export const retryMiddleware = async (ctx, next) => {
+  // exponential backoff
+  const backoff = (attempt) => 1000 * 2 ** attempt;
+
+  ctx.execute = async (fn) => {
+    // using @xgsd/engine retry()
+    return retry(ctx.data, fn, 3, {
+      timeoutWrapper: withTimeout(1000),
+      backoff,
+      onAttempt: (attempt) => {
+        if (attempt.finalAttempt) {
+          console.log(
+            `[retry] all hope is lost (${attempt.attempt + 1}/${attempt.maxRetries})`,
+          );
+          return;
+        }
+
+        console.log(
+          `[retry] currently retrying, next: ${attempt.nextMs.toFixed(2)} ms (${attempt.attempt + 1}/${attempt.maxRetries})`,
+        );
+      },
+    });
+  };
+
+  await next();
+};
+```
+
+You import `@xgsd/engine` and define what `retry()` looks like without endless configuration.
+
+This was possible with plugins but there was no timeout protection and very minimal protection against failures (e.g. silently drops errors).
+
+It's more flexible too as `ctx` is mutable unlike plugins.
+
+Take care when mutating `ctx`, the tradeoff for flexibility is often debugging headaches.
+
+---
+
+## Challenges/Learnings
+
+When designing workers, I addressed:
+
+- **Over-abstraction and incorrect abstraction boundaries**
+  - Extensions (plugins, hooks, lifecycle systems) introduced unclear execution order and hidden shared state.
+  - Many abstractions were introduced before `@xgsd/engine` stabilised, resulting in systems being bolted on.
+  - Feature growth outpaced architectural clarity, causing overlapping responsibilities and blurred boundaries.
+  - **Key finding:** KISS — Keep It Simple, Stupid.
+
+---
+
+- **Poor performance and execution overhead**
+  - Excessive state sharing between main and child processes led to duplicated memory usage and unnecessary coupling.
+  - Block lifecycle transitions (start/stop) introduced measurable overhead (~50–100ms per block in some cases).
+  - Dependency bloat from unbounded imports and weak justification increased install size and startup cost, especially on constrained hardware.
+  - IPC communication complexity with trying to manage main -> child and main -> project -> child communication.
+  - **Key finding:** minimise cross-process state and strictly control serialised data.
+
+---
+
+- **Breaking changes and dependency instability**
+  - Tight coupling between `@xgsd/engine`, `@xgsd/runtime`, and CLI tooling meant internal changes often forced CLI updates.
+  - Version boundaries were unclear during extraction into separate packages.
+  - Despite this, the core user code interface introduced in xGSD v0.2 remained largely stable.
+  - **Key finding:** the user-facing execution model was stable; most changes were internal orchestration improvements.
+
+---
+
+- **Unclear mental model**
+  - The hardest issue to resolve, as it compounded all other problems.
+  - Multiple overlapping concepts (runtime, extensions, plugins, CLI behaviour) made system behaviour difficult to reason about.
+  - This also slowed refactoring and made documentation inconsistent (or nonexistent).
+  - **Key finding:** clarity of mental model is more important than feature completeness. KISS applies, but so does documenting as part of design, not after implementation.
+
+---
+
+## Full Comparison
+
+A non-exhaustive comparison between the runtime vs workers.
+
+| **Feature**                      | **`@xgsd/runtime`**      | **`@xgsd/workers`**       |
+| -------------------------------- | ------------------------ | ------------------------- |
+| **Local-first**                  | Yes                      | Yes                       |
+| **Primary model**                | Workflow orchestration   | Isolated worker execution |
+| **Execution style**              | Project/runtime driven   | Request/task driven       |
+| **Projects**                     | Yes                      | No                        |
+| **Config scope**                 | Project-level            | Worker-level              |
+| **Plugins/extensions**           | Yes                      | No                        |
+| **Event system**                 | Yes                      | No                        |
+| **Middleware**                   | No                       | Core abstraction          |
+| **Retries/backoff**              | Built-in                 | User-defined if needed    |
+| **Hard TTL support**             | Complex/shared lifecycle | Native/simple             |
+| **Process isolation**            | Optional/configurable    | Primary model             |
+| **In-process mode**              | Yes                      | No                        |
+| **Child-process execution**      | Supported                | Core                      |
+| **API/server workloads**         | Secondary                | Primary                   |
+| **Queue/job workloads**          | Supported                | Natural fit               |
+| **Long-running orchestration**   | Yes                      | No                        |
+| **Request/response lifecycle**   | Not primary              | Primary                   |
+| **Cold start performance**       | Moderate                 | Fast                      |
+| **Memory footprint**             | Higher                   | Low                       |
+| **Startup complexity**           | Higher                   | Minimal                   |
+| **Runtime extensibility**        | High                     | Intentionally minimal     |
+| **Event coordination**           | Yes                      | No                        |
+| **Execution observability**      | Rich/runtime-wide        | Per-worker                |
+| **Failure isolation**            | Mixed depending on mode  | Strong                    |
+| **Serverless-style workloads**   | Possible                 | Designed for              |
+| **AWS Lambda style usage**       | Awkward                  | Natural                   |
+| **Edge/worker deployment model** | Less suitable            | Suitable                  |
+| **Default mental model**         | Project/blocks           | Worker/function           |
+| **Shared foundation**            | `@xgsd/engine`           | `@xgsd/engine`            |
+
+---

@@ -81,8 +81,23 @@
               "sidebar": "labsSidebar"
             },
             {
-              "id": "labs/workers",
-              "path": "/xgsd-userdocs/labs/workers",
+              "id": "labs/Workers/background",
+              "path": "/xgsd-userdocs/labs/Workers/background",
+              "sidebar": "labsSidebar"
+            },
+            {
+              "id": "labs/Workers/middleware",
+              "path": "/xgsd-userdocs/labs/Workers/middleware",
+              "sidebar": "labsSidebar"
+            },
+            {
+              "id": "labs/Workers/overview",
+              "path": "/xgsd-userdocs/labs/Workers/overview",
+              "sidebar": "labsSidebar"
+            },
+            {
+              "id": "labs/Workers/troubleshooting",
+              "path": "/xgsd-userdocs/labs/Workers/troubleshooting",
               "sidebar": "labsSidebar"
             }
           ],

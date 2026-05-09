@@ -96,6 +96,11 @@
               "sidebar": "labsSidebar"
             },
             {
+              "id": "labs/Workers/tests",
+              "path": "/xgsd-userdocs/labs/Workers/experiments",
+              "sidebar": "labsSidebar"
+            },
+            {
               "id": "labs/Workers/troubleshooting",
               "path": "/xgsd-userdocs/labs/Workers/troubleshooting",
               "sidebar": "labsSidebar"

@@ -1,0 +1,110 @@
+---
+title: Experiments with Workers
+sidebar_position: 3
+slug: experiments
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+---
+
+## Docker
+
+### Dependencies
+
+- `@xgsd/engine` - `v1.0.0-stable` was used
+- `@xgsd/workers` - `v0.1.0` was used
+- `@xgsd/worker-cli` - `v0.1.0-beta.3` was used
+- `esbuild` - `v0.28.0` was used
+- `docker` - `28.3.3` was used
+
+### Running it
+
+The `Dockerfile`:
+
+```docker title="Dockerfile"
+FROM node:24-alpine
+
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+RUN yarn install --production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npx", "worker", "up", "-c", "worker.json"]
+```
+
+Small helper script (optional):
+
+```bash
+WORKER_NAME="my-worker"
+
+# build image
+docker build -t my-worker .
+
+# run in background
+docker run -d \
+  --name my-worker \
+  -p 3000:3000 \
+  -u $(id -u):$(id -g) \
+  -v $(pwd):/app \
+  my-worker
+```
+
+I use this script:
+
+```bash title="test.sh"
+#!/usr/bin/env bash
+
+URL="http://localhost:3000/run"
+DIST=".xgsd"
+
+mkdir -p "$DIST"
+
+BODY='{
+  "url": "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London"
+}'
+
+cp "$DIST/output.json" "$DIST/output.bak.json"
+
+curl \
+  --silent \
+  --show-error \
+  --no-buffer \
+  --max-time 120 \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --data "$BODY" \
+  "$URL" \
+  > "$DIST/output.json"
+
+echo "saved response to $DIST/output.json"
+```
+
+To call the API and write output to a `output.json` file.
+
+To run everything:
+
+```bash
+chmod +x ./docker.sh
+chmod +x ./test.sh
+
+# build + launch docker container
+./docker.sh
+
+# call worker
+./test.sh
+```
+
+Check `activations.jsonl`, `events.jsonl` and `output.json` to view the result.
+
+---
+
+<ApiExample.Footer since="@xgsd/workers@v0.1.0" experimental />
+
+</ApiExample>

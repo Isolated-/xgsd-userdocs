@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '922'),
+    component: ComponentCreator('/xgsd-userdocs/', '6ec'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', 'b9b'),
+        component: ComponentCreator('/xgsd-userdocs/', '7cf'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', 'fb5'),
+            component: ComponentCreator('/xgsd-userdocs/', 'c43'),
             routes: [
               {
                 path: '/xgsd-userdocs/advanced/',
@@ -130,6 +130,12 @@ export default [
               {
                 path: '/xgsd-userdocs/labs/Workers/background',
                 component: ComponentCreator('/xgsd-userdocs/labs/Workers/background', 'f52'),
+                exact: true,
+                sidebar: "labsSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/labs/Workers/experiments',
+                component: ComponentCreator('/xgsd-userdocs/labs/Workers/experiments', 'b64'),
                 exact: true,
                 sidebar: "labsSidebar"
               },

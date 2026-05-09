@@ -7,26 +7,7 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 <ApiExample>
 
-When troubleshooting ensure your config looks like:
-
-```json
-{
-  "entry": "worker.js", // explict
-  "dist": ".xgsd", // explict
-  "bundler": {
-    "enabled": false, // optional set bundler to false
-    "cache": {
-      "strategy": "never" // set cache to never
-    }
-  },
-  "limits": {
-    "ttl": 5000,
-    "mem": 64
-  }
-}
-```
-
-Just remember to **set cache to `never`** before you start troubleshooting.
+Remember to **set cache to `never`** before you start troubleshooting.
 
 Seriously.
 
@@ -36,6 +17,10 @@ A surprising amount of "xGSD is broken" moments turned out to be:
 - stale config
 - stale output
 - or me forgetting cache was enabled (usually this!)
+
+Please [**report any problems**](https://github.com/Isolated-/xgsd-workers/issues/new) that you find - I'll get them fixed ASAP.
+
+Include a brief summary of your problem and any error stack/trace info available.
 
 ---
 
@@ -132,6 +117,20 @@ You'll need to do this for each worker as global import isn't supported.
 
 This is an intentional constraint as it eliminates trying to determine where something is imported from.
 
+### ESM/CommonJS
+
+If you're having compatibility issues with ESM/CommonJS consider activating the bundler:
+
+```json title="worker.json"
+{
+  "bunder": {
+    "enabled": true
+  }
+}
+```
+
+This should elimate most problems ([**please report issues here**](https://github.com/Isolated-/xgsd-workers/issues/new)).
+
 ---
 
 ## Bundler
@@ -142,6 +141,8 @@ The bundler serves two purposes:
 
 - **Increases portability** by outputting a consistent format (ESM)
 - **Reduces overhead** for TypeScript by turning TypeScript -> ESM to avoid expensive JIT compilation.
+
+[**Having problems?**](https://github.com/Isolated-/xgsd-workers/issues/new)
 
 ### Bundle not updating/refreshing
 

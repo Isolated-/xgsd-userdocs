@@ -8,7 +8,7 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 ## **Quick Overview**
 
-_Workers_ are functions that execute in an isolated environment.
+**Workers** are functions that execute in an isolated environment.
 
 They are intentionally limited and have no concept of **Projects** or **Blocks**.
 
@@ -61,6 +61,16 @@ export default async function (data: any) {
 }
 ```
 
+:::info
+
+**Did you know?**
+
+You can achieve most of what you could before with **Workers**.
+
+This is due to the flexible nature of middleware vs the immutable nature of plugins/extensions.
+
+:::
+
 ## Goal
 
 **Reduce memory usage and time wasted starting/stopping processes.**
@@ -75,9 +85,28 @@ Workers will focus on _need to have_ vs _nice to have_.
 | Memory usage (base) - all processes | < 40MB      | > 90MB      |
 | Memory usage (base) - child process | < 10MB      | > 25MB      |
 
+## Dependencies
+
+In order to use `@xgsd/workers` you'll need to install:
+
+- `@xgsd/engine`
+- `@xgsd/workers`
+- `esbuild` (optional)
+
+In your workers folder.
+
+This decouples your worker from whatever is running it.
+
+```bash
+yarn add @xgsd/engine @xgsd/workers
+
+# optional
+yarn add esbuild
+```
+
 ## Schema
 
-Workers are designed around a static schema:
+Workers are designed around a schema:
 
 ```json title="schema.json"
 {
@@ -183,6 +212,44 @@ When there's an error in your application, it'll be wrapped:
 
 ## Configuration
 
+Example `worker.json`:
+
+```json title="worker.json"
+{
+  "entry": "worker.js",
+  "dist": ".xgsd",
+  "bundler": {
+    "enabled": true,
+    "cache": {
+      "strategy": "never" // always|change|never
+    }
+  },
+  "limits": {
+    "ttl": 60000,
+    "memory": 64,
+    "concurrency": 32
+  },
+  "output": {
+    "mode": "wrapped" // wrapped|raw
+  }
+}
+```
+
+### Options
+
+Some of these may not be fully supported yet.
+
+| Property                 | Type        | Default     | Note                                                       |
+| ------------------------ | ----------- | ----------- | ---------------------------------------------------------- |
+| `entry`                  | **string**  | none        | **does not** default to `main` in `package.json`           |
+| `dist`                   | **string**  | `.xgsd`     | built files/events/activation logs go here                 |
+| `bundler.enabled`        | **boolean** | `undefined` | uses esbuild to prebuild code (increases portability)      |
+| `bundler.cache.strategy` | **enum**    | `undefined` | cache `bundle.js` to speed up runs                         |
+| `limits.ttl`             | **number**  | `1000`      | ttl for process (hard limit, will ungracefully exit)       |
+| `limits.memory`          | **number**  | `128`       | limit memory usage (uses heap usage)                       |
+| `limits.concurrency`     | **number**  | `32`        | prevents too many processes spawning (not implemented yet) |
+| `output.mode`            | **enum**    | `wrapped`   | output format (include/exclude schema)                     |
+
 ## Middleware
 
 _Extensions_ aren't supported in _Workers_, instead a lightweight middleware system is provided:
@@ -206,6 +273,74 @@ const logger = (ctx: RuntimeContext, next: Next) => {
 // this function is called just before your function runs
 // it should always return an array of middleware functions
 export const middleware = () => [logger];
+```
+
+Middleware provides a new way of composing projects without all the added complexity of plugins/orchestrators/executors.
+
+### Examples
+
+#### Retry()
+
+You can replicate the retry logic of xGSD with middleware:
+
+```javascript
+export const retryMiddleware = async (ctx, next) => {
+  // exponential backoff
+  const backoff = (attempt) => 1000 * 2 ** attempt;
+
+  ctx.execute = async (fn) => {
+    // using @xgsd/engine retry() and withTimeout()
+    return retry(ctx.data, fn, 3, {
+      timeoutWrapper: withTimeout(1000),
+      backoff,
+      onAttempt: (attempt) => {
+        if (attempt.finalAttempt) {
+          console.log(
+            `[retry] all hope is lost (${attempt.attempt + 1}/${attempt.maxRetries})`,
+          );
+          return;
+        }
+
+        console.log(
+          `[retry] currently retrying, next: ${attempt.nextMs.toFixed(2)} ms (${attempt.attempt + 1}/${attempt.maxRetries})`,
+        );
+      },
+    });
+  };
+
+  await next();
+};
+
+export const middleware = () => [retryMiddleware];
+```
+
+## Events
+
+Log and error events are streamed to `{dist}/events.jsonl`:
+
+```json
+{
+  "message": "[runtime] finished running worker took 587.10 ms",
+  "timestamp": 1778318464737,
+  "type": "log",
+  "id": "b0d16af1-7ea8-4b54-9a37-3426c5a0473b"
+}
+```
+
+Activation events are logged to `{dist}/activations.json` and do not include input/output data:
+
+```json
+{
+  "id": "d9c94425-89da-45d0-bf0c-d70402e6779d",
+  "version": "0.1.0-beta.0",
+  "ttl": 60000,
+  "memory": 64,
+  "concurrency": 32,
+  "ok": false,
+  "duration": 3051.468702,
+  "error": "something went wrong",
+  "timestamp": "2026-05-09T10:00:37.842Z"
+}
 ```
 
 ## Compatibility

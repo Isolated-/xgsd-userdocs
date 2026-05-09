@@ -114,6 +114,64 @@ These will be untagged and instead make best effort to normalise and serialise t
 
 ---
 
+## Unable to resolve dependencies
+
+If you're seeing "cannot resolve X" for:
+
+- `esbuild`
+- `@xgsd/engine`
+- `@xgsd/workers` (if using `@xgsd/woker-cli`)
+
+Then you need to install the missing dependency in the path of your worker:
+
+```bash
+yarn add @xgsd/engine @xgsd/workers esbuild
+```
+
+You'll need to do this for each worker as global import isn't supported.
+
+This is an intentional constraint as it eliminates trying to determine where something is imported from.
+
+---
+
+## Bundler
+
+When `bundler.enabled = true` in your `worker.json` file then your entry file will be bundled with `esbuild` to increase portability and reduce over all memory usage by elimating
+
+The bundler serves two purposes:
+
+- **Increases portability** by outputting a consistent format (ESM)
+- **Reduces overhead** for TypeScript by turning TypeScript -> ESM to avoid expensive JIT compilation.
+
+### Bundle not updating/refreshing
+
+If you've set your cache strategy to `always` then the cache value will always be returned regardless of how long it's been kept or if anything has changed.
+
+If your strategy is `change` and your bundle doesn't refresh then:
+
+1. You may not be using the right extension (needs to be `.js/.ts`) - change detection is primitive and only supports `.js` and `.ts` to avoid hashing _everything_.
+
+---
+
+## Worker guard
+
+Anything to do with `CODE_WORKER_GUARD` means that one or more of your limits were exceeded and the process has been killed.
+
+If this is unexpected, the default limits are:
+
+```json
+{
+  "limits": {
+    "ttl": 5000,
+    "memory": 64
+  }
+}
+```
+
+Override the defaults in your `worker.json` file.
+
+---
+
 ## Serialisation/Deserialisation
 
 If you're seeing `{}` in a `result` or `error` that most likely means either:

@@ -52,6 +52,18 @@ It keeps what the runtime got right and loses everything else.
 
 It not be pretty but a worker will always end by the expected time-to-live and for the most part outputs are formalised.
 
+Here's what _Workers_ will always get right:
+
+- **execution of user-defined Node.js/TypeScript functions**
+- **robust process isolation and error handling**
+- **predictable runtime behaviour** - from I/O normalisation to safe guards preventing misuse.
+
+_Workers_ won't be concerned with:
+
+- **projects**, **workflows**, or any form of orchestration.
+- **retries** and **timeouts** (beyond `ttl`)
+- **transport mechanisms/adapters** (beyond test/dev) - no pub/sub or req/res layers in `@xgsd/workers`.
+
 ---
 
 ## Middleware vs Extensions

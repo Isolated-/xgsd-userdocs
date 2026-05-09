@@ -136,7 +136,7 @@ This is an intentional constraint as it eliminates trying to determine where som
 
 ## Bundler
 
-When `bundler.enabled = true` in your `worker.json` file then your entry file will be bundled with `esbuild` to increase portability and reduce over all memory usage by elimating
+When `bundler.enabled = true` in your `worker.json` file then your entry file will be bundled with `esbuild`.
 
 The bundler serves two purposes:
 
@@ -184,5 +184,7 @@ A trade off to using child processes is that information isn't passed in like ar
 As a result, values _must_ be serialised or they'll be reduced to `{}`.
 
 ---
+
+<ApiExample.Footer since="@xgsd/workers@v0.1.0" experimental />
 
 </ApiExample>

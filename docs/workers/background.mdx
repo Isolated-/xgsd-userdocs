@@ -1,5 +1,5 @@
 ---
-title: xGSD vs Workers?
+title: Why Workers?
 ---
 
 :::tip
@@ -12,61 +12,80 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 <ApiExample>
 
+## TL;DR
+
+1. A **Worker** is an isolated function that runs input to output predictably.
+2. Workers will influence the design of xGSD v1.
+3. `@xgsd/runtime` and `@xgsd/cli` are now legacy.
+4. Most of xGSD < v0.7 can be replaced with middleware.
+5. You should migrate to **Workers** if you're using xGSD.
+
+## Terminology
+
+xGSD v0.7 terminology is _messy_, **Workers** keeps it simple:
+
+| Term                      | Context                                                 |
+| ------------------------- | ------------------------------------------------------- |
+| **Worker** or **Workers** | User-defined execution unit/function                    |
+| **Container**             | Bounded runtime environment/sandbox                     |
+| **Middleware**            | Execution composition                                   |
+| **Signals**               | Runtime generated feedback - logs, errors, other events |
+| **Transport**             | External integration layer - http, bullmq, etc          |
+| **Watchdog**              | Container policy enforcement/hard limits                |
+
 ## Background
 
-xGSD was introduced with the idea of running a generic function:
+xGSD was started to find ways of predictably running usercode functions without a cloud setup.
+
+Between v0.5 and v0.7, xGSD stablised executing usercode functions inside processes/containers without needing a full cloud setup (or mini-cloud).
+
+The shape that was defined is:
 
 ```typescript
 type RunFn<T, R> = (data: T) => Promise<R>;
 ```
 
-Predictably and safely.
+Over time, this simple runtime grew into end-to-end orchestration with everything included.
 
-Over time this concept grew into "workflows" (later "projects") which became overly complicated for most use cases.
+A few things didn't change though:
 
-1. `< v0.5` focused on defining everything for the user.
-2. `< v0.7` focused on introducing extensions: plugins, executors, and orchestrators.
+- `RunFn` - remained completed untouched.
+- `execute()` - has pretty much remained untouched (minus extraction into `@xgsd/engine` and `withTimeout()` introduction)
+- `retry()` - same story with a few minor improvements here and there.
 
-Until v0.5 the only way to run a project was via the CLI with partial API support being bolted on between v0.5 and v0.6.
+When releasing xGSD v0.7, I found a flaw with its design: **the shift toward extensions and project-scoped execution meant that plugins themselves could cause the system to act unpredictably or crash ungracefully**.
 
-Refactoring v0.5 made me notice there's an architectural flaw in xGSD so I decided to take a different approach.
+There was no clean solution to support extensions at a project-level whilst maintaining a system that is predictable without enforcing per-project isolation.
 
-I outlined the core concerns:
+This would lead to even longer start up times for an environment that is mainly unneeded. The duplication of state between processes would also mean that devices like the RPi Zero 2 would be basically unsupported.
 
-- **execute functions in isolation/containment**
-- **logging/reporting/feedback from system**
-- **user extension points beyond main function**
-- **controlling complexity**
-
-And defined how `@xgsd/workers` would compare to `@xgsd/runtime` (see [**Full Comparison**](#full-comparison) for more):
+So I defined how `@xgsd/workers` would compare to `@xgsd/runtime` (see [**Full Comparison**](#full-comparison) for more info):
 
 | **Feature**          | **`@xgsd/runtime`**              | **`@xgsd/workers`**                          |
 | -------------------- | -------------------------------- | -------------------------------------------- |
 | **Local-first**      | Yes                              | Yes                                          |
+| **Run anywhere**     | No                               | Yes                                          |
 | **Purpose**          | Full orchestration of "projects" | Serverless / isolated execution of functions |
 | **Scope**            | Project-level systems            | Single execution                             |
 | **Complexity**       | Higher                           | Minimal                                      |
 | **Extensibility**    | High (plugins/events)            | Simple middleware system                     |
 | **Execution model**  | Stateful workflow runtime        | Stateless worker runtime                     |
-| **Fault tolerance**  | High                             | Very high                                    |
+| **Fault tolerance**  | High                             | Critical                                     |
 | **Primary strength** | Coordination & structure         | Speed & isolation                            |
 | **User experience**  | _Almost_ everything built in     | Nothing built in                             |
 
-It keeps what the runtime got right and loses everything else.
-
-It not be pretty but a worker will always end by the expected time-to-live and for the most part outputs are formalised.
-
 Here's what _Workers_ will always get right:
 
-- **execution of user-defined Node.js/TypeScript functions**
-- **robust process isolation and error handling**
-- **predictable runtime behaviour** - from I/O normalisation to safe guards preventing misuse.
+- **bullet-proof execution of a worker in a container environment**.
 
-_Workers_ won't be concerned with:
+Here's what we've intentionally excluded:
 
-- **projects**, **workflows**, or any form of orchestration.
-- **retries** and **timeouts** (beyond `ttl`)
-- **transport mechanisms/adapters** (beyond test/dev) - no pub/sub or req/res layers in `@xgsd/workers`.
+- **Projects** and **Blocks** or any form of orchestration/sequencing.
+- **Retry logic** and soft timeouts (not including `ttl`).
+- **Concrete transport adapters** - no pub/sub or req/res layers in `@xgsd/workers`.
+- **Templating** and any pre-/post-processing of data.
+- **Config syntax**
+- **Event-based abstractions** - like `EventBus` or event emitters.
 
 ---
 
@@ -74,7 +93,25 @@ _Workers_ won't be concerned with:
 
 One of the biggest differences is the new middleware system.
 
-Instead of worrying about what an **Executor** is and how that aligns with an **Orchestrator** to override behaviour like retries, you can define middleware:
+Instead of worrying about what an **Executor** is and how that aligns with an **Orchestrator** to override behaviour like retries, you define middleware.
+
+The flow of middlewares is predictable and _everything_ runs in the same container, as shown:
+
+![xGSD Workers architecture](/img/middleware.png)
+
+The outer border indiciates the containers physical boundary. Usually this is inside a child process but could equally run inside something like Docker.
+
+This design ensures both middleware and worker failures are handled the same way resulting in less divergence.
+
+When you compare that to plugins, it's the opposite:
+
+![xGSD Workers architecture](/img/plugins.png)
+
+Plugins were conceptually OK but in reality meant to provide any form of resillience a new container would need to be introduced.
+
+### Retry()
+
+Here's a real world example that replicates xGSD retry logic:
 
 ```javascript title="worker.js"
 import { retry, withTimeout } from "@xgsd/engine";

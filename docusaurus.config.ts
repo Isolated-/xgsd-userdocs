@@ -67,21 +67,15 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "apiSidebar",
+          sidebarId: "workersSidebar",
           position: "left",
-          label: "API",
+          label: "Workers",
         },
         {
           type: "docSidebar",
           sidebarId: "labsSidebar",
           position: "left",
           label: "Labs",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "advancedSidebar",
-          position: "left",
-          label: "Advanced",
         },
         {
           href: "https://github.com/Isolated-/xgsd-cli",

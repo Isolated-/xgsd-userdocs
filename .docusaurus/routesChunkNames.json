@@ -42,36 +42,20 @@
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-6ec": {
+  "/xgsd-userdocs/-5f9": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-7cf": {
+  "/xgsd-userdocs/-aa1": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---xgsd-userdocs-0-b-4-147"
   },
-  "/xgsd-userdocs/-c43": {
+  "/xgsd-userdocs/-ba0": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/xgsd-userdocs/advanced/-ec8": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-advanced-d-72-2a4"
-  },
-  "/xgsd-userdocs/advanced/overrides-dab": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-advanced-overridesac-1-4b4"
-  },
-  "/xgsd-userdocs/advanced/Plugins/-536": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-advanced-plugins-41-f-198"
-  },
-  "/xgsd-userdocs/advanced/Plugins/webhooks-398": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-advanced-plugins-webhooksc-8-d-05c"
-  },
-  "/xgsd-userdocs/api/-be2": {
+  "/xgsd-userdocs/api/-9eb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-api-5-e-8-5d7"
   },
@@ -107,25 +91,29 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-labs-code-bundler-292-351"
   },
-  "/xgsd-userdocs/labs/Workers/background-f52": {
+  "/xgsd-userdocs/labs/overrides-26e": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-labs-workers-background-1-e-7-81a"
+    "content": "content---xgsd-userdocs-labs-overridesa-94-cf8"
   },
-  "/xgsd-userdocs/labs/Workers/experiments-b64": {
+  "/xgsd-userdocs/workers/background-505": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-labs-workers-tests-79-c-18b"
+    "content": "content---xgsd-userdocs-workers-backgroundbb-0-c18"
   },
-  "/xgsd-userdocs/labs/Workers/middleware-b70": {
+  "/xgsd-userdocs/workers/experiments-e78": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-labs-workers-middleware-0-ec-5c0"
+    "content": "content---xgsd-userdocs-workers-experiments-7-ef-efe"
   },
-  "/xgsd-userdocs/labs/Workers/overview-297": {
+  "/xgsd-userdocs/workers/middleware-978": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-labs-workers-overview-7-cd-9af"
+    "content": "content---xgsd-userdocs-workers-middleware-582-963"
   },
-  "/xgsd-userdocs/labs/Workers/troubleshooting-375": {
+  "/xgsd-userdocs/workers/overview-735": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---xgsd-userdocs-labs-workers-troubleshooting-84-f-8b1"
+    "content": "content---xgsd-userdocs-workers-overview-7-a-3-0fe"
+  },
+  "/xgsd-userdocs/workers/troubleshooting-90a": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-workers-troubleshooting-626-ac1"
   },
   "/xgsd-userdocs/-551": {
     "__comp": "__comp---theme-doc-item-178-a40",

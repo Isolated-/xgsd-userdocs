@@ -11,29 +11,8 @@
           "mainDocId": "guides/getting-started",
           "docs": [
             {
-              "id": "advanced/index",
-              "path": "/xgsd-userdocs/advanced/",
-              "sidebar": "advancedSidebar"
-            },
-            {
-              "id": "advanced/overrides",
-              "path": "/xgsd-userdocs/advanced/overrides",
-              "sidebar": "advancedSidebar"
-            },
-            {
-              "id": "advanced/Plugins/index",
-              "path": "/xgsd-userdocs/advanced/Plugins/",
-              "sidebar": "advancedSidebar"
-            },
-            {
-              "id": "advanced/Plugins/webhooks",
-              "path": "/xgsd-userdocs/advanced/Plugins/webhooks",
-              "sidebar": "advancedSidebar"
-            },
-            {
               "id": "api/index",
-              "path": "/xgsd-userdocs/api/",
-              "sidebar": "apiSidebar"
+              "path": "/xgsd-userdocs/api/"
             },
             {
               "id": "guides/configuration",
@@ -81,29 +60,34 @@
               "sidebar": "labsSidebar"
             },
             {
-              "id": "labs/Workers/background",
-              "path": "/xgsd-userdocs/labs/Workers/background",
+              "id": "labs/overrides",
+              "path": "/xgsd-userdocs/labs/overrides",
               "sidebar": "labsSidebar"
             },
             {
-              "id": "labs/Workers/middleware",
-              "path": "/xgsd-userdocs/labs/Workers/middleware",
-              "sidebar": "labsSidebar"
+              "id": "workers/background",
+              "path": "/xgsd-userdocs/workers/background",
+              "sidebar": "workersSidebar"
             },
             {
-              "id": "labs/Workers/overview",
-              "path": "/xgsd-userdocs/labs/Workers/overview",
-              "sidebar": "labsSidebar"
+              "id": "workers/middleware",
+              "path": "/xgsd-userdocs/workers/middleware",
+              "sidebar": "workersSidebar"
             },
             {
-              "id": "labs/Workers/tests",
-              "path": "/xgsd-userdocs/labs/Workers/experiments",
-              "sidebar": "labsSidebar"
+              "id": "workers/overview",
+              "path": "/xgsd-userdocs/workers/overview",
+              "sidebar": "workersSidebar"
             },
             {
-              "id": "labs/Workers/troubleshooting",
-              "path": "/xgsd-userdocs/labs/Workers/troubleshooting",
-              "sidebar": "labsSidebar"
+              "id": "workers/tests",
+              "path": "/xgsd-userdocs/workers/experiments",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/troubleshooting",
+              "path": "/xgsd-userdocs/workers/troubleshooting",
+              "sidebar": "workersSidebar"
             }
           ],
           "draftIds": [],
@@ -114,22 +98,16 @@
                 "label": "guides/getting-started"
               }
             },
-            "apiSidebar": {
+            "workersSidebar": {
               "link": {
-                "path": "/xgsd-userdocs/api/",
-                "label": "api/index"
+                "path": "/xgsd-userdocs/workers/overview",
+                "label": "workers/overview"
               }
             },
             "labsSidebar": {
               "link": {
                 "path": "/xgsd-userdocs/labs/",
                 "label": "labs/index"
-              }
-            },
-            "advancedSidebar": {
-              "link": {
-                "path": "/xgsd-userdocs/advanced/",
-                "label": "advanced/index"
               }
             }
           }

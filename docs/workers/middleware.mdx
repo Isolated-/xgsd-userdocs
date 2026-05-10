@@ -1,0 +1,30 @@
+---
+title: Middleware
+sidebar_position: 4
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+## What is Middleware?
+
+If you've used Express or Koa middleware before, Workers middleware should feel familiar.
+
+Middleware wraps worker execution in a predictable flow:
+
+![alt text](/img/middlewares_order.png)
+
+This makes it easy to:
+
+- validate input
+- retry executions
+- add logging
+- collect signals
+- handle errors
+
+Without introducing hidden lifecycle hooks or plugin orchestration.
+
+<ApiExample.Footer since="@xgsd/workers@0.1.0" experimental />
+
+</ApiExample>

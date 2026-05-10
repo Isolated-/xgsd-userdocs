@@ -39,45 +39,20 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '6ec'),
+    component: ComponentCreator('/xgsd-userdocs/', '5f9'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', '7cf'),
+        component: ComponentCreator('/xgsd-userdocs/', 'aa1'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', 'c43'),
+            component: ComponentCreator('/xgsd-userdocs/', 'ba0'),
             routes: [
               {
-                path: '/xgsd-userdocs/advanced/',
-                component: ComponentCreator('/xgsd-userdocs/advanced/', 'ec8'),
-                exact: true,
-                sidebar: "advancedSidebar"
-              },
-              {
-                path: '/xgsd-userdocs/advanced/overrides',
-                component: ComponentCreator('/xgsd-userdocs/advanced/overrides', 'dab'),
-                exact: true,
-                sidebar: "advancedSidebar"
-              },
-              {
-                path: '/xgsd-userdocs/advanced/Plugins/',
-                component: ComponentCreator('/xgsd-userdocs/advanced/Plugins/', '536'),
-                exact: true,
-                sidebar: "advancedSidebar"
-              },
-              {
-                path: '/xgsd-userdocs/advanced/Plugins/webhooks',
-                component: ComponentCreator('/xgsd-userdocs/advanced/Plugins/webhooks', '398'),
-                exact: true,
-                sidebar: "advancedSidebar"
-              },
-              {
                 path: '/xgsd-userdocs/api/',
-                component: ComponentCreator('/xgsd-userdocs/api/', 'be2'),
-                exact: true,
-                sidebar: "apiSidebar"
+                component: ComponentCreator('/xgsd-userdocs/api/', '9eb'),
+                exact: true
               },
               {
                 path: '/xgsd-userdocs/guides/configuration',
@@ -128,34 +103,40 @@ export default [
                 sidebar: "labsSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/Workers/background',
-                component: ComponentCreator('/xgsd-userdocs/labs/Workers/background', 'f52'),
+                path: '/xgsd-userdocs/labs/overrides',
+                component: ComponentCreator('/xgsd-userdocs/labs/overrides', '26e'),
                 exact: true,
                 sidebar: "labsSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/Workers/experiments',
-                component: ComponentCreator('/xgsd-userdocs/labs/Workers/experiments', 'b64'),
+                path: '/xgsd-userdocs/workers/background',
+                component: ComponentCreator('/xgsd-userdocs/workers/background', '505'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "workersSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/Workers/middleware',
-                component: ComponentCreator('/xgsd-userdocs/labs/Workers/middleware', 'b70'),
+                path: '/xgsd-userdocs/workers/experiments',
+                component: ComponentCreator('/xgsd-userdocs/workers/experiments', 'e78'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "workersSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/Workers/overview',
-                component: ComponentCreator('/xgsd-userdocs/labs/Workers/overview', '297'),
+                path: '/xgsd-userdocs/workers/middleware',
+                component: ComponentCreator('/xgsd-userdocs/workers/middleware', '978'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "workersSidebar"
               },
               {
-                path: '/xgsd-userdocs/labs/Workers/troubleshooting',
-                component: ComponentCreator('/xgsd-userdocs/labs/Workers/troubleshooting', '375'),
+                path: '/xgsd-userdocs/workers/overview',
+                component: ComponentCreator('/xgsd-userdocs/workers/overview', '735'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/troubleshooting',
+                component: ComponentCreator('/xgsd-userdocs/workers/troubleshooting', '90a'),
+                exact: true,
+                sidebar: "workersSidebar"
               },
               {
                 path: '/xgsd-userdocs/',

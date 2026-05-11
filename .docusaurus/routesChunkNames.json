@@ -1,221 +1,221 @@
 {
-  "/xgsd-userdocs/__docusaurus/debug-831": {
+  "/__docusaurus/debug-5ff": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/__docusaurus/debug/config-cab": {
+  "/__docusaurus/debug/config-5ba": {
     "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/__docusaurus/debug/content-030": {
+  "/__docusaurus/debug/content-a2b": {
     "__comp": "__comp---theme-debug-contentba-8-ce7",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     },
-    "__props": "__props---xgsd-userdocs-docusaurus-debug-contente-62-bba"
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
   },
-  "/xgsd-userdocs/__docusaurus/debug/globalData-ec3": {
+  "/__docusaurus/debug/globalData-c3c": {
     "__comp": "__comp---theme-debug-global-dataede-0fa",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/__docusaurus/debug/metadata-bf8": {
+  "/__docusaurus/debug/metadata-156": {
     "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/__docusaurus/debug/registry-396": {
+  "/__docusaurus/debug/registry-88c": {
     "__comp": "__comp---theme-debug-registry-679-501",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/__docusaurus/debug/routes-445": {
+  "/__docusaurus/debug/routes-000": {
     "__comp": "__comp---theme-debug-routes-946-699",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-c7c": {
+  "/-68a": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-288": {
+  "/-59a": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---xgsd-userdocs-0-b-4-147"
+    "__props": "__props---22-d-307"
   },
-  "/xgsd-userdocs/-b4b": {
+  "/-9e2": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/xgsd-userdocs/api/-9eb": {
+  "/api/-1d3": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-api-5-e-8-5d7"
   },
-  "/xgsd-userdocs/guides/configuration-b35": {
+  "/guides/configuration-edc": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-configuration-446-3e2"
   },
-  "/xgsd-userdocs/guides/modes-87c": {
+  "/guides/modes-65c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-modesacf-6a2"
   },
-  "/xgsd-userdocs/guides/project-scaffolding-058": {
+  "/guides/project-scaffolding-2a7": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-project-scaffolding-96-d-090"
   },
-  "/xgsd-userdocs/guides/project-setup-6db": {
+  "/guides/project-setup-ffe": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-project-setupf-6-b-b5a"
   },
-  "/xgsd-userdocs/guides/troubleshooting-4e2": {
+  "/guides/troubleshooting-654": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-troubleshooting-024-b80"
   },
-  "/xgsd-userdocs/guides/using-hooks-d31": {
+  "/guides/using-hooks-65c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-guides-using-hooks-1-af-770"
   },
-  "/xgsd-userdocs/labs/-399": {
+  "/labs/-bdf": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-labs-05-a-80b"
   },
-  "/xgsd-userdocs/labs/code-bundler-098": {
+  "/labs/code-bundler-a5f": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-labs-code-bundler-292-351"
   },
-  "/xgsd-userdocs/labs/overrides-26e": {
+  "/labs/overrides-728": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-labs-overridesa-94-cf8"
   },
-  "/xgsd-userdocs/workers/-6d6": {
+  "/workers/-3ea": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-b-70-2c2"
   },
-  "/xgsd-userdocs/workers/api/-26d": {
+  "/workers/api/-e4c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-8-c-9-c38"
   },
-  "/xgsd-userdocs/workers/api/enumerations/WorkerErrorCode-8af": {
+  "/workers/api/enumerations/WorkerErrorCode-23a": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-enumerations-worker-error-code-566-7f1"
   },
-  "/xgsd-userdocs/workers/api/functions/createHandler-aa0": {
+  "/workers/api/functions/createHandler-91c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-functions-create-handler-0-f-7-cea"
   },
-  "/xgsd-userdocs/workers/api/functions/runWorker-761": {
+  "/workers/api/functions/runWorker-b2e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-functions-run-worker-5-db-c0a"
   },
-  "/xgsd-userdocs/workers/api/globals-e1a": {
+  "/workers/api/globals-56d": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-globalsd-90-717"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/Activation-0c1": {
+  "/workers/api/type-aliases/Activation-9a8": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-activation-550-9b6"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/ActivationHandler-2c9": {
+  "/workers/api/type-aliases/ActivationHandler-366": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-activation-handler-65-c-d52"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/ActivationSignal-9e7": {
+  "/workers/api/type-aliases/ActivationSignal-ca4": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-activation-signal-19-f-14d"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/Context-5ff": {
+  "/workers/api/type-aliases/Context-9eb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-context-171-0d1"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/ContextMetadata-250": {
+  "/workers/api/type-aliases/ContextMetadata-814": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-context-metadata-406-109"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/ErrorSignal-fc0": {
+  "/workers/api/type-aliases/ErrorSignal-2c1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-error-signalf-76-44d"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/GenericSignal-524": {
+  "/workers/api/type-aliases/GenericSignal-84c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-generic-signale-23-93a"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/LogSignal-500": {
+  "/workers/api/type-aliases/LogSignal-25c": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-log-signalb-9-b-8bc"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/Signal-b58": {
+  "/workers/api/type-aliases/Signal-b7a": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-signal-8-ab-7fa"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/SignalType-123": {
+  "/workers/api/type-aliases/SignalType-deb": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-signal-type-7-f-6-e4e"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/SystemSignal-e10": {
+  "/workers/api/type-aliases/SystemSignal-527": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-system-signal-53-b-0dc"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerConfig-561": {
+  "/workers/api/type-aliases/WorkerConfig-b70": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-configfb-1-31d"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCache-fee": {
+  "/workers/api/type-aliases/WorkerConfigCache-c47": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-config-cache-009-0b0"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCacheStrategy-03e": {
+  "/workers/api/type-aliases/WorkerConfigCacheStrategy-971": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-config-cache-strategy-680-ed2"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerError-ee8": {
+  "/workers/api/type-aliases/WorkerError-7f0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-error-8-f-2-9d4"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerErrorType-e37": {
+  "/workers/api/type-aliases/WorkerErrorType-1d9": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-error-type-5-c-7-aa4"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerOutputMode-86f": {
+  "/workers/api/type-aliases/WorkerOutputMode-c89": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-output-mode-4-e-3-4b6"
   },
-  "/xgsd-userdocs/workers/api/type-aliases/WorkerResult-7e0": {
+  "/workers/api/type-aliases/WorkerResult-2fc": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-api-type-aliases-worker-result-455-62b"
   },
-  "/xgsd-userdocs/workers/background-505": {
+  "/workers/background-c99": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-backgroundbb-0-c18"
   },
-  "/xgsd-userdocs/workers/config-ff0": {
+  "/workers/config-e7e": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-config-14-b-c89"
   },
-  "/xgsd-userdocs/workers/docker-e35": {
+  "/workers/docker-b45": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-dockerbaa-6b7"
   },
-  "/xgsd-userdocs/workers/middleware-978": {
+  "/workers/middleware-cf1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-middleware-582-963"
   },
-  "/xgsd-userdocs/workers/signals-92d": {
+  "/workers/signals-674": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-signals-521-99d"
   },
-  "/xgsd-userdocs/workers/troubleshooting-90a": {
+  "/workers/troubleshooting-a72": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-troubleshooting-626-ac1"
   },
-  "/xgsd-userdocs/-551": {
+  "/-845": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-4-dc-e4e"
   }

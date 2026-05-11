@@ -5,7 +5,7 @@
   "source": "@site/docs/guides/configuration.mdx",
   "sourceDirName": "guides",
   "slug": "/guides/configuration",
-  "permalink": "/xgsd-userdocs/guides/configuration",
+  "permalink": "/guides/configuration",
   "draft": false,
   "unlisted": false,
   "tags": [],
@@ -18,10 +18,10 @@
   "sidebar": "tutorialSidebar",
   "previous": {
     "title": "Understanding Modes",
-    "permalink": "/xgsd-userdocs/guides/modes"
+    "permalink": "/guides/modes"
   },
   "next": {
     "title": "What are Hooks?",
-    "permalink": "/xgsd-userdocs/guides/using-hooks"
+    "permalink": "/guides/using-hooks"
   }
 }

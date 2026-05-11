@@ -28,8 +28,8 @@ export default {
       "gitEagerVcs": true
     }
   },
-  "url": "https://Isolated-.github.io",
-  "baseUrl": "/xgsd-userdocs/",
+  "url": "https://docs.xgsd.io",
+  "baseUrl": "/",
   "organizationName": "Isolated-",
   "projectName": "xgsd-userdocs",
   "onBrokenLinks": "ignore",

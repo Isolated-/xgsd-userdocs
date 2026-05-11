@@ -89,15 +89,14 @@ import { createHandler } from "@xgsd/workers";
 // this will depend on your app needs
 const cwd = process.cwd();
 const handler = createHandler({
-  entry: "worker.js",
+  cwd,
+  config: { entry: "worker.js" },
 });
 
 // inside your transport (e.g. Express route):
 async function callback(req, res) {
   return handler({
     data: req.data,
-    env,
-    cwd,
   });
 }
 ```

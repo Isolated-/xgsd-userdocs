@@ -13,8 +13,8 @@
       "calendar": "gregory",
       "path": "en",
       "translate": false,
-      "url": "https://Isolated-.github.io",
-      "baseUrl": "/xgsd-userdocs/"
+      "url": "https://docs.xgsd.io",
+      "baseUrl": "/"
     }
   }
 }

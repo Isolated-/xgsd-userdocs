@@ -57,7 +57,6 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
     "colorMode": {
       "respectPrefersColorScheme": true,
       "defaultMode": "light",
@@ -65,6 +64,10 @@ export default {
     },
     "navbar": {
       "title": "xGSD",
+      "logo": {
+        "alt": "xGSD",
+        "src": "img/logo.png"
+      },
       "items": [
         {
           "type": "docSidebar",

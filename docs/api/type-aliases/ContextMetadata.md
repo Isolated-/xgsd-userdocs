@@ -8,7 +8,7 @@
 
 > **ContextMetadata** = `object`
 
-Defined in: [core/types.ts:86](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L86)
+Defined in: [core/types.ts:89](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L89)
 
 CONTEXT TYPES
 
@@ -18,7 +18,7 @@ CONTEXT TYPES
 
 > **bundler**: `object`
 
-Defined in: [core/types.ts:96](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L96)
+Defined in: [core/types.ts:99](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L99)
 
 #### cache?
 
@@ -28,13 +28,25 @@ Defined in: [core/types.ts:96](https://github.com/Isolated-/xgsd-workers/blob/ea
 
 > **enabled**: `boolean`
 
+#### exclude?
+
+> `optional` **exclude?**: `string`[]
+
+#### extensions?
+
+> `optional` **extensions?**: `string`[]
+
+#### include?
+
+> `optional` **include?**: `string`[]
+
 ***
 
 ### cwd
 
 > **cwd**: `string`
 
-Defined in: [core/types.ts:91](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L91)
+Defined in: [core/types.ts:94](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L94)
 
 ***
 
@@ -42,7 +54,7 @@ Defined in: [core/types.ts:91](https://github.com/Isolated-/xgsd-workers/blob/ea
 
 > **dist**: `string`
 
-Defined in: [core/types.ts:90](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L90)
+Defined in: [core/types.ts:93](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L93)
 
 ***
 
@@ -50,7 +62,7 @@ Defined in: [core/types.ts:90](https://github.com/Isolated-/xgsd-workers/blob/ea
 
 > **entry**: `string`
 
-Defined in: [core/types.ts:89](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L89)
+Defined in: [core/types.ts:92](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L92)
 
 ***
 
@@ -58,7 +70,7 @@ Defined in: [core/types.ts:89](https://github.com/Isolated-/xgsd-workers/blob/ea
 
 > **limits**: `object`
 
-Defined in: [core/types.ts:92](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L92)
+Defined in: [core/types.ts:95](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L95)
 
 #### memory
 
@@ -74,7 +86,7 @@ Defined in: [core/types.ts:92](https://github.com/Isolated-/xgsd-workers/blob/ea
 
 > **output**: `object`
 
-Defined in: [core/types.ts:100](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L100)
+Defined in: [core/types.ts:106](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L106)
 
 #### mode
 
@@ -86,7 +98,7 @@ Defined in: [core/types.ts:100](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **pid?**: `number`
 
-Defined in: [core/types.ts:88](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L88)
+Defined in: [core/types.ts:91](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L91)
 
 ***
 
@@ -94,4 +106,4 @@ Defined in: [core/types.ts:88](https://github.com/Isolated-/xgsd-workers/blob/ea
 
 > **version**: `string`
 
-Defined in: [core/types.ts:87](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L87)
+Defined in: [core/types.ts:90](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L90)

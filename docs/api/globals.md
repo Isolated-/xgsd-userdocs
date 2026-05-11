@@ -18,6 +18,7 @@
 - [ErrorSignal](type-aliases/ErrorSignal.md)
 - [GenericSignal](type-aliases/GenericSignal.md)
 - [LogSignal](type-aliases/LogSignal.md)
+- [MetricSignal](type-aliases/MetricSignal.md)
 - [Signal](type-aliases/Signal.md)
 - [SignalType](type-aliases/SignalType.md)
 - [SystemSignal](type-aliases/SystemSignal.md)
@@ -28,6 +29,10 @@
 - [WorkerErrorType](type-aliases/WorkerErrorType.md)
 - [WorkerOutputMode](type-aliases/WorkerOutputMode.md)
 - [WorkerResult](type-aliases/WorkerResult.md)
+
+## Variables
+
+- [version](variables/version.md)
 
 ## Functions
 

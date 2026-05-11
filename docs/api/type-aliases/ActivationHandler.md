@@ -6,9 +6,9 @@
 
 # Type Alias: ActivationHandler
 
-> **ActivationHandler** = \<`T`\>(`activation`) => `Promise`\<[`WorkerResult`](WorkerResult.md)\<`T`\>\>
+> **ActivationHandler** = \<`T`\>(`activation?`) => `Promise`\<[`WorkerResult`](WorkerResult.md)\<`T`\>\>
 
-Defined in: [core/types.ts:127](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L127)
+Defined in: [core/types.ts:133](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L133)
 
 ## Type Parameters
 
@@ -18,7 +18,7 @@ Defined in: [core/types.ts:127](https://github.com/Isolated-/xgsd-workers/blob/e
 
 ## Parameters
 
-### activation
+### activation?
 
 [`Activation`](Activation.md)\<`T`\>
 

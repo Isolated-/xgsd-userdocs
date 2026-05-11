@@ -67,12 +67,12 @@ const config: Config = {
           position: "left",
           label: "Basics",
         },
-        /*{
+        {
           type: "docSidebar",
           sidebarId: "apiSidebar",
           position: "left",
           label: "API",
-        },*/
+        },
         {
           href: "https://github.com/Isolated-/xgsd-workers",
           label: "@xgsd/workers",

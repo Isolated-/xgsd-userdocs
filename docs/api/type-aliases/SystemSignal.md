@@ -8,4 +8,4 @@
 
 > **SystemSignal** = [`GenericSignal`](GenericSignal.md)
 
-Defined in: [core/types.ts:156](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L156)
+Defined in: [core/types.ts:163](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L163)

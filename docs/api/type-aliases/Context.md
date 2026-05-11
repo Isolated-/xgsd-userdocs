@@ -8,7 +8,7 @@
 
 > **Context**\<`T`, `E`\> = `object`
 
-Defined in: [core/types.ts:105](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L105)
+Defined in: [core/types.ts:111](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L111)
 
 ## Type Parameters
 
@@ -26,7 +26,7 @@ Defined in: [core/types.ts:105](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **data**: `T` \| `null`
 
-Defined in: [core/types.ts:107](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L107)
+Defined in: [core/types.ts:113](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L113)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [core/types.ts:107](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **env**: `Record`\<`string`, `any`\> \| `null`
 
-Defined in: [core/types.ts:108](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L108)
+Defined in: [core/types.ts:114](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L114)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [core/types.ts:108](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **error?**: `E` \| `null`
 
-Defined in: [core/types.ts:112](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L112)
+Defined in: [core/types.ts:118](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L118)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [core/types.ts:112](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **execute?**: `any`
 
-Defined in: [core/types.ts:110](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L110)
+Defined in: [core/types.ts:116](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L116)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [core/types.ts:110](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **id**: `string`
 
-Defined in: [core/types.ts:106](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L106)
+Defined in: [core/types.ts:112](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L112)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [core/types.ts:106](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **meta**: [`ContextMetadata`](ContextMetadata.md)
 
-Defined in: [core/types.ts:113](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L113)
+Defined in: [core/types.ts:119](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L119)
 
 ***
 
@@ -74,4 +74,4 @@ Defined in: [core/types.ts:113](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **result?**: `T` \| `null`
 
-Defined in: [core/types.ts:111](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L111)
+Defined in: [core/types.ts:117](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L117)

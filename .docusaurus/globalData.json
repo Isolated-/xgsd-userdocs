@@ -76,6 +76,11 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "api/type-aliases/MetricSignal",
+              "path": "/api/type-aliases/MetricSignal",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "api/type-aliases/Signal",
               "path": "/api/type-aliases/Signal",
               "sidebar": "apiSidebar"
@@ -123,6 +128,11 @@
             {
               "id": "api/type-aliases/WorkerResult",
               "path": "/api/type-aliases/WorkerResult",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/variables/version",
+              "path": "/api/variables/version",
               "sidebar": "apiSidebar"
             },
             {

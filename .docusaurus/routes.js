@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '811'),
+    component: ComponentCreator('/', 'f3d'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '6f1'),
+        component: ComponentCreator('/', 'f21'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '374'),
+            component: ComponentCreator('/', '110'),
             routes: [
               {
                 path: '/api/',
@@ -128,6 +128,12 @@ export default [
                 sidebar: "apiSidebar"
               },
               {
+                path: '/api/type-aliases/MetricSignal',
+                component: ComponentCreator('/api/type-aliases/MetricSignal', '71b'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
                 path: '/api/type-aliases/Signal',
                 component: ComponentCreator('/api/type-aliases/Signal', '6a5'),
                 exact: true,
@@ -184,6 +190,12 @@ export default [
               {
                 path: '/api/type-aliases/WorkerResult',
                 component: ComponentCreator('/api/type-aliases/WorkerResult', '6de'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/variables/version',
+                component: ComponentCreator('/api/variables/version', '4c3'),
                 exact: true,
                 sidebar: "apiSidebar"
               },

@@ -8,7 +8,7 @@
 
 > **Signal**\<`T`\> = `object`
 
-Defined in: [core/types.ts:138](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L138)
+Defined in: [core/types.ts:144](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L144)
 
 ## Type Parameters
 
@@ -22,7 +22,7 @@ Defined in: [core/types.ts:138](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **ctx**: `string`
 
-Defined in: [core/types.ts:139](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L139)
+Defined in: [core/types.ts:145](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L145)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [core/types.ts:139](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **message**: `string`
 
-Defined in: [core/types.ts:141](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L141)
+Defined in: [core/types.ts:147](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L147)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [core/types.ts:141](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **meta?**: `T` \| `null`
 
-Defined in: [core/types.ts:143](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L143)
+Defined in: [core/types.ts:149](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L149)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [core/types.ts:143](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **timestamp**: `number`
 
-Defined in: [core/types.ts:142](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L142)
+Defined in: [core/types.ts:148](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L148)
 
 ***
 
@@ -54,4 +54,4 @@ Defined in: [core/types.ts:142](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > **type**: [`SignalType`](SignalType.md)
 
-Defined in: [core/types.ts:140](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L140)
+Defined in: [core/types.ts:146](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L146)

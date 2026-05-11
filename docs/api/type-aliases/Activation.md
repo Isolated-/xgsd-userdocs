@@ -8,7 +8,7 @@
 
 > **Activation**\<`T`\> = `object`
 
-Defined in: [core/types.ts:120](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L120)
+Defined in: [core/types.ts:126](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L126)
 
 ACTIVATION TYPES
 
@@ -20,11 +20,11 @@ ACTIVATION TYPES
 
 ## Properties
 
-### cwd
+### cwd?
 
-> **cwd**: `string`
+> `optional` **cwd?**: `string`
 
-Defined in: [core/types.ts:124](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L124)
+Defined in: [core/types.ts:130](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L130)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [core/types.ts:124](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **data?**: `T`
 
-Defined in: [core/types.ts:122](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L122)
+Defined in: [core/types.ts:128](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L128)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [core/types.ts:122](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **env?**: `Record`\<`string`, `unknown`\>
 
-Defined in: [core/types.ts:123](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L123)
+Defined in: [core/types.ts:129](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L129)
 
 ***
 
@@ -48,4 +48,4 @@ Defined in: [core/types.ts:123](https://github.com/Isolated-/xgsd-workers/blob/e
 
 > `optional` **id?**: `string`
 
-Defined in: [core/types.ts:121](https://github.com/Isolated-/xgsd-workers/blob/ea4cc8ec85b211048bcfb1a1c34e805794fe9184/src/core/types.ts#L121)
+Defined in: [core/types.ts:127](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L127)

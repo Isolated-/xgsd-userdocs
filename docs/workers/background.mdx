@@ -20,18 +20,7 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 4. Most of xGSD < v0.7 can be replaced with middleware.
 5. You should migrate to **Workers** if you're using xGSD.
 
-## Terminology
-
-xGSD v0.7 terminology is _messy_, **Workers** keeps it simple:
-
-| Term                      | Context                                                 |
-| ------------------------- | ------------------------------------------------------- |
-| **Worker** or **Workers** | User-defined execution unit/function                    |
-| **Container**             | Bounded runtime environment/sandbox                     |
-| **Middleware**            | Execution composition                                   |
-| **Signals**               | Runtime generated feedback - logs, errors, other events |
-| **Transport**             | External integration layer - http, bullmq, etc          |
-| **Watchdog**              | Container policy enforcement/hard limits                |
+---
 
 ## Background
 
@@ -86,6 +75,21 @@ Here's what we've intentionally excluded:
 - **Templating** and any pre-/post-processing of data.
 - **Config syntax**
 - **Event-based abstractions** - like `EventBus` or event emitters.
+
+I'll benchmark **Workers** using these metrics:
+
+| Metric                       | Acceptable | Goal     | Note                                                   |
+| ---------------------------- | ---------- | -------- | ------------------------------------------------------ |
+| **End-to-end response time** | `< 100ms`  | `< 50ms` | This is the time it takes from process start to end    |
+| **Base memory usage**        | `< 20MB`   | `< 10MB` | Measured when a **Worker** is in an idle/blocked state |
+
+If you're using `@xgsd/worker-cli`, these metrics may be automatically collected.
+
+:::note
+Benchmarking will take place on modest hardware and may vary machine-to-machine.
+
+Feel free to share your results if you benchmark **Workers**.
+:::
 
 ---
 

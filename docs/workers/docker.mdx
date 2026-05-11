@@ -2,3 +2,134 @@
 title: Docker
 sidebar_position: 6
 ---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+**Workers** are platform agnostic but setting them up for a Docker environment is easy.
+
+## Dockerfile
+
+Create a new `Dockerfile`:
+
+```dockerfile title="Dockerfile"
+FROM node:24-alpine
+
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+RUN yarn install --production
+
+COPY . .
+
+# make sure @xgsd/worker-cli is installed
+RUN npm install -g @xgsd/worker-cli@0.1.2
+
+EXPOSE 3000
+
+CMD ["worker", "up", "-c", "worker.json"]
+```
+
+## Build
+
+Build the image:
+
+```bash
+docker build -t my-worker .
+```
+
+## Run
+
+Run `my-worker` with:
+
+```bash
+docker run -d \
+  --name my-worker \
+  -p 3000:3000 \
+  -u $(id -u):$(id -g) \
+  -v $(pwd):/app \
+  my-worker
+```
+
+Send a request to `http://localhost:3000` and it'll be passed to your worker.
+
+Using a worker that returns input data, will produce the following output (unwrapped):
+
+```json
+{
+  "path": "/run",
+  "method": "POST",
+  "headers": {
+    "host": "localhost:3000",
+    "user-agent": "curl/8.12.1",
+    "accept": "*/*",
+    "content-type": "application/json",
+    "content-length": "78"
+  },
+  "query": { "myparam": "true" },
+  "body": {
+    "url": "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London"
+  }
+}
+```
+
+Or wrapped:
+
+```json
+{
+  "version": "v1",
+  "ok": true,
+  "result": {
+    "path": "/run",
+    "method": "POST",
+    "headers": {
+      "host": "localhost:3000",
+      "user-agent": "curl/8.12.1",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "content-length": "78"
+    },
+    "query": { "myparam": "true" },
+    "body": {
+      "url": "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London"
+    }
+  },
+  "error": null
+}
+```
+
+Here's an script I use to send data to my worker:
+
+```bash title="test"
+#!/usr/bin/env bash
+
+URL="http://localhost:3000/run"
+DIST=".xgsd"
+
+mkdir -p "$DIST"
+
+BODY='{
+  "url": "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London"
+}'
+
+cp "$DIST/output.json" "$DIST/output.bak.json"
+
+curl \
+  --silent \
+  --show-error \
+  --no-buffer \
+  --max-time 120 \
+  --request POST \
+  --header "Content-Type: application/json" \
+  --data "$BODY" \
+  "$URL" \
+  > "$DIST/output.json"
+
+echo "saved response to $DIST/output.json"
+```
+
+Make it executable with `chmod +x ./test`.
+
+<ApiExample.Footer since="@xgsd/workers@0.1.0" experimental/>
+</ApiExample>

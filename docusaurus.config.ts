@@ -61,35 +61,24 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "workersSidebar",
           position: "left",
           label: "Basics",
         },
-        {
+        /*{
           type: "docSidebar",
-          sidebarId: "workersSidebar",
+          sidebarId: "apiSidebar",
           position: "left",
-          label: "Workers",
-        },
+          label: "API",
+        },*/
         {
-          type: "docSidebar",
-          sidebarId: "labsSidebar",
-          position: "left",
-          label: "Labs",
-        },
-        {
-          href: "https://github.com/Isolated-/xgsd-cli",
-          label: "@xgsd/cli",
+          href: "https://github.com/Isolated-/xgsd-workers",
+          label: "@xgsd/workers",
           position: "right",
         },
         {
-          href: "https://github.com/Isolated-/xgsd-runtime",
-          label: "@xgsd/runtime",
-          position: "right",
-        },
-        {
-          href: "https://github.com/Isolated-/xgsd-engine",
-          label: "@xgsd/engine",
+          href: "https://github.com/Isolated-/xgsd-workers",
+          label: "@xgsd/worker-cli",
           position: "right",
         },
       ],

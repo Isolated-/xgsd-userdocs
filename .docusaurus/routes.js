@@ -39,218 +39,153 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '68a'),
+    component: ComponentCreator('/', '811'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '59a'),
+        component: ComponentCreator('/', '6f1'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '9e2'),
+            component: ComponentCreator('/', '374'),
             routes: [
               {
                 path: '/api/',
-                component: ComponentCreator('/api/', '1d3'),
-                exact: true
+                component: ComponentCreator('/api/', 'fa3'),
+                exact: true,
+                sidebar: "apiSidebar"
               },
               {
-                path: '/guides/configuration',
-                component: ComponentCreator('/guides/configuration', 'edc'),
+                path: '/api/enumerations/WorkerErrorCode',
+                component: ComponentCreator('/api/enumerations/WorkerErrorCode', '92c'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/guides/modes',
-                component: ComponentCreator('/guides/modes', '65c'),
+                path: '/api/functions/createHandler',
+                component: ComponentCreator('/api/functions/createHandler', '59f'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/guides/project-scaffolding',
-                component: ComponentCreator('/guides/project-scaffolding', '2a7'),
+                path: '/api/functions/runWorker',
+                component: ComponentCreator('/api/functions/runWorker', 'ebb'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/guides/project-setup',
-                component: ComponentCreator('/guides/project-setup', 'ffe'),
+                path: '/api/globals',
+                component: ComponentCreator('/api/globals', '1f1'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/guides/troubleshooting',
-                component: ComponentCreator('/guides/troubleshooting', '654'),
+                path: '/api/type-aliases/Activation',
+                component: ComponentCreator('/api/type-aliases/Activation', 'f61'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/guides/using-hooks',
-                component: ComponentCreator('/guides/using-hooks', '65c'),
+                path: '/api/type-aliases/ActivationHandler',
+                component: ComponentCreator('/api/type-aliases/ActivationHandler', '1cd'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/labs/',
-                component: ComponentCreator('/labs/', 'bdf'),
+                path: '/api/type-aliases/ActivationSignal',
+                component: ComponentCreator('/api/type-aliases/ActivationSignal', '353'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/labs/code-bundler',
-                component: ComponentCreator('/labs/code-bundler', 'a5f'),
+                path: '/api/type-aliases/Context',
+                component: ComponentCreator('/api/type-aliases/Context', '62d'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/labs/overrides',
-                component: ComponentCreator('/labs/overrides', '728'),
+                path: '/api/type-aliases/ContextMetadata',
+                component: ComponentCreator('/api/type-aliases/ContextMetadata', '0c0'),
                 exact: true,
-                sidebar: "labsSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/',
-                component: ComponentCreator('/workers/', '3ea'),
+                path: '/api/type-aliases/ErrorSignal',
+                component: ComponentCreator('/api/type-aliases/ErrorSignal', '5ae'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/',
-                component: ComponentCreator('/workers/api/', 'e4c'),
+                path: '/api/type-aliases/GenericSignal',
+                component: ComponentCreator('/api/type-aliases/GenericSignal', '447'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/enumerations/WorkerErrorCode',
-                component: ComponentCreator('/workers/api/enumerations/WorkerErrorCode', '23a'),
+                path: '/api/type-aliases/LogSignal',
+                component: ComponentCreator('/api/type-aliases/LogSignal', '23b'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/functions/createHandler',
-                component: ComponentCreator('/workers/api/functions/createHandler', '91c'),
+                path: '/api/type-aliases/Signal',
+                component: ComponentCreator('/api/type-aliases/Signal', '6a5'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/functions/runWorker',
-                component: ComponentCreator('/workers/api/functions/runWorker', 'b2e'),
+                path: '/api/type-aliases/SignalType',
+                component: ComponentCreator('/api/type-aliases/SignalType', 'a6f'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/globals',
-                component: ComponentCreator('/workers/api/globals', '56d'),
+                path: '/api/type-aliases/SystemSignal',
+                component: ComponentCreator('/api/type-aliases/SystemSignal', '4c9'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/Activation',
-                component: ComponentCreator('/workers/api/type-aliases/Activation', '9a8'),
+                path: '/api/type-aliases/WorkerConfig',
+                component: ComponentCreator('/api/type-aliases/WorkerConfig', 'ece'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/ActivationHandler',
-                component: ComponentCreator('/workers/api/type-aliases/ActivationHandler', '366'),
+                path: '/api/type-aliases/WorkerConfigCache',
+                component: ComponentCreator('/api/type-aliases/WorkerConfigCache', 'b93'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/ActivationSignal',
-                component: ComponentCreator('/workers/api/type-aliases/ActivationSignal', 'ca4'),
+                path: '/api/type-aliases/WorkerConfigCacheStrategy',
+                component: ComponentCreator('/api/type-aliases/WorkerConfigCacheStrategy', 'd49'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/Context',
-                component: ComponentCreator('/workers/api/type-aliases/Context', '9eb'),
+                path: '/api/type-aliases/WorkerError',
+                component: ComponentCreator('/api/type-aliases/WorkerError', '5d2'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/ContextMetadata',
-                component: ComponentCreator('/workers/api/type-aliases/ContextMetadata', '814'),
+                path: '/api/type-aliases/WorkerErrorType',
+                component: ComponentCreator('/api/type-aliases/WorkerErrorType', '82e'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/ErrorSignal',
-                component: ComponentCreator('/workers/api/type-aliases/ErrorSignal', '2c1'),
+                path: '/api/type-aliases/WorkerOutputMode',
+                component: ComponentCreator('/api/type-aliases/WorkerOutputMode', 'a90'),
                 exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
-                path: '/workers/api/type-aliases/GenericSignal',
-                component: ComponentCreator('/workers/api/type-aliases/GenericSignal', '84c'),
+                path: '/api/type-aliases/WorkerResult',
+                component: ComponentCreator('/api/type-aliases/WorkerResult', '6de'),
                 exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/LogSignal',
-                component: ComponentCreator('/workers/api/type-aliases/LogSignal', '25c'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/Signal',
-                component: ComponentCreator('/workers/api/type-aliases/Signal', 'b7a'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/SignalType',
-                component: ComponentCreator('/workers/api/type-aliases/SignalType', 'deb'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/SystemSignal',
-                component: ComponentCreator('/workers/api/type-aliases/SystemSignal', '527'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerConfig',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerConfig', 'b70'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerConfigCache',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerConfigCache', 'c47'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerConfigCacheStrategy',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerConfigCacheStrategy', '971'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerError',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerError', '7f0'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerErrorType',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerErrorType', '1d9'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerOutputMode',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerOutputMode', 'c89'),
-                exact: true,
-                sidebar: "workersSidebar"
-              },
-              {
-                path: '/workers/api/type-aliases/WorkerResult',
-                component: ComponentCreator('/workers/api/type-aliases/WorkerResult', '2fc'),
-                exact: true,
-                sidebar: "workersSidebar"
+                sidebar: "apiSidebar"
               },
               {
                 path: '/workers/background',
@@ -290,9 +225,9 @@ export default [
               },
               {
                 path: '/',
-                component: ComponentCreator('/', '845'),
+                component: ComponentCreator('/', '843'),
                 exact: true,
-                sidebar: "tutorialSidebar"
+                sidebar: "workersSidebar"
               }
             ]
           }

@@ -8,176 +8,122 @@
           "label": "Next",
           "isLast": true,
           "path": "/",
-          "mainDocId": "guides/getting-started",
+          "mainDocId": "workers/index",
           "docs": [
             {
-              "id": "api/index",
-              "path": "/api/"
+              "id": "api/enumerations/WorkerErrorCode",
+              "path": "/api/enumerations/WorkerErrorCode",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/configuration",
-              "path": "/guides/configuration",
-              "sidebar": "tutorialSidebar"
+              "id": "api/functions/createHandler",
+              "path": "/api/functions/createHandler",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/getting-started",
-              "path": "/",
-              "sidebar": "tutorialSidebar"
+              "id": "api/functions/runWorker",
+              "path": "/api/functions/runWorker",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/modes",
-              "path": "/guides/modes",
-              "sidebar": "tutorialSidebar"
+              "id": "api/globals",
+              "path": "/api/globals",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/project-scaffolding",
-              "path": "/guides/project-scaffolding",
-              "sidebar": "tutorialSidebar"
+              "id": "api/README",
+              "path": "/api/",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/project-setup",
-              "path": "/guides/project-setup",
-              "sidebar": "tutorialSidebar"
+              "id": "api/type-aliases/Activation",
+              "path": "/api/type-aliases/Activation",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/troubleshooting",
-              "path": "/guides/troubleshooting",
-              "sidebar": "tutorialSidebar"
+              "id": "api/type-aliases/ActivationHandler",
+              "path": "/api/type-aliases/ActivationHandler",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "guides/using-hooks",
-              "path": "/guides/using-hooks",
-              "sidebar": "tutorialSidebar"
+              "id": "api/type-aliases/ActivationSignal",
+              "path": "/api/type-aliases/ActivationSignal",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "labs/code-bundler",
-              "path": "/labs/code-bundler",
-              "sidebar": "labsSidebar"
+              "id": "api/type-aliases/Context",
+              "path": "/api/type-aliases/Context",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "labs/index",
-              "path": "/labs/",
-              "sidebar": "labsSidebar"
+              "id": "api/type-aliases/ContextMetadata",
+              "path": "/api/type-aliases/ContextMetadata",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "labs/overrides",
-              "path": "/labs/overrides",
-              "sidebar": "labsSidebar"
+              "id": "api/type-aliases/ErrorSignal",
+              "path": "/api/type-aliases/ErrorSignal",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/enumerations/WorkerErrorCode",
-              "path": "/workers/api/enumerations/WorkerErrorCode",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/GenericSignal",
+              "path": "/api/type-aliases/GenericSignal",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/functions/createHandler",
-              "path": "/workers/api/functions/createHandler",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/LogSignal",
+              "path": "/api/type-aliases/LogSignal",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/functions/runWorker",
-              "path": "/workers/api/functions/runWorker",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/Signal",
+              "path": "/api/type-aliases/Signal",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/globals",
-              "path": "/workers/api/globals",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/SignalType",
+              "path": "/api/type-aliases/SignalType",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/README",
-              "path": "/workers/api/",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/SystemSignal",
+              "path": "/api/type-aliases/SystemSignal",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/Activation",
-              "path": "/workers/api/type-aliases/Activation",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerConfig",
+              "path": "/api/type-aliases/WorkerConfig",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/ActivationHandler",
-              "path": "/workers/api/type-aliases/ActivationHandler",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerConfigCache",
+              "path": "/api/type-aliases/WorkerConfigCache",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/ActivationSignal",
-              "path": "/workers/api/type-aliases/ActivationSignal",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerConfigCacheStrategy",
+              "path": "/api/type-aliases/WorkerConfigCacheStrategy",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/Context",
-              "path": "/workers/api/type-aliases/Context",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerError",
+              "path": "/api/type-aliases/WorkerError",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/ContextMetadata",
-              "path": "/workers/api/type-aliases/ContextMetadata",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerErrorType",
+              "path": "/api/type-aliases/WorkerErrorType",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/ErrorSignal",
-              "path": "/workers/api/type-aliases/ErrorSignal",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerOutputMode",
+              "path": "/api/type-aliases/WorkerOutputMode",
+              "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/api/type-aliases/GenericSignal",
-              "path": "/workers/api/type-aliases/GenericSignal",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/LogSignal",
-              "path": "/workers/api/type-aliases/LogSignal",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/Signal",
-              "path": "/workers/api/type-aliases/Signal",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/SignalType",
-              "path": "/workers/api/type-aliases/SignalType",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/SystemSignal",
-              "path": "/workers/api/type-aliases/SystemSignal",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerConfig",
-              "path": "/workers/api/type-aliases/WorkerConfig",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerConfigCache",
-              "path": "/workers/api/type-aliases/WorkerConfigCache",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerConfigCacheStrategy",
-              "path": "/workers/api/type-aliases/WorkerConfigCacheStrategy",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerError",
-              "path": "/workers/api/type-aliases/WorkerError",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerErrorType",
-              "path": "/workers/api/type-aliases/WorkerErrorType",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerOutputMode",
-              "path": "/workers/api/type-aliases/WorkerOutputMode",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/api/type-aliases/WorkerResult",
-              "path": "/workers/api/type-aliases/WorkerResult",
-              "sidebar": "workersSidebar"
+              "id": "api/type-aliases/WorkerResult",
+              "path": "/api/type-aliases/WorkerResult",
+              "sidebar": "apiSidebar"
             },
             {
               "id": "workers/background",
@@ -196,7 +142,7 @@
             },
             {
               "id": "workers/index",
-              "path": "/workers/",
+              "path": "/",
               "sidebar": "workersSidebar"
             },
             {
@@ -217,22 +163,16 @@
           ],
           "draftIds": [],
           "sidebars": {
-            "tutorialSidebar": {
-              "link": {
-                "path": "/",
-                "label": "guides/getting-started"
-              }
-            },
             "workersSidebar": {
               "link": {
-                "path": "/workers/",
+                "path": "/",
                 "label": "workers/index"
               }
             },
-            "labsSidebar": {
+            "apiSidebar": {
               "link": {
-                "path": "/labs/",
-                "label": "labs/index"
+                "path": "/api/",
+                "label": "api/README"
               }
             }
           }

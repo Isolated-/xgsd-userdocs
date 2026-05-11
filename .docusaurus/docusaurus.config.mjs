@@ -28,7 +28,7 @@ export default {
       "gitEagerVcs": true
     }
   },
-  "url": "https://docs.xgsd.io",
+  "url": "https://Isolated-.github.io",
   "baseUrl": "/",
   "organizationName": "Isolated-",
   "projectName": "xgsd-userdocs",
@@ -68,35 +68,18 @@ export default {
       "items": [
         {
           "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
+          "sidebarId": "workersSidebar",
           "position": "left",
           "label": "Basics"
         },
         {
-          "type": "docSidebar",
-          "sidebarId": "workersSidebar",
-          "position": "left",
-          "label": "Workers"
-        },
-        {
-          "type": "docSidebar",
-          "sidebarId": "labsSidebar",
-          "position": "left",
-          "label": "Labs"
-        },
-        {
-          "href": "https://github.com/Isolated-/xgsd-cli",
-          "label": "@xgsd/cli",
+          "href": "https://github.com/Isolated-/xgsd-workers",
+          "label": "@xgsd/workers",
           "position": "right"
         },
         {
-          "href": "https://github.com/Isolated-/xgsd-runtime",
-          "label": "@xgsd/runtime",
-          "position": "right"
-        },
-        {
-          "href": "https://github.com/Isolated-/xgsd-engine",
-          "label": "@xgsd/engine",
+          "href": "https://github.com/Isolated-/xgsd-workers",
+          "label": "@xgsd/worker-cli",
           "position": "right"
         }
       ],

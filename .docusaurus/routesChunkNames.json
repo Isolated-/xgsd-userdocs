@@ -42,17 +42,17 @@
       "plugin": "plugin---xgsd-userdocs-docusaurus-debugb-38-656"
     }
   },
-  "/xgsd-userdocs/-512": {
+  "/xgsd-userdocs/-c7c": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---xgsd-userdocs-aba-823"
     }
   },
-  "/xgsd-userdocs/-021": {
+  "/xgsd-userdocs/-288": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---xgsd-userdocs-0-b-4-147"
   },
-  "/xgsd-userdocs/-f2c": {
+  "/xgsd-userdocs/-b4b": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/xgsd-userdocs/api/-9eb": {
@@ -198,6 +198,10 @@
   "/xgsd-userdocs/workers/config-ff0": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---xgsd-userdocs-workers-config-14-b-c89"
+  },
+  "/xgsd-userdocs/workers/docker-e35": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---xgsd-userdocs-workers-dockerbaa-6b7"
   },
   "/xgsd-userdocs/workers/middleware-978": {
     "__comp": "__comp---theme-doc-item-178-a40",

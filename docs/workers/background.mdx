@@ -4,7 +4,7 @@ title: History
 
 :::tip
 
-Unless you want to learn about the history of xGSD and workers you may want our other guides, see [**Overview**](overview).
+Unless you want to learn about the history of xGSD and workers you may want our other guides, see [**Overview**](/workers).
 
 :::
 
@@ -147,15 +147,23 @@ You import `@xgsd/engine` and define what `retry()` looks like without endless c
 
 This was possible with plugins but there was no timeout protection and very minimal protection against failures (e.g. silently drops errors).
 
-It's more flexible too as `ctx` is mutable unlike plugins.
+Plugins were really just reactors as they were unable to share or mutate state.
 
-Take care when mutating `ctx`, the tradeoff for flexibility is often debugging headaches.
+:::warning
+Mutating `ctx` should be done with care.
+
+Otherwise you'll face endless debugging nightmares.
+:::
 
 ---
 
 ## Challenges/Learnings
 
-When designing workers, I addressed:
+I've compiled some of the learnings from xGSD for anyone trying to make something like **Workers**.
+
+I hope it helps.
+
+---
 
 - **Over-abstraction and incorrect abstraction boundaries**
   - Extensions (plugins, hooks, lifecycle systems) introduced unclear execution order and hidden shared state.
@@ -190,43 +198,5 @@ When designing workers, I addressed:
 
 ---
 
-## Full Comparison
-
-A non-exhaustive comparison between the runtime vs workers.
-
-| **Feature**                      | **`@xgsd/runtime`**      | **`@xgsd/workers`**       |
-| -------------------------------- | ------------------------ | ------------------------- |
-| **Local-first**                  | Yes                      | Yes                       |
-| **Primary model**                | Workflow orchestration   | Isolated worker execution |
-| **Execution style**              | Project/runtime driven   | Request/task driven       |
-| **Projects**                     | Yes                      | No                        |
-| **Config scope**                 | Project-level            | Worker-level              |
-| **Plugins/extensions**           | Yes                      | No                        |
-| **Event system**                 | Yes                      | No                        |
-| **Middleware**                   | No                       | Core abstraction          |
-| **Retries/backoff**              | Built-in                 | User-defined if needed    |
-| **Hard TTL support**             | Complex/shared lifecycle | Native/simple             |
-| **Process isolation**            | Optional/configurable    | Primary model             |
-| **In-process mode**              | Yes                      | No                        |
-| **Child-process execution**      | Supported                | Core                      |
-| **API/server workloads**         | Secondary                | Primary                   |
-| **Queue/job workloads**          | Supported                | Natural fit               |
-| **Long-running orchestration**   | Yes                      | No                        |
-| **Request/response lifecycle**   | Not primary              | Primary                   |
-| **Cold start performance**       | Moderate                 | Fast                      |
-| **Memory footprint**             | Higher                   | Low                       |
-| **Startup complexity**           | Higher                   | Minimal                   |
-| **Runtime extensibility**        | High                     | Intentionally minimal     |
-| **Event coordination**           | Yes                      | No                        |
-| **Execution observability**      | Rich/runtime-wide        | Per-worker                |
-| **Failure isolation**            | Mixed depending on mode  | Strong                    |
-| **Serverless-style workloads**   | Possible                 | Designed for              |
-| **AWS Lambda style usage**       | Awkward                  | Natural                   |
-| **Edge/worker deployment model** | Less suitable            | Suitable                  |
-| **Default mental model**         | Project/blocks           | Worker/function           |
-| **Shared foundation**            | `@xgsd/engine`           | `@xgsd/engine`            |
-
----
-
-<ApiExample.Footer since="@xgsd/workers@v0.1.0" experimental/>
+<ApiExample.Footer since="@xgsd/workers@0.1.0" experimental/>
 </ApiExample>

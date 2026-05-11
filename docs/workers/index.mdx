@@ -9,7 +9,7 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 :::tip
 
-**Workers** run your code in a container (or isolation) to handles most failures for you.
+**Workers** run your Node.js code in a container that handle most failures for you.
 
 This reduces development time and allows you to focus on _building_.
 
@@ -22,33 +22,33 @@ will no longer receive updates.
 
 :::
 
-**Workers** is built on `@xgsd/engine` — the same core used by `@xgsd/runtime` — and incorporates lessons learned from years of development.
+**Workers** runs your code anywhere quickly and without cloud setup.
 
 When paired with your own transporter, it effectively gives you a serverless-style environment that runs across your local network.
 
 Just getting started? Install the [**Worker CLI**](https://www.npmjs.com/package/@xgsd/worker-cli) to speed up development.
 
-View the repo if you need help implementing `@xgsd/workers` in your app.
-
-### Terms
+View the repo if you need help integrating `@xgsd/workers` with your app.
 
 ---
 
-| Term                             | Context                                                            |
-| -------------------------------- | ------------------------------------------------------------------ |
-| **Workers**                      | Refers to the runtime as a whole (packaged as `@xgsd/workers`)     |
-| **Worker**                       | This is everything inside the container - your code and middleware |
-| **Container**                    | Bounded runtime environment/sandbox                                |
-| **Middleware**                   | Think Express/Koa middleware, it's very familiar                   |
-| **Signals**                      | Runtime generated feedback - logs, errors, other events            |
-| **Transport**                    | External integration layer - http, bullmq, etc                     |
-| **Watchdog** or **Worker Guard** | Container policy enforcement/hard limits                           |
+### Terms
+
+| Term                          | Context                                                            |
+| ----------------------------- | ------------------------------------------------------------------ |
+| **Workers**                   | Refers to the runtime as a whole (packaged as `@xgsd/workers`)     |
+| **Worker**                    | This is everything inside the container - your code and middleware |
+| **Container**                 | Bounded runtime environment/sandbox                                |
+| **Middleware**                | Think Express/Koa middleware, it's very familiar                   |
+| **Signals**                   | Runtime generated feedback - logs, errors, other events            |
+| **Transport**                 | External integration layer - http, bullmq, etc                     |
+| **Worker guard** or **Guard** | Container policy enforcement/hard limits                           |
 
 ---
 
 ## Install
 
-Install the `@xgsd/workers` package with npm or Yarn:
+Install `@xgsd/workers` with npm or Yarn:
 
 ```bash
 # using npm
@@ -81,11 +81,9 @@ export default async function worker() {
 }
 ```
 
-`worker.js` can be anything, just update your `entry` in `worker.json`.
+Then somewhere in your transport layer (your app):
 
-Somewhere in your transport layer:
-
-```js title="myapp.js"
+```js title="app.js"
 import { createHandler } from "@xgsd/workers";
 
 // this will depend on your app needs
@@ -104,7 +102,17 @@ async function callback(req, res) {
 }
 ```
 
-You can install `@xgsd/worker-cli` for HTTP + dev/test transports (not intended for production use).
+Using `@xgsd/worker-cli`:
+
+```bash
+worker run -c worker.json
+```
+
+Or serve it on `http://localhost:3000`:
+
+```bash
+worker up -c worker.json
+```
 
 ---
 

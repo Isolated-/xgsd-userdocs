@@ -190,6 +190,11 @@
               "sidebar": "workersSidebar"
             },
             {
+              "id": "workers/docker",
+              "path": "/xgsd-userdocs/workers/docker",
+              "sidebar": "workersSidebar"
+            },
+            {
               "id": "workers/index",
               "path": "/xgsd-userdocs/workers/",
               "sidebar": "workersSidebar"

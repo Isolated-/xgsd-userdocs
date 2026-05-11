@@ -1,0 +1,66 @@
+name: Deploy Versioned Docs
+
+on:
+  release:
+    types: [released]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ----------------------------
+      # Checkout repository
+      # ----------------------------
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ----------------------------
+      # Setup Node.js
+      # ----------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+
+      # ----------------------------
+      # Install dependencies
+      # ----------------------------
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # ----------------------------
+      # Extract version from tag
+      # Example:
+      # v1.0.0-beta.0 -> 1.0.0-beta.0
+      # ----------------------------
+      - name: Extract version
+        id: version
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      # ----------------------------
+      # Create Docusaurus version
+      # ----------------------------
+      - name: Create docs version
+        run: yarn docusaurus docs:version ${{ steps.version.outputs.version }}
+
+      # ----------------------------
+      # Build docs
+      # ----------------------------
+      - name: Build docs
+        run: yarn build
+
+      # ----------------------------
+      # Deploy to GitHub Pages
+      # ----------------------------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

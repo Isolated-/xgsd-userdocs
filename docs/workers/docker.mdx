@@ -7,7 +7,11 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 <ApiExample>
 
-**Workers** are platform agnostic but setting them up for a Docker environment is easy.
+Set up Docker and get **Workers** running _anywhere_.
+
+We'll never add any direct support for Docker (unlike old xGSD), but **Workers** will always be platform-agnostic so it shouldn't take much effort to get up and running.
+
+This guide gives you a basic idea of how to do it.
 
 ## Dockerfile
 
@@ -30,6 +34,8 @@ EXPOSE 3000
 
 CMD ["worker", "up", "-c", "worker.json"]
 ```
+
+If you've used Docker, you've already done this bit a thousand times - just ensure `worker.json` matches your config.
 
 ## Build
 
@@ -99,7 +105,28 @@ Or wrapped:
 }
 ```
 
-Here's an script I use to send data to my worker:
+## Script
+
+Here's a script that builds the image + starts the container:
+
+```bash title="docker"
+# build image
+docker build -t my-worker .
+
+# run in background
+docker run -d \
+  --name my-worker \
+  -p 3000:3000 \
+  -u $(id -u):$(id -g) \
+  -v $(pwd):/app \
+  my-worker
+```
+
+Make it executable with `chmod +x ./docker`
+
+And then run it with `./docker`.
+
+And here's an script you can use to call your worker (I use this for testing):
 
 ```bash title="test"
 #!/usr/bin/env bash
@@ -130,6 +157,8 @@ echo "saved response to $DIST/output.json"
 ```
 
 Make it executable with `chmod +x ./test`.
+
+Then run it with `./test`.
 
 <ApiExample.Footer since="@xgsd/workers@0.1.0" experimental/>
 </ApiExample>

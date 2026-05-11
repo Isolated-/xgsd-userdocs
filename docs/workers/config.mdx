@@ -1,0 +1,51 @@
+---
+title: Config
+sidebar_position: 1
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+## Options
+
+Some of these may not be fully supported yet.
+
+| Property                 | Type        | Default     | Note                                                       |
+| ------------------------ | ----------- | ----------- | ---------------------------------------------------------- |
+| `entry`                  | **string**  | none        | **does not** default to `main` in `package.json`           |
+| `dist`                   | **string**  | `.xgsd`     | built files/events/activation logs go here                 |
+| `bundler.enabled`        | **boolean** | `undefined` | uses esbuild to prebuild code (increases portability)      |
+| `bundler.cache.strategy` | **enum**    | `never`     | cache `bundle.js` to speed up runs                         |
+| `limits.ttl`             | **number**  | `1000`      | ttl for process (hard limit, will ungracefully exit)       |
+| `limits.memory`          | **number**  | `128`       | limit memory usage (uses heap usage)                       |
+| `limits.concurrency`     | **number**  | `32`        | prevents too many processes spawning (not implemented yet) |
+| `output.mode`            | **enum**    | `wrapped`   | output format (include/exclude schema)                     |
+
+### Example
+
+An example `worker.json`:
+
+```json title="worker.json"
+{
+  "entry": "worker.js",
+  "dist": ".xgsd",
+  "bundler": {
+    "enabled": false,
+    "cache": {
+      "strategy": "change"
+    }
+  },
+  "limits": {
+    "ttl": 10000,
+    "memory": 64,
+    "concurrency": 32
+  },
+  "output": {
+    "mode": "wrapped"
+  }
+}
+```
+
+<ApiExample.Footer since="@xgsd/workers@0.1.0" experimental/>
+</ApiExample>

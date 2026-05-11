@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/xgsd-userdocs/',
-    component: ComponentCreator('/xgsd-userdocs/', '5f9'),
+    component: ComponentCreator('/xgsd-userdocs/', '512'),
     routes: [
       {
         path: '/xgsd-userdocs/',
-        component: ComponentCreator('/xgsd-userdocs/', 'aa1'),
+        component: ComponentCreator('/xgsd-userdocs/', '021'),
         routes: [
           {
             path: '/xgsd-userdocs/',
-            component: ComponentCreator('/xgsd-userdocs/', 'ba0'),
+            component: ComponentCreator('/xgsd-userdocs/', 'f2c'),
             routes: [
               {
                 path: '/xgsd-userdocs/api/',
@@ -109,14 +109,158 @@ export default [
                 sidebar: "labsSidebar"
               },
               {
+                path: '/xgsd-userdocs/workers/',
+                component: ComponentCreator('/xgsd-userdocs/workers/', '6d6'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/', '26d'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/enumerations/WorkerErrorCode',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/enumerations/WorkerErrorCode', '8af'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/functions/createHandler',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/functions/createHandler', 'aa0'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/functions/runWorker',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/functions/runWorker', '761'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/globals',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/globals', 'e1a'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/Activation',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/Activation', '0c1'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/ActivationHandler',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/ActivationHandler', '2c9'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/ActivationSignal',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/ActivationSignal', '9e7'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/Context',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/Context', '5ff'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/ContextMetadata',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/ContextMetadata', '250'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/ErrorSignal',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/ErrorSignal', 'fc0'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/GenericSignal',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/GenericSignal', '524'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/LogSignal',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/LogSignal', '500'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/Signal',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/Signal', 'b58'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/SignalType',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/SignalType', '123'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/SystemSignal',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/SystemSignal', 'e10'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerConfig',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerConfig', '561'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCache',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCache', 'fee'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCacheStrategy',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCacheStrategy', '03e'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerError',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerError', 'ee8'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerErrorType',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerErrorType', 'e37'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerOutputMode',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerOutputMode', '86f'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
+                path: '/xgsd-userdocs/workers/api/type-aliases/WorkerResult',
+                component: ComponentCreator('/xgsd-userdocs/workers/api/type-aliases/WorkerResult', '7e0'),
+                exact: true,
+                sidebar: "workersSidebar"
+              },
+              {
                 path: '/xgsd-userdocs/workers/background',
                 component: ComponentCreator('/xgsd-userdocs/workers/background', '505'),
                 exact: true,
                 sidebar: "workersSidebar"
               },
               {
-                path: '/xgsd-userdocs/workers/experiments',
-                component: ComponentCreator('/xgsd-userdocs/workers/experiments', 'e78'),
+                path: '/xgsd-userdocs/workers/config',
+                component: ComponentCreator('/xgsd-userdocs/workers/config', 'ff0'),
                 exact: true,
                 sidebar: "workersSidebar"
               },
@@ -127,8 +271,8 @@ export default [
                 sidebar: "workersSidebar"
               },
               {
-                path: '/xgsd-userdocs/workers/overview',
-                component: ComponentCreator('/xgsd-userdocs/workers/overview', '735'),
+                path: '/xgsd-userdocs/workers/signals',
+                component: ComponentCreator('/xgsd-userdocs/workers/signals', '92d'),
                 exact: true,
                 sidebar: "workersSidebar"
               },

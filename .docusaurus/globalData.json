@@ -65,8 +65,133 @@
               "sidebar": "labsSidebar"
             },
             {
+              "id": "workers/api/enumerations/WorkerErrorCode",
+              "path": "/xgsd-userdocs/workers/api/enumerations/WorkerErrorCode",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/functions/createHandler",
+              "path": "/xgsd-userdocs/workers/api/functions/createHandler",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/functions/runWorker",
+              "path": "/xgsd-userdocs/workers/api/functions/runWorker",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/globals",
+              "path": "/xgsd-userdocs/workers/api/globals",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/README",
+              "path": "/xgsd-userdocs/workers/api/",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/Activation",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/Activation",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/ActivationHandler",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/ActivationHandler",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/ActivationSignal",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/ActivationSignal",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/Context",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/Context",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/ContextMetadata",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/ContextMetadata",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/ErrorSignal",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/ErrorSignal",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/GenericSignal",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/GenericSignal",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/LogSignal",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/LogSignal",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/Signal",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/Signal",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/SignalType",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/SignalType",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/SystemSignal",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/SystemSignal",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerConfig",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerConfig",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerConfigCache",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCache",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerConfigCacheStrategy",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerConfigCacheStrategy",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerError",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerError",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerErrorType",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerErrorType",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerOutputMode",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerOutputMode",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/api/type-aliases/WorkerResult",
+              "path": "/xgsd-userdocs/workers/api/type-aliases/WorkerResult",
+              "sidebar": "workersSidebar"
+            },
+            {
               "id": "workers/background",
               "path": "/xgsd-userdocs/workers/background",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/config",
+              "path": "/xgsd-userdocs/workers/config",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/index",
+              "path": "/xgsd-userdocs/workers/",
               "sidebar": "workersSidebar"
             },
             {
@@ -75,13 +200,8 @@
               "sidebar": "workersSidebar"
             },
             {
-              "id": "workers/overview",
-              "path": "/xgsd-userdocs/workers/overview",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/tests",
-              "path": "/xgsd-userdocs/workers/experiments",
+              "id": "workers/signals",
+              "path": "/xgsd-userdocs/workers/signals",
               "sidebar": "workersSidebar"
             },
             {
@@ -100,8 +220,8 @@
             },
             "workersSidebar": {
               "link": {
-                "path": "/xgsd-userdocs/workers/overview",
-                "label": "workers/overview"
+                "path": "/xgsd-userdocs/workers/",
+                "label": "workers/index"
               }
             },
             "labsSidebar": {

@@ -1,0 +1,182 @@
+---
+title: Getting started
+sidebar_position: 0
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+:::tip
+
+**Workers** run your code in a container (or isolation) to handles most failures for you.
+
+This reduces development time and allows you to focus on _building_.
+
+If you're using xGSD — you should migrate as:
+
+- `@xgsd/cli`
+- `@xgsd/runtime`
+
+will no longer receive updates.
+
+:::
+
+**Workers** is built on `@xgsd/engine` — the same core used by `@xgsd/runtime` — and incorporates lessons learned from years of development.
+
+When paired with your own transporter, it effectively gives you a serverless-style environment that runs across your local network.
+
+Just getting started? Install the [**Worker CLI**](https://www.npmjs.com/package/@xgsd/worker-cli) to speed up development.
+
+View the repo if you need help implementing `@xgsd/workers` in your app.
+
+### Terms
+
+---
+
+| Term                             | Context                                                            |
+| -------------------------------- | ------------------------------------------------------------------ |
+| **Workers**                      | Refers to the runtime as a whole (packaged as `@xgsd/workers`)     |
+| **Worker**                       | This is everything inside the container - your code and middleware |
+| **Container**                    | Bounded runtime environment/sandbox                                |
+| **Middleware**                   | Think Express/Koa middleware, it's very familiar                   |
+| **Signals**                      | Runtime generated feedback - logs, errors, other events            |
+| **Transport**                    | External integration layer - http, bullmq, etc                     |
+| **Watchdog** or **Worker Guard** | Container policy enforcement/hard limits                           |
+
+---
+
+## Install
+
+Install the `@xgsd/workers` package with npm or Yarn:
+
+```bash
+# using npm
+npm i @xgsd/workers @xgsd/engine --save
+
+# using yarn
+yarn add @xgsd/workers @xgsd/engine
+```
+
+---
+
+## Quickstart
+
+Create a new folder for your code:
+
+```bash
+mkdir my-worker
+cd my-worker
+```
+
+Create a `worker.js`:
+
+```js title="worker.js"
+export default async function worker() {
+  const url = "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London";
+
+  const res = await fetch(url);
+
+  return res.json();
+}
+```
+
+`worker.js` can be anything, just update your `entry` in `worker.json`.
+
+Somewhere in your transport layer:
+
+```js title="myapp.js"
+import { createHandler } from "@xgsd/workers";
+
+// this will depend on your app needs
+const cwd = process.cwd();
+const handler = createHandler({
+  entry: "worker.js",
+});
+
+// inside your transport (e.g. Express route):
+async function callback(req, res) {
+  return handler({
+    data: req.data,
+    env,
+    cwd,
+  });
+}
+```
+
+You can install `@xgsd/worker-cli` for HTTP + dev/test transports (not intended for production use).
+
+---
+
+## Schema
+
+Workers are designed around a schema:
+
+```json title="schema.json"
+{
+  "version": "v1",
+  "ok": true,
+  "result": {
+    // data
+  },
+  "error": {
+    // error
+  },
+  "duration": 0
+}
+```
+
+Return values and errors will be wrapped and returned in this format.
+
+Set `output.mode` to `raw` to return unwrapped values/errors.
+
+---
+
+## Signals
+
+When workers run they produce a stream of **Signals**.
+
+**Signals** are logs, errors, activations, system events, and anything else that is produced as a side effect of your worker running.
+
+The format is consistent:
+
+```json
+{
+  "ctx": "{id}",
+  "type": "log|error|activation|system|generic",
+  "message": "{message}",
+  "meta": {},
+  "timestamp": 1778318464737
+}
+```
+
+for all **Signals** and `meta` reflects any signal-specific data.
+
+Create your own **Signals** by logging to `stdout` or `stderr`.
+
+See [**Signals**](signals) to learn more.
+
+---
+
+## Config
+
+See [**Config**](config) to learn more.
+
+---
+
+## Middleware
+
+See [**Middleware**](middleware) to learn more.
+
+---
+
+## Troubleshooting
+
+See [**Troubleshooting**](troubleshooting) to learn more.
+
+- [**Report a problem**](https://github.com/Isolated-/xgsd-workers/issues/new)
+
+---
+
+<ApiExample.Footer since="@xgsd/workers@v0.1.0" experimental/>
+</ApiExample>

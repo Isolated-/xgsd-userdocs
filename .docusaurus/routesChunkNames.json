@@ -1,118 +1,75 @@
 {
-  "/__docusaurus/debug-5ff": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/config-5ba": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/content-a2b": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    },
-    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
-  },
-  "/__docusaurus/debug/globalData-c3c": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/metadata-156": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/registry-88c": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/routes-000": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
   "/-966": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "plugin---aba-d70"
+      "plugin": "aba21aa0"
     }
   },
   "/-de8": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---22-d-307"
+    "__comp": "a7bd4aaa",
+    "__props": "22dd74f7"
   },
   "/-92b": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
+    "__comp": "a94703ab"
   },
   "/api/-fa3": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-982-b6d"
+    "__comp": "17896441",
+    "content": "982ac012"
   },
   "/api/enumerations/WorkerErrorCode-92c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-enumerations-worker-error-code-668-376"
+    "__comp": "17896441",
+    "content": "66896ed6"
   },
   "/api/functions/createTransport-17f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-functions-create-transportb-28-71f"
+    "__comp": "17896441",
+    "content": "b287267c"
   },
   "/api/globals-1f1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-globals-2-b-9-f74"
+    "__comp": "17896441",
+    "content": "2b9e9ebb"
   },
   "/api/type-aliases/StreamLike-c65": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-stream-likebdd-d2f"
+    "__comp": "17896441",
+    "content": "bddd9458"
   },
   "/api/type-aliases/WorkerError-5d2": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-errorde-1-2da"
+    "__comp": "17896441",
+    "content": "de17f4e6"
   },
   "/api/variables/version-4c3": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-variables-version-62-a-af4"
+    "__comp": "17896441",
+    "content": "62a7103e"
   },
   "/workers/background-c99": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-backgroundbb-0-201"
+    "__comp": "17896441",
+    "content": "bb04b399"
   },
   "/workers/docker-b45": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-dockerbaa-10d"
+    "__comp": "17896441",
+    "content": "baa4c8ed"
   },
   "/workers/middleware-cf1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-middleware-582-61f"
+    "__comp": "17896441",
+    "content": "582b3337"
   },
   "/workers/options-4a1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-options-1-cb-f85"
+    "__comp": "17896441",
+    "content": "1cbf172d"
   },
   "/workers/signals-674": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-signals-521-1c2"
+    "__comp": "17896441",
+    "content": "521df336"
   },
   "/workers/transports-a8c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-transportscf-8-14c"
+    "__comp": "17896441",
+    "content": "cf8174a8"
   },
   "/workers/troubleshooting-a72": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-troubleshooting-626-e90"
+    "__comp": "17896441",
+    "content": "626f4999"
   },
   "/-843": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---b-70-b1e"
+    "__comp": "17896441",
+    "content": "b70e12b9"
   }
 }

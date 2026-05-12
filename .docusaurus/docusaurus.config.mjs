@@ -32,7 +32,7 @@ export default {
   "baseUrl": "/",
   "organizationName": "Isolated-",
   "projectName": "xgsd-userdocs",
-  "onBrokenLinks": "ignore",
+  "onBrokenLinks": "throw",
   "i18n": {
     "defaultLocale": "en",
     "locales": [

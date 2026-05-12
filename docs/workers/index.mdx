@@ -114,7 +114,7 @@ When workers run they produce a stream of **Signals**.
 
 **Signals** are logs, errors, activations, system events, and anything else that is produced as a side effect of your worker running.
 
-The format is consistent:
+The format is consistent and `meta` reflects any signal-specific data.
 
 ```json
 {
@@ -125,8 +125,6 @@ The format is consistent:
   "timestamp": 1778318464737
 }
 ```
-
-for all **Signals** and `meta` reflects any signal-specific data.
 
 Create your own **Signals** by logging to `stdout` or `stderr`.
 

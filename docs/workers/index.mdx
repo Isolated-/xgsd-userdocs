@@ -10,9 +10,11 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 :::tip
 
-**Workers.js** runs your code in a container that handle most failures for you.
+**Workers.js** runs your code in isolated processes for predictable execution.
 
 This reduces development time and allows you to focus on _building_.
+
+When paired with your own transporter — it effectively gives you a serverless-style environment that runs across your local network.
 
 If you're using xGSD — you should migrate as:
 
@@ -22,24 +24,6 @@ If you're using xGSD — you should migrate as:
 will no longer receive updates.
 
 :::
-
-**Workers.js** runs your code anywhere quickly and without cloud setup.
-
-When paired with your own transporter, it effectively gives you a serverless-style environment that runs across your local network.
-
----
-
-### Terms
-
-| Term                          | Context                                                            |
-| ----------------------------- | ------------------------------------------------------------------ |
-| **Workers**                   | Refers to the runtime as a whole (packaged as `@xgsd/workers`)     |
-| **Worker**                    | This is everything inside the container - your code and middleware |
-| **Process** or **Container**  | Bounded runtime environment/sandbox                                |
-| **Middleware**                | Think Express/Koa middleware, it's very familiar                   |
-| **Signals**                   | Runtime generated feedback - logs, errors, other events            |
-| **Transport**                 | External integration layer - http, bullmq, etc                     |
-| **Worker guard** or **Guard** | Container policy enforcement/hard limits                           |
 
 ---
 
@@ -147,6 +131,68 @@ for all **Signals** and `meta` reflects any signal-specific data.
 Create your own **Signals** by logging to `stdout` or `stderr`.
 
 See [**Signals**](/workers/signals) to learn more.
+
+---
+
+## Middleware
+
+You can add middleware that is executed before and after your worker runs.
+
+This is similar to Express or Koa middleware.
+
+Here's an example:
+
+```js title="worker.js"
+const a = (ctx, next) => {
+  console.log('a')
+  await next()
+  console.log('a')
+}
+
+const b = (ctx, next) => {
+  console.log('b')
+  await next()
+  console.log('b')
+}
+
+const middleware = () => [a, b]
+
+export default function() {
+  console.log('worker')
+}
+```
+
+If you run this worker — you'll get:
+
+```text
+a
+b
+worker
+b
+a
+```
+
+This is how you take a simple worker function and extend it with loggers, retry logic, validation, and more.
+
+See [**Middleware**](/workers/middleware) for more information.
+
+---
+
+## Terms
+
+Here's how we describe **Workers.js**:
+
+| Term                          | Context                                                            |
+| ----------------------------- | ------------------------------------------------------------------ |
+| **Workers** or **Workers.js** | Refers to the runtime as a whole (packaged as `@xgsd/workers`)     |
+| **Worker**                    | This is everything inside the container - your code and middleware |
+| **Process** or **Container**  | Bounded runtime environment/sandbox                                |
+| **Middleware**                | Think Express/Koa middleware, it's very familiar                   |
+| **Signals**                   | Runtime generated feedback - logs, errors, other events            |
+| **Transport**                 | External integration layer - http, bullmq, etc                     |
+| **Worker guard** or **Guard** | Container policy enforcement/hard limits                           |
+
+---
 
 <ApiExample.Footer since="v1-beta" />
 </ApiExample>

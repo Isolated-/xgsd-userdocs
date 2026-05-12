@@ -47,7 +47,8 @@ export default {
       {
         "docs": {
           "sidebarPath": "./sidebars.ts",
-          "routeBasePath": "/"
+          "routeBasePath": "/",
+          "editUrl": "https://github.com/Isolated-/xgsd-userdocs/tree/main/"
         },
         "blog": false,
         "theme": {

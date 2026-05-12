@@ -61,16 +61,11 @@ If you're debugging middleware failures then register them in layers to isolate 
 
 ### System
 
-System errors are thrown when something goes wrong _before_ or _after_ your code has finished running.
+See [**WorkerErrorCode**](/api/enumerations/WorkerErrorCode) for what errors are thrown and when.
 
-- `CODE_WORKER_GUARD` - this error is thrown whenever your process limits are exceeded (`ttl`/`memory`).
-- `CODE_INVALID_ENTRY_FILE` - thrown when your entry file is missing, or an error prevents load.
-- `CODE_INVALID_DEFAULT_FUNCTION` - thrown when you don't export a default function, or if your default export is not a function.
-- `CODE_INVALID_MIDDLEWARE_FUNCTION` - thrown when one or more of your middleware functions are invalid (e.g. not functions).
-- `CODE_BUNDLE_ERROR` - thrown when bundling errors occur (currently unused).
-- `CODE_FATAL_ERROR` - thrown when an unhandled exception/rejection is caught (currently unused)
+Most system errors result in a rejection so you should wrap `await transport()` in a try/catch block.
 
-These will be tagged with `{type:"user|system|unknown"}`.
+This is intentional as it prevents leaking system failures to users of your apps.
 
 ### Usercode
 
@@ -99,58 +94,15 @@ These will be untagged and instead make best effort to normalise and serialise t
 
 ---
 
-## Unable to resolve dependencies
-
-If you're seeing "cannot resolve X" for:
-
-- `esbuild`
-- `@xgsd/engine`
-- `@xgsd/workers` (if using `@xgsd/woker-cli`)
-
-Then you need to install the missing dependency in the path of your worker:
-
-```bash
-yarn add @xgsd/engine @xgsd/workers esbuild
-```
-
-You'll need to do this for each worker as global import isn't supported.
-
-This is an intentional constraint as it eliminates trying to determine where something is imported from.
-
 ### ESM/CommonJS
 
-If you're having compatibility issues with ESM/CommonJS consider activating the bundler:
+We only test and build against ESM.
 
-```json title="worker.json"
-{
-  "bunder": {
-    "enabled": true
-  }
-}
-```
+If you're using CommonJS consider updating your project to ESM.
 
-This should elimate most problems ([**please report issues here**](https://github.com/Isolated-/xgsd-workers/issues/new)).
+You _may_ be able to use CommonJS but it's not recommended.
 
----
-
-## Bundler
-
-When `bundler.enabled = true` in your `worker.json` file then your entry file will be bundled with `esbuild`.
-
-The bundler serves two purposes:
-
-- **Increases portability** by outputting a consistent format (ESM)
-- **Reduces overhead** for TypeScript by turning TypeScript -> ESM to avoid expensive JIT compilation.
-
-[**Having problems?**](https://github.com/Isolated-/xgsd-workers/issues/new)
-
-### Bundle not updating/refreshing
-
-If you've set your cache strategy to `always` then the cache value will always be returned regardless of how long it's been kept or if anything has changed.
-
-If your strategy is `change` and your bundle doesn't refresh then:
-
-1. You may not be using the right extension (needs to be `.js/.ts`) - change detection is primitive and only supports `.js` and `.ts` to avoid hashing _everything_.
+If you're having issues with ESM [**please report issues here**](https://github.com/Isolated-/xgsd-workers/issues/new).
 
 ---
 
@@ -169,7 +121,26 @@ If this is unexpected, the default limits are:
 }
 ```
 
-Override the defaults in your `worker.json` file.
+:::info
+By default **heap usage** is used when limiting memory.
+
+You can use:
+
+```js
+const transport = createTransport({
+  entry: "./worker.js",
+  limits: {
+    memory: {
+      limitMB: 64,
+      strategy: "rss",
+    },
+  },
+});
+```
+
+If you prefer RSS.
+
+:::
 
 ---
 
@@ -184,8 +155,16 @@ A trade off to using child processes is that information isn't passed in like ar
 
 As a result, values _must_ be serialised or they'll be reduced to `{}`.
 
+### Errors
+
+As of **v1-beta** a fatal error is thrown if your data cannot be serialised.
+
+The error code for these errors is `CODE_INVALID_DATA` and this is thrown if `result` or `error` cannot be serialised.
+
+If you see this error you should ensure your worker and middleware functions aren't returning any non-serialisable values.
+
 ---
 
-<ApiExample.Footer since="@xgsd/workers@v0.1.0" experimental />
+<ApiExample.Footer since="v1-beta" />
 
 </ApiExample>

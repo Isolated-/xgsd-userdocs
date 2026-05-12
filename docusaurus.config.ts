@@ -41,6 +41,7 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           routeBasePath: "/",
+          editUrl: "https://github.com/Isolated-/xgsd-userdocs/tree/main/",
         },
         blog: false,
         theme: {

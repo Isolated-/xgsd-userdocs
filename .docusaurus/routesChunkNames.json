@@ -42,17 +42,17 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/-f3d": {
+  "/-966": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-f21": {
+  "/-de8": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-110": {
+  "/-92b": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/api/-fa3": {
@@ -63,93 +63,21 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-enumerations-worker-error-code-668-376"
   },
-  "/api/functions/createHandler-59f": {
+  "/api/functions/createTransport-17f": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-functions-create-handler-3-b-8-559"
-  },
-  "/api/functions/runWorker-ebb": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-functions-run-worker-7-ec-827"
+    "content": "content---api-functions-create-transportb-28-71f"
   },
   "/api/globals-1f1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-globals-2-b-9-f74"
   },
-  "/api/type-aliases/Activation-f61": {
+  "/api/type-aliases/StreamLike-c65": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-activation-4-cc-b76"
-  },
-  "/api/type-aliases/ActivationHandler-1cd": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-activation-handler-6-b-7-a57"
-  },
-  "/api/type-aliases/ActivationSignal-353": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-activation-signalf-59-45c"
-  },
-  "/api/type-aliases/Context-62d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-context-9-fb-72f"
-  },
-  "/api/type-aliases/ContextMetadata-0c0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-context-metadatae-76-813"
-  },
-  "/api/type-aliases/ErrorSignal-5ae": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-error-signal-29-b-8e3"
-  },
-  "/api/type-aliases/GenericSignal-447": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-generic-signal-0-bd-da8"
-  },
-  "/api/type-aliases/LogSignal-23b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-log-signalaaf-f5c"
-  },
-  "/api/type-aliases/MetricSignal-71b": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-metric-signalaf-7-08e"
-  },
-  "/api/type-aliases/Signal-6a5": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-signal-978-aa6"
-  },
-  "/api/type-aliases/SignalType-a6f": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-signal-type-9-a-8-e33"
-  },
-  "/api/type-aliases/SystemSignal-4c9": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-system-signalb-8-b-bcd"
-  },
-  "/api/type-aliases/WorkerConfig-ece": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-confige-4-f-494"
-  },
-  "/api/type-aliases/WorkerConfigCache-b93": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-config-cachecc-4-652"
-  },
-  "/api/type-aliases/WorkerConfigCacheStrategy-d49": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-config-cache-strategye-80-362"
+    "content": "content---api-type-aliases-stream-likebdd-d2f"
   },
   "/api/type-aliases/WorkerError-5d2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-type-aliases-worker-errorde-1-2da"
-  },
-  "/api/type-aliases/WorkerErrorType-82e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-error-typec-1-d-1d0"
-  },
-  "/api/type-aliases/WorkerOutputMode-a90": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-output-mode-17-e-b7b"
-  },
-  "/api/type-aliases/WorkerResult-6de": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---api-type-aliases-worker-resultd-06-dde"
   },
   "/api/variables/version-4c3": {
     "__comp": "__comp---theme-doc-item-178-a40",
@@ -159,10 +87,6 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---workers-backgroundbb-0-201"
   },
-  "/workers/config-e7e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-config-14-b-6ed"
-  },
   "/workers/docker-b45": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---workers-dockerbaa-10d"
@@ -171,9 +95,17 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---workers-middleware-582-61f"
   },
+  "/workers/options-4a1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-options-1-cb-f85"
+  },
   "/workers/signals-674": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---workers-signals-521-1c2"
+  },
+  "/workers/transports-a8c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-transportscf-8-14c"
   },
   "/workers/troubleshooting-a72": {
     "__comp": "__comp---theme-doc-item-178-a40",

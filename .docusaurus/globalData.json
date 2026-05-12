@@ -16,13 +16,8 @@
               "sidebar": "apiSidebar"
             },
             {
-              "id": "api/functions/createHandler",
-              "path": "/api/functions/createHandler",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/functions/runWorker",
-              "path": "/api/functions/runWorker",
+              "id": "api/functions/createTransport",
+              "path": "/api/functions/createTransport",
               "sidebar": "apiSidebar"
             },
             {
@@ -36,98 +31,13 @@
               "sidebar": "apiSidebar"
             },
             {
-              "id": "api/type-aliases/Activation",
-              "path": "/api/type-aliases/Activation",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/ActivationHandler",
-              "path": "/api/type-aliases/ActivationHandler",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/ActivationSignal",
-              "path": "/api/type-aliases/ActivationSignal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/Context",
-              "path": "/api/type-aliases/Context",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/ContextMetadata",
-              "path": "/api/type-aliases/ContextMetadata",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/ErrorSignal",
-              "path": "/api/type-aliases/ErrorSignal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/GenericSignal",
-              "path": "/api/type-aliases/GenericSignal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/LogSignal",
-              "path": "/api/type-aliases/LogSignal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/MetricSignal",
-              "path": "/api/type-aliases/MetricSignal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/Signal",
-              "path": "/api/type-aliases/Signal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/SignalType",
-              "path": "/api/type-aliases/SignalType",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/SystemSignal",
-              "path": "/api/type-aliases/SystemSignal",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/WorkerConfig",
-              "path": "/api/type-aliases/WorkerConfig",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/WorkerConfigCache",
-              "path": "/api/type-aliases/WorkerConfigCache",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/WorkerConfigCacheStrategy",
-              "path": "/api/type-aliases/WorkerConfigCacheStrategy",
+              "id": "api/type-aliases/StreamLike",
+              "path": "/api/type-aliases/StreamLike",
               "sidebar": "apiSidebar"
             },
             {
               "id": "api/type-aliases/WorkerError",
               "path": "/api/type-aliases/WorkerError",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/WorkerErrorType",
-              "path": "/api/type-aliases/WorkerErrorType",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/WorkerOutputMode",
-              "path": "/api/type-aliases/WorkerOutputMode",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "api/type-aliases/WorkerResult",
-              "path": "/api/type-aliases/WorkerResult",
               "sidebar": "apiSidebar"
             },
             {
@@ -138,11 +48,6 @@
             {
               "id": "workers/background",
               "path": "/workers/background",
-              "sidebar": "workersSidebar"
-            },
-            {
-              "id": "workers/config",
-              "path": "/workers/config",
               "sidebar": "workersSidebar"
             },
             {
@@ -161,8 +66,18 @@
               "sidebar": "workersSidebar"
             },
             {
+              "id": "workers/options",
+              "path": "/workers/options",
+              "sidebar": "workersSidebar"
+            },
+            {
               "id": "workers/signals",
               "path": "/workers/signals",
+              "sidebar": "workersSidebar"
+            },
+            {
+              "id": "workers/transports",
+              "path": "/workers/transports",
               "sidebar": "workersSidebar"
             },
             {

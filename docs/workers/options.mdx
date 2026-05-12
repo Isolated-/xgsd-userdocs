@@ -1,0 +1,61 @@
+---
+title: Options
+sidebar_position: 1
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+You can override default behaviour by providing options when calling `createTransport`.
+
+```javascript
+// override default stream
+const stream = createWriteStream("output.jsonl");
+
+const transport = createTransport({
+  // entry is the absolute path to your worker.js
+  entry: "./worker.js",
+  limits: {
+    // time to live in ms
+    ttl: 15000,
+    // memory heap usage in mb
+    memory: 64,
+
+    // you can limit rss too:
+    memory: {
+      limitMB: 64,
+      strategy: "rss",
+    },
+  },
+  output: {
+    // this can be wrapped or raw
+    mode: "raw",
+  },
+  stream,
+});
+```
+
+## Options
+
+You must provide an `entry` path - everything else is optional.
+
+| Property      | Type           | Default                     | Note                      |
+| ------------- | -------------- | --------------------------- | ------------------------- |
+| `entry`       | **string**     | `worker.js`                 | path to your worker.js    |
+| `stream`      | **StreamLike** | `process.stdout`            | this is where signals go  |
+| `limits`      | **see Limits** | `{ ttl: 5000, memory: 64 }` | controls the worker guard |
+| `output.mode` | **string**     | `wrapped`                   | can be `wrapped` or `raw` |
+
+## Limits
+
+The **Worker Guard** prevents a process exceeding limits.
+
+| Property | Type                      | Default | Note                                                                                                          |
+| -------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| `ttl`    | **number**                | `5000`  | the time-to-live (TTL) for your process/container                                                             |
+| `memory` | **number**/**MemoryType** | `64`    | memory usage limit, depending on `memory.strategy` either heap usage or rss is used. By default heap is used. |
+
+<ApiExample.Footer since="v1-beta" />
+
+</ApiExample>

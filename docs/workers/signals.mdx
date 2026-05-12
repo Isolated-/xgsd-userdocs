@@ -7,5 +7,87 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 <ApiExample>
 
-<ApiExample.Footer since="@xgsd/workers@0.1.0" experimental/>
+**Signals** are streamed from the container your worker runs in.
+
+They're a collection of:
+
+- **Activations**
+- **Errors** and **warnings**
+- **Logs**
+- **Metrics**
+- **System messages**
+
+By default signals are appended to `.xgsd/signals.jsonl` but you can override it by setting `stream` when calling `createHandler`.
+
+:::tip
+When developing, `stream: process.stdout` can be very useful as it'll print information to your console vs file.
+
+It also provides:
+
+```bash
+node run.js | grep "system"
+
+# output:
+{"ctx":"...","type":"system","message":"...","meta":null,"timestamp":123}
+```
+
+:::
+
+---
+
+## Format
+
+The format is consistent:
+
+```json
+{
+  "ctx": "{id}",
+  "type": "log|error|activation|system|generic",
+  "message": "{message}",
+  "meta": {},
+  "timestamp": 1778318464737
+}
+```
+
+for all **Signals** and `meta` reflects any signal-specific data.
+
+---
+
+## Sending your own Signals
+
+You can send **Signals** to `stdout`/`stderr`.
+
+Messages will be picked up and marked with `generic` unless you use the format above.
+
+You can also define your own format using `generic` signals, for example:
+
+```js
+console.log({
+  production: false,
+  name: "my worker",
+  description: "just started",
+});
+```
+
+This will result in a message like:
+
+```json
+{
+  "ctx": "{id}",
+  "type": "generic",
+  "message": "generic",
+  "meta": {
+    "production": false,
+    "name": "my worker",
+    "description": "just started"
+  },
+  "timestamp": 123
+}
+```
+
+So you can build on **Signals** to better match your app/environment.
+
+---
+
+<ApiExample.Footer since="v1" />
 </ApiExample>

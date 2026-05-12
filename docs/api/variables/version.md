@@ -8,4 +8,4 @@
 
 > `const` **version**: `any` = `packageJson.version`
 
-Defined in: [index.ts:16](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/index.ts#L16)
+Defined in: [index.ts:17](https://github.com/Isolated-/xgsd-workers/blob/fd690c9e1709816db586522b0ed13be6e47fcd6b/src/index.ts#L17)

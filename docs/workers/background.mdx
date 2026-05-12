@@ -93,6 +93,23 @@ Feel free to share your results if you benchmark **Workers**.
 
 ---
 
+## Use cases
+
+Here's a few ideas for what you can do with **Workers**:
+
+| Use case                                  | Suitable | Note                                                                                           |
+| ----------------------------------------- | -------- | ---------------------------------------------------------------------------------------------- |
+| Production, mission critical systems      | **No**   | Workers aren't designed to power huge projects - they're hackable sandboxes for your projects. |
+| Home serverless lab                       | **Yes**  | designed for this use case                                                                     |
+| ETL/data pipelines                        | **Yes**  | input -> function -> output model fits nicely                                                  |
+| Automation/glue layer (like Zapier)       | **Yes**  | near-perfect fit                                                                               |
+| Sandboxing/safe execution of unknown code | **Yes**  | everything is isolated making unsafe coder safer                                               |
+| Prototyping/system design                 | **Yes**  | rapidly prototype ideas                                                                        |
+
+There's not much you can't do, if you're new to Node.js or simply tired of re-inventing the same logic for small projects then give it a go.
+
+---
+
 ## Middleware vs Extensions
 
 One of the biggest differences is the new middleware system.

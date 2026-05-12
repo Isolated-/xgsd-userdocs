@@ -8,7 +8,7 @@
 
 > **WorkerError** = `object`
 
-Defined in: [core/types.ts:24](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L24)
+Defined in: [types/error.types.ts:100](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L100)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [core/types.ts:24](https://github.com/Isolated-/xgsd-workers/blob/f8
 
 > `optional` **code?**: [`WorkerErrorCode`](../enumerations/WorkerErrorCode.md)
 
-Defined in: [core/types.ts:25](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L25)
+Defined in: [types/error.types.ts:101](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L101)
 
 ***
 
@@ -24,12 +24,20 @@ Defined in: [core/types.ts:25](https://github.com/Isolated-/xgsd-workers/blob/f8
 
 > `optional` **message?**: `string`
 
-Defined in: [core/types.ts:26](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L26)
+Defined in: [types/error.types.ts:102](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L102)
+
+***
+
+### stack?
+
+> `optional` **stack?**: `string`
+
+Defined in: [types/error.types.ts:103](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L103)
 
 ***
 
 ### type?
 
-> `optional` **type?**: [`WorkerErrorType`](WorkerErrorType.md)
+> `optional` **type?**: `WorkerErrorType`
 
-Defined in: [core/types.ts:27](https://github.com/Isolated-/xgsd-workers/blob/f804e52aec360064da6e930f8acb6381f7f3c3a4/src/core/types.ts#L27)
+Defined in: [types/error.types.ts:104](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L104)

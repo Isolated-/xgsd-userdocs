@@ -39,7 +39,7 @@ View the repo if you need help integrating `@xgsd/workers` with your app.
 | ----------------------------- | ------------------------------------------------------------------ |
 | **Workers**                   | Refers to the runtime as a whole (packaged as `@xgsd/workers`)     |
 | **Worker**                    | This is everything inside the container - your code and middleware |
-| **Container**                 | Bounded runtime environment/sandbox                                |
+| **Process** or **Container**  | Bounded runtime environment/sandbox                                |
 | **Middleware**                | Think Express/Koa middleware, it's very familiar                   |
 | **Signals**                   | Runtime generated feedback - logs, errors, other events            |
 | **Transport**                 | External integration layer - http, bullmq, etc                     |
@@ -53,10 +53,10 @@ Install `@xgsd/workers` with npm or Yarn:
 
 ```bash
 # using npm
-npm i @xgsd/workers @xgsd/engine --save
+npm i @xgsd/workers --save
 
 # using yarn
-yarn add @xgsd/workers @xgsd/engine
+yarn add @xgsd/workers
 ```
 
 ---
@@ -82,36 +82,24 @@ export default async function worker() {
 }
 ```
 
-Then somewhere in your transport layer (your app):
+To call your worker:
 
 ```js title="app.js"
-import { createHandler } from "@xgsd/workers";
+import { createTransport } from "@xgsd/workers";
 
-// this will depend on your app needs
-const cwd = process.cwd();
-const handler = createHandler({
-  cwd,
-  config: { entry: "worker.js" },
+// you'd usually do this during app bootstrap
+const transport = createTransport({
+  entry: "./worker.js",
 });
 
-// inside your transport (e.g. Express route):
-async function callback(req, res) {
-  return handler({
-    data: req.data,
-  });
-}
-```
-
-Using `@xgsd/worker-cli`:
-
-```bash
-worker run -c worker.json
-```
-
-Or serve it on `http://localhost:3000`:
-
-```bash
-worker up -c worker.json
+// this would usually be inside a callback
+// like Express/Koa/etc, really whatever you need
+// inside a script works perfectly too!
+const result = await transport({
+  data: {
+    hello: "world",
+  },
+});
 ```
 
 ---
@@ -163,28 +151,6 @@ for all **Signals** and `meta` reflects any signal-specific data.
 Create your own **Signals** by logging to `stdout` or `stderr`.
 
 See [**Signals**](signals) to learn more.
-
----
-
-## Config
-
-See [**Config**](config) to learn more.
-
----
-
-## Middleware
-
-See [**Middleware**](middleware) to learn more.
-
----
-
-## Troubleshooting
-
-See [**Troubleshooting**](troubleshooting) to learn more.
-
-- [**Report a problem**](https://github.com/Isolated-/xgsd-workers/issues/new)
-
----
 
 <ApiExample.Footer since="@xgsd/workers@v0.1.0" experimental/>
 </ApiExample>

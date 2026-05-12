@@ -1,0 +1,31 @@
+---
+title: Transports
+sidebar_position: 5
+---
+
+import ApiExample from "@site/src/components/ApiExample.tsx";
+
+<ApiExample>
+
+:::tip
+**Made your own transport?** Let us know so we can list it on this page!
+:::
+
+**Transports** are how your **Worker** is activated.
+
+They're responsible for collecting and providing any transport-specific data.
+
+For example, in a HTTP transport the `data` for your worker may include:
+
+- path/url
+- method
+- headers
+- query params
+- body
+
+Optionally, you may decide to return a `status` in the output of your worker.
+
+This design allows for transport- and platform-agnostic architecture leading to predictable execution of your functions.
+
+<ApiExample.Footer since="v1" />
+</ApiExample>

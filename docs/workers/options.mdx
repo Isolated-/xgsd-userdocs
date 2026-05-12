@@ -36,6 +36,8 @@ const transport = createTransport({
 });
 ```
 
+---
+
 ## Options
 
 You must provide an `entry` path - everything else is optional.
@@ -47,6 +49,8 @@ You must provide an `entry` path - everything else is optional.
 | `limits`      | **see Limits** | `{ ttl: 5000, memory: 64 }` | controls the worker guard |
 | `output.mode` | **string**     | `wrapped`                   | can be `wrapped` or `raw` |
 
+---
+
 ## Limits
 
 The **Worker Guard** prevents a process exceeding limits.
@@ -55,6 +59,33 @@ The **Worker Guard** prevents a process exceeding limits.
 | -------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
 | `ttl`    | **number**                | `5000`  | the time-to-live (TTL) for your process/container                                                             |
 | `memory` | **number**/**MemoryType** | `64`    | memory usage limit, depending on `memory.strategy` either heap usage or rss is used. By default heap is used. |
+
+---
+
+## Stream
+
+Your stream must implement [`StreamLike`](/api/type-aliases/StreamLike.md).
+
+You only need to implement `write` (unlike the full `Writeable` interface):
+
+```js
+const stream = {
+  write: (chunk: string) => {
+    // do something with the signal
+    const signal = JSON.parse(chunk);
+
+    // one use case is
+    console.log(`${signal.message} (${signal.type}`)
+  },
+};
+
+const transport = createTransport({
+  stream,
+  // ... your other options
+})
+```
+
+---
 
 <ApiExample.Footer since="v1-beta" />
 

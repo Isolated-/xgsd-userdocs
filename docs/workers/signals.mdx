@@ -87,6 +87,39 @@ This will result in a message like:
 
 So you can build on **Signals** to better match your app/environment.
 
+:::tip
+**Signals** are in JSON format.
+
+If you use `stream: process.stdout` in development it can be hard to tell what's going on.
+
+You can clean this up by doing something like this:
+
+```js
+const transport = createTransport({
+  entry: "./worker.js",
+  stream: {
+    write: (chunk) => {
+      const json = JSON.parse(chunk);
+      console.log(json.message);
+    },
+  },
+});
+```
+
+That way you go from:
+
+```text
+{"ctx":"504fabe1","type":"system","message":"starting container",...}
+```
+
+To:
+
+```text
+starting container
+```
+
+:::
+
 ---
 
 <ApiExample.Footer since="v1-beta" />

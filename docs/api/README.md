@@ -1,19 +1,15 @@
-**@xgsd/workers**
-
+---
+title: Workers.js
 ---
 
-# @xgsd/workers
+# Workers.js
 
 [![Version](https://img.shields.io/npm/v/@xgsd/workers.svg)](https://npmjs.org/package/@xgsd/workers)  
 [![CI & Release](https://github.com/Isolated-/xgsd-workers/actions/workflows/release.yml/badge.svg)](https://github.com/Isolated-/xgsd-workers/actions/workflows/release.yml)
 
 ---
 
-Make Node.js more predictable and fail-safe with **Workers**.
-
-This is a simplified alternative to the full xGSD runtime — focusing on fast execution, low memory usage, and deterministic behaviour.
-
----
+**Workers.js** runs your code in a container that handle most failures for you.
 
 ## Install
 
@@ -30,12 +26,12 @@ yarn add @xgsd/workers
 A **Worker** is a simple async function, usually exported from `worker.js`:
 
 ```javascript
+import axios from "axios";
+
 export default async function worker(data) {
   const url = "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London";
 
-  const res = await fetch(url);
-  const json = await res.json();
-
+  const json = (await axios.get(url)).data;
   return json;
 }
 ```
@@ -81,6 +77,18 @@ Run all tests with:
 ```bash
 yarn test
 ```
+
+---
+
+## Benchmarks
+
+Run benchmarks with:
+
+```bash
+node benchmarks/concurrency.js
+```
+
+Results are saved to `benchmarks/results`.
 
 ---
 

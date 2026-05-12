@@ -1,75 +1,118 @@
 {
-  "/-966": {
-    "__comp": "5e95c892",
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "aba21aa0"
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/-de8": {
-    "__comp": "a7bd4aaa",
-    "__props": "22dd74f7"
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
   },
-  "/-92b": {
-    "__comp": "a94703ab"
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/-772": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---aba-d70"
+    }
+  },
+  "/-81b": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---22-d-307"
+  },
+  "/-578": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/api/-fa3": {
-    "__comp": "17896441",
-    "content": "982ac012"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-982-b6d"
   },
   "/api/enumerations/WorkerErrorCode-92c": {
-    "__comp": "17896441",
-    "content": "66896ed6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-enumerations-worker-error-code-668-376"
   },
   "/api/functions/createTransport-17f": {
-    "__comp": "17896441",
-    "content": "b287267c"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-functions-create-transportb-28-71f"
   },
   "/api/globals-1f1": {
-    "__comp": "17896441",
-    "content": "2b9e9ebb"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-globals-2-b-9-f74"
   },
   "/api/type-aliases/StreamLike-c65": {
-    "__comp": "17896441",
-    "content": "bddd9458"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-stream-likebdd-d2f"
   },
   "/api/type-aliases/WorkerError-5d2": {
-    "__comp": "17896441",
-    "content": "de17f4e6"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-worker-errorde-1-2da"
   },
   "/api/variables/version-4c3": {
-    "__comp": "17896441",
-    "content": "62a7103e"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-variables-version-62-a-af4"
   },
-  "/workers/background-c99": {
-    "__comp": "17896441",
-    "content": "bb04b399"
+  "/workers/Benchmarks/benchmarking-e00": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-benchmarks-benchmarking-0-e-5-55e"
   },
   "/workers/docker-b45": {
-    "__comp": "17896441",
-    "content": "baa4c8ed"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-dockerbaa-10d"
   },
   "/workers/middleware-cf1": {
-    "__comp": "17896441",
-    "content": "582b3337"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-middleware-582-61f"
   },
   "/workers/options-4a1": {
-    "__comp": "17896441",
-    "content": "1cbf172d"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-options-1-cb-f85"
   },
   "/workers/signals-674": {
-    "__comp": "17896441",
-    "content": "521df336"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-signals-521-1c2"
   },
   "/workers/transports-a8c": {
-    "__comp": "17896441",
-    "content": "cf8174a8"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-transportscf-8-14c"
   },
   "/workers/troubleshooting-a72": {
-    "__comp": "17896441",
-    "content": "626f4999"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---workers-troubleshooting-626-e90"
   },
   "/-843": {
-    "__comp": "17896441",
-    "content": "b70e12b9"
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---b-70-b1e"
   }
 }

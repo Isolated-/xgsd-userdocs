@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "xGSD",
+  title: "Workers.js",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -56,11 +56,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "xGSD",
-      logo: {
-        alt: "xGSD",
-        src: "img/logo.png",
-      },
+      title: "Workers.js",
       items: [
         {
           type: "docSidebar",

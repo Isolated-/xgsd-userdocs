@@ -46,8 +46,8 @@
               "sidebar": "apiSidebar"
             },
             {
-              "id": "workers/background",
-              "path": "/workers/background",
+              "id": "workers/Benchmarks/benchmarking",
+              "path": "/workers/Benchmarks/benchmarking",
               "sidebar": "workersSidebar"
             },
             {

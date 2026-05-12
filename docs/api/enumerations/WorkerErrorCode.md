@@ -6,7 +6,7 @@
 
 # Enumeration: WorkerErrorCode
 
-Defined in: [types/error.types.ts:12](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L12)
+Defined in: [types/error.types.ts:12](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L12)
 
 Error codes used across the worker/runtime boundary.
 
@@ -24,7 +24,7 @@ They are intended for:
 
 > **CODE\_FATAL\_ERROR**: `"CODE_FATAL_ERROR"`
 
-Defined in: [types/error.types.ts:32](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L32)
+Defined in: [types/error.types.ts:32](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L32)
 
 ## Fatal Error
 
@@ -38,7 +38,7 @@ Execution cannot safely continue after this is thrown.
 
 > **CODE\_INVALID\_CONFIG**: `"CODE_INVALID_CONFIG"`
 
-Defined in: [types/error.types.ts:44](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L44)
+Defined in: [types/error.types.ts:44](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L44)
 
 ## Invalid Configuration
 
@@ -55,7 +55,7 @@ Configuration provided to the worker is invalid or malformed.
 
 > **CODE\_INVALID\_DATA**: `"CODE_INVALID_DATA"`
 
-Defined in: [types/error.types.ts:96](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L96)
+Defined in: [types/error.types.ts:96](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L96)
 
 ## Invalid Data
 
@@ -72,7 +72,7 @@ Data cannot be safely serialised for transport.
 
 > **CODE\_INVALID\_DEFAULT\_FUNCTION**: `"CODE_INVALID_DEFAULT_FUNCTION"`
 
-Defined in: [types/error.types.ts:73](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L73)
+Defined in: [types/error.types.ts:73](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L73)
 
 ## Invalid Default Export
 
@@ -94,7 +94,7 @@ export default () => {}
 
 > **CODE\_INVALID\_ENTRY\_FILE**: `"CODE_INVALID_ENTRY_FILE"`
 
-Defined in: [types/error.types.ts:56](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L56)
+Defined in: [types/error.types.ts:56](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L56)
 
 ## Invalid Entry File
 
@@ -111,7 +111,7 @@ The entry file cannot be resolved, loaded, or parsed.
 
 > **CODE\_INVALID\_MIDDLEWARE\_FUNCTION**: `"CODE_INVALID_MIDDLEWARE_FUNCTION"`
 
-Defined in: [types/error.types.ts:84](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L84)
+Defined in: [types/error.types.ts:84](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L84)
 
 ## Invalid Middleware Function
 
@@ -127,7 +127,7 @@ Middleware provided is not a valid function.
 
 > **CODE\_WORKER\_GUARD**: `"CODE_WORKER_GUARD"`
 
-Defined in: [types/error.types.ts:23](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L23)
+Defined in: [types/error.types.ts:23](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L23)
 
 ## Guard Violation
 

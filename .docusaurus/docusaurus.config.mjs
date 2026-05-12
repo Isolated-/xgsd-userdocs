@@ -4,7 +4,7 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "xGSD",
+  "title": "Workers.js",
   "favicon": "img/favicon.ico",
   "future": {
     "v4": {
@@ -64,11 +64,7 @@ export default {
       "disableSwitch": false
     },
     "navbar": {
-      "title": "xGSD",
-      "logo": {
-        "alt": "xGSD",
-        "src": "img/logo.png"
-      },
+      "title": "Workers.js",
       "items": [
         {
           "type": "docSidebar",

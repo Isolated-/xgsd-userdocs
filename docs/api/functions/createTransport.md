@@ -1,14 +1,14 @@
 [**@xgsd/workers**](../README.md)
 
----
+***
 
 [@xgsd/workers](../globals.md) / createTransport
 
 # Function: createTransport()
 
-> **createTransport**(`opts`): `ActivationHandler`
+> **createTransport**\<`Mode`\>(`opts`): `ActivationHandler`
 
-Defined in: [index.ts:159](https://github.com/Isolated-/xgsd-workers/blob/836271c60824c33043f9efbda97cf4e774cc77cf/src/index.ts#L159)
+Defined in: [index.ts:159](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/index.ts#L159)
 
 Creates a reusable worker transport.
 
@@ -39,7 +39,7 @@ Example:
 export default async function (data) {
   return {
     hello: data.name,
-  };
+  }
 }
 ```
 
@@ -93,19 +93,19 @@ Signals are written to the configured stream.
 ## Example
 
 ```ts
-import { createTransport } from "@xgsd/workers";
+import {createTransport} from '@xgsd/workers'
 
 const transport = createTransport({
-  entry: "./worker.js",
-});
+  entry: './worker.js',
+})
 
 const result = await transport({
   data: {
-    name: "world",
+    name: 'world',
   },
-});
+})
 
-console.log(result);
+console.log(result)
 ```
 
 ---
@@ -128,20 +128,26 @@ Raw mode:
 ```ts
 createTransport({
   output: {
-    mode: "raw",
-  },
-});
+    mode: 'raw'
+  }
+})
 ```
 
 Returns the worker result directly.
 
 ---
 
+## Type Parameters
+
+### Mode
+
+`Mode` *extends* `WorkerOutputMode` = `"wrapped"`
+
 ## Parameters
 
 ### opts
 
-`CreateTransportOpts`
+`CreateTransportOpts`\<`Mode`\>
 
 ## Returns
 

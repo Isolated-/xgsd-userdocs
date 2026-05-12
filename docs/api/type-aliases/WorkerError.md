@@ -8,7 +8,7 @@
 
 > **WorkerError** = `object`
 
-Defined in: [types/error.types.ts:100](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L100)
+Defined in: [types/error.types.ts:100](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L100)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [types/error.types.ts:100](https://github.com/Isolated-/xgsd-workers
 
 > `optional` **code?**: [`WorkerErrorCode`](../enumerations/WorkerErrorCode.md)
 
-Defined in: [types/error.types.ts:101](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L101)
+Defined in: [types/error.types.ts:101](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L101)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [types/error.types.ts:101](https://github.com/Isolated-/xgsd-workers
 
 > `optional` **message?**: `string`
 
-Defined in: [types/error.types.ts:102](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L102)
+Defined in: [types/error.types.ts:102](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L102)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [types/error.types.ts:102](https://github.com/Isolated-/xgsd-workers
 
 > `optional` **stack?**: `string`
 
-Defined in: [types/error.types.ts:103](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L103)
+Defined in: [types/error.types.ts:103](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L103)
 
 ***
 
@@ -40,4 +40,4 @@ Defined in: [types/error.types.ts:103](https://github.com/Isolated-/xgsd-workers
 
 > `optional` **type?**: `WorkerErrorType`
 
-Defined in: [types/error.types.ts:104](https://github.com/Isolated-/xgsd-workers/blob/9a86de86e0299b7a6300fb874405fc956e309734/src/types/error.types.ts#L104)
+Defined in: [types/error.types.ts:104](https://github.com/Isolated-/xgsd-workers/blob/f3a26c7f00a9d8287c89ebb9106e7466e3254aeb/src/types/error.types.ts#L104)

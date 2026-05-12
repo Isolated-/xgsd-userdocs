@@ -1,0 +1,147 @@
+---
+title: Benchmark (v1-beta)
+---
+
+## Environment
+
+Benchmarks are run using Github Actions and are hosted on a VM.
+
+| Type          | Version         |
+| ------------- | --------------- |
+| **Node**      | `v24.14`        |
+| **Workers**   | `v1.0.0-beta.0` |
+| **OS**        | `Ubuntu v24.04` |
+| **CPU cores** | `4`             |
+| **Memory**    | `16Gb`          |
+
+This test was completed on 12th May 2026.
+
+---
+
+## Spec
+
+This spec will be used for all benchmarks.
+
+The test:
+
+| Type                 | Value          | Note                                                    |
+| -------------------- | -------------- | ------------------------------------------------------- |
+| **Activations**      | `10000`        | number of unique worker activations                     |
+| **Objects returned** | `256`          | number of objects returned by the worker (payload size) |
+| **Concurrency**      | `4`, `8`, `16` | number of processes running at once                     |
+
+We're collecting and using the following results:
+
+| Type                        | Note                                |
+| --------------------------- | ----------------------------------- |
+| **Average activation time** | e2e time it takes to complete a run |
+| **Throughput**              | number of activations per second    |
+
+Future benchmarks will look more into the memory used by the main (benchmark) process and child processes (the workers).
+
+Each test will be ran three times before any average is collected resulting in 90k activations per test.
+
+Each activation results in a process spawning and terminating so this is a good measure of how much stress Workers.js can handle.
+
+Rules:
+
+1. All numbers are calculated from the results of three benchmark runs.
+2. When possible, the same environment will be used.
+3. We'll publish all findings as-is and without comparison to other software.
+4. We'll not give our opinion on the results - we'll simply present our findings.
+
+---
+
+## Worker
+
+Here's the worker definition:
+
+```js title="worker.js"
+// this simulates your worker returning data
+// we previously didn't use this in benchmarks
+// that made them less realistic
+// what we didn't want to introduce is latency from network calls
+// or other I/O calls
+const createReturnedObjects = (count = 10000) => {
+  const items = [];
+
+  for (let i = 0; i < count; i++) {
+    items.push({
+      id: i,
+      name: `item-${i}`,
+      description: "x".repeat(100),
+      nested: {
+        active: true,
+        tags: ["a", "b", "c"],
+      },
+    });
+  }
+
+  return {
+    generatedAt: Date.now(),
+    items,
+  };
+};
+
+export default async function worker(data) {
+  return createReturnedObjects(data?.items ?? 1);
+}
+
+export const a = async (ctx, next) => {
+  console.log("a called");
+  await next();
+  console.log("a called");
+};
+
+export const b = async (ctx, next) => {
+  console.log("b called");
+  await next();
+  console.log("b called");
+};
+
+export const middleware = () => [a, b];
+```
+
+This is one of the worker's we've built our tests around so it made sense to use it here.
+
+---
+
+## Benchmark script
+
+You can view the benchmark script + the script used to analyse the output in our [**Repo**](https://github.com/Isolated-/xgsd-workers) in `benchmarks/concurrency.js` and `benchmarks/stat.js`.
+
+The `README.md` demonstrates how to run these scripts.
+
+---
+
+## Results
+
+Here's the numbers:
+
+| Metric                              | Min      | Max      | Mean     | Median   |
+| ----------------------------------- | -------- | -------- | -------- | -------- |
+| **Activation time** (ms)            | `59.66`  | `257.51` | `145.49` | `123.87` |
+| **Throughput** (activations/sec)    | `62.09`  | `67.02`  | `64.76`  | `64.56`  |
+| **Heap used** (main process - MB)\* | `5.94`   | `60.05`  | `43.40`  | `46.87`  |
+| **RSS used** (main process - MB)\*  | `206.38` | `237.12` | `219.83` | `217.98` |
+
+- `concurrency.js` acculumates benchmark data over time which leads to a slow increase in RSS/heap usage (\*).
+
+Benchmarking took an average of **2 mins 30 secs** and main memory usage never exceeded **240 MB** RSS or **60 MB** heap.
+
+A quick best vs worst comparison:
+
+| Metric                                   | Concurrency | Value    |
+| ---------------------------------------- | ----------- | -------- |
+| **Best activation time** (ms)            | `4`         | `59.66`  |
+| **Worst activation time** (ms)           | `16`        | `257.51` |
+| **Lowest throughput** (activations/sec)  | `16`        | `62.09`  |
+| **Highest throughput** (activations/sec) | `4`         | `67.02`  |
+
+## Get involved
+
+We'll accumulate benchmark results so people have a good understanding of how useful **Workers.js** can be.
+
+Please share your findings by making an issue on our Github ([**Here**](https://github.com/Isolated-/xgsd-workers)).
+
+---

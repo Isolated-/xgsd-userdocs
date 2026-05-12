@@ -13,7 +13,7 @@ If you've used Express or Koa middleware before, Workers middleware should feel 
 
 Middleware wraps worker execution in a predictable flow:
 
-![Middleware diagram showing order of execution (A -> B -> Worker -> B -> A)](/img/middlewares_order.png)
+![Middleware diagram showing order of execution (A - B - Worker - B - A)](/img/middlewares_order.png)
 
 This makes it easy to:
 
@@ -25,6 +25,67 @@ This makes it easy to:
 
 Without introducing hidden lifecycle hooks or plugin orchestration.
 
+---
+
+## Retry()
+
+Here's how you can re-create the retry logic from **Workers.js** predecessor — _xGSD_.
+
+First, the middleware code:
+
+```js title="middleware.js"
+import { retry, withTimeout } from "@xgsd/engine";
+export const retryMiddleware = async (ctx, next) => {
+  // exponential backoff
+  const backoff = (attempt) => 1000 * 2 ** attempt;
+
+  ctx.execute = async (fn) => {
+    // using @xgsd/engine retry()
+    return retry(ctx.data, fn, 3, {
+      timeoutWrapper: withTimeout(1000),
+      backoff,
+      onAttempt: (attempt) => {
+        if (attempt.finalAttempt) {
+          console.log(
+            `[retry] all hope is lost (${attempt.attempt + 1}/${attempt.maxRetries})`,
+          );
+          return;
+        }
+
+        console.log(
+          `[retry] currently retrying, next: ${attempt.nextMs.toFixed(2)} ms (${attempt.attempt + 1}/${attempt.maxRetries})`,
+        );
+      },
+    });
+  };
+
+  await next();
+};
+```
+
+Next your worker:
+
+```js
+import { retryMiddleware } from "./middleware.js";
+
+export default async function () {
+  throw new Error("this always goes wrong");
+}
+
+export const middleware = () => [retryMiddleware];
+```
+
+When you run this, you'll see:
+
+```text
+[retry] currently retrying, next: 1000.00 ms (1/3)
+[retry] currently retrying, next: 2000.00 ms (2/3)
+[retry] all hope is lost (3/3)
+```
+
+---
+
 <ApiExample.Footer since="v1-beta" />
 
 </ApiExample>
+```

@@ -27,5 +27,73 @@ Optionally, you may decide to return a `status` in the output of your worker.
 
 This design allows for transport- and platform-agnostic architecture leading to predictable execution of your functions.
 
+## BullMQ Transport
+
+If you're already using BullMQ, you can integrate Workers.js directly into your existing job pipeline.
+
+BullMQ handles:
+
+- retries
+- concurrency
+- scheduling
+- queue management
+
+Workers.js handles:
+
+- isolated execution
+- crash containment
+- predictable resource usage
+- structured result/error handling
+
+Together, they allow each job to run in its own isolated process while continuing to use BullMQ for orchestration.
+
+:::tip
+If you previously used xGSD, combining BullMQ with Workers.js provides a lightweight replacement for retries, concurrency, and isolated job execution.
+:::
+
+### Install
+
+Install with Yarn:
+
+```bash
+yarn add @xgsd/transport-bullmq bullmq
+```
+
+Or with npm:
+
+```bash
+npm install @xgsd/transport-bullmq bullmq
+```
+
+### Usage
+
+```js title="consumer.js"
+import { Queue, Worker } from "bullmq";
+import { createWorkerTransport } from "@xgsd/transport-bullmq";
+
+const queue = new Queue("QUEUE", {
+  connection: {
+    host: "localhost",
+    port: 6379,
+  },
+});
+
+createWorkerTransport({
+  queue: "QUEUE",
+  transport: {
+    entry: "./worker.js",
+    // ... normal options
+  },
+  worker: Worker,
+  workerConfig: {
+    connection: {
+      host: "localhost",
+      port: 6379,
+    },
+    // ... normal BullMQ worker config
+  },
+});
+```
+
 <ApiExample.Footer since="v1-beta" />
 </ApiExample>

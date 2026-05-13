@@ -31,6 +31,11 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "api/type-aliases/CreateTransportOpts",
+              "path": "/api/type-aliases/CreateTransportOpts",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "api/type-aliases/StreamLike",
               "path": "/api/type-aliases/StreamLike",
               "sidebar": "apiSidebar"

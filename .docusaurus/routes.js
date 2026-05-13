@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '772'),
+    component: ComponentCreator('/', '762'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '81b'),
+        component: ComponentCreator('/', '644'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '578'),
+            component: ComponentCreator('/', 'bf2'),
             routes: [
               {
                 path: '/api/',
@@ -70,6 +70,12 @@ export default [
               {
                 path: '/api/globals',
                 component: ComponentCreator('/api/globals', '1f1'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/CreateTransportOpts',
+                component: ComponentCreator('/api/type-aliases/CreateTransportOpts', '188'),
                 exact: true,
                 sidebar: "apiSidebar"
               },

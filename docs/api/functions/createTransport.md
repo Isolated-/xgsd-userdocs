@@ -1,6 +1,6 @@
 [**@xgsd/workers**](../README.md)
 
-***
+---
 
 [@xgsd/workers](../globals.md) / createTransport
 
@@ -39,7 +39,7 @@ Example:
 export default async function (data) {
   return {
     hello: data.name,
-  }
+  };
 }
 ```
 
@@ -93,19 +93,19 @@ Signals are written to the configured stream.
 ## Example
 
 ```ts
-import {createTransport} from '@xgsd/workers'
+import { createTransport } from "@xgsd/workers";
 
 const transport = createTransport({
-  entry: './worker.js',
-})
+  entry: "./worker.js",
+});
 
 const result = await transport({
   data: {
-    name: 'world',
+    name: "world",
   },
-})
+});
 
-console.log(result)
+console.log(result);
 ```
 
 ---
@@ -128,9 +128,9 @@ Raw mode:
 ```ts
 createTransport({
   output: {
-    mode: 'raw'
-  }
-})
+    mode: "raw",
+  },
+});
 ```
 
 Returns the worker result directly.
@@ -141,13 +141,13 @@ Returns the worker result directly.
 
 ### Mode
 
-`Mode` *extends* `WorkerOutputMode` = `"wrapped"`
+`Mode` _extends_ `WorkerOutputMode` = `"wrapped"`
 
 ## Parameters
 
 ### opts
 
-`CreateTransportOpts`\<`Mode`\>
+[`CreateTransportOpts`](../type-aliases/CreateTransportOpts.md)\<`Mode`\>
 
 ## Returns
 

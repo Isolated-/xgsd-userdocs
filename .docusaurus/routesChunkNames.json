@@ -42,17 +42,17 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/-772": {
+  "/-762": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-81b": {
+  "/-644": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-578": {
+  "/-bf2": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/api/-fa3": {
@@ -70,6 +70,10 @@
   "/api/globals-1f1": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-globals-2-b-9-f74"
+  },
+  "/api/type-aliases/CreateTransportOpts-188": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-create-transport-opts-2-dd-d50"
   },
   "/api/type-aliases/StreamLike-c65": {
     "__comp": "__comp---theme-doc-item-178-a40",

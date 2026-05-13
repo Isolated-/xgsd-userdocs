@@ -53,13 +53,11 @@ cd my-worker
 Create a `worker.js`:
 
 ```js title="worker.js"
-export default async function worker() {
-  const url = "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London";
-
-  const res = await fetch(url);
-
-  return res.json();
-}
+// a worker is a simple async function
+// it must be the default export
+export default async (data) => {
+  return { hello: data.name };
+};
 ```
 
 To call your worker:
@@ -77,7 +75,7 @@ const transport = createTransport({
 // inside a script works perfectly too!
 const result = await transport({
   data: {
-    hello: "world",
+    name: "world",
   },
 });
 ```
@@ -98,7 +96,7 @@ Workers are designed around a schema:
   "error": {
     // error
   },
-  "duration": 0
+  "duration": 12.34
 }
 ```
 
@@ -141,23 +139,23 @@ This is similar to Express or Koa middleware.
 Here's an example:
 
 ```js title="worker.js"
-const a = (ctx, next) => {
-  console.log('a')
-  await next()
-  console.log('a')
-}
+export default async () => {
+  console.log("worker");
+};
 
-const b = (ctx, next) => {
-  console.log('b')
-  await next()
-  console.log('b')
-}
+const a = async (ctx, next) => {
+  console.log("a");
+  await next();
+  console.log("a");
+};
 
-const middleware = () => [a, b]
+const b = async (ctx, next) => {
+  console.log("b");
+  await next();
+  console.log("b");
+};
 
-export default function() {
-  console.log('worker')
-}
+const middleware = async () => [a, b];
 ```
 
 If you run this worker — you'll get:

@@ -167,7 +167,7 @@ const validator = (ctx) => {
   return true;
 };
 
-export const middleware = () => [myCustomValidator(validator)];
+export const middleware = async () => [myCustomValidator(validator)];
 ```
 
 ---

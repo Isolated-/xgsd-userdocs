@@ -75,11 +75,6 @@ const config: Config = {
           label: "@xgsd/workers",
           position: "right",
         },
-        {
-          href: "https://github.com/Isolated-/xgsd-workers",
-          label: "@xgsd/worker-cli",
-          position: "right",
-        },
       ],
     },
     footer: {

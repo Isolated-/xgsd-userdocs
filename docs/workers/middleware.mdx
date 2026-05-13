@@ -128,6 +128,50 @@ When you run this, you'll see:
 
 ---
 
+## Third party middleware
+
+When creating middleware that you intend to share, you probably don't want to rely on hardcoded values or rules.
+
+The easiest way to do that is with a factory function:
+
+```js
+export function myCustomValidator(validator) {
+  if (!validator || typeof validator !== "function") {
+    throw new Error(
+      `"validator" must be a function received ${typeof validator}`,
+    );
+  }
+
+  return async function (ctx, next) {
+    if (!validator(ctx)) {
+      throw new Error("validation failed");
+    }
+
+    await next();
+  };
+}
+```
+
+The user can provide their own `validator()` function that allows them to use something like Joi or valibot.
+
+They'd use it like this:
+
+```js
+import { myCustomValidator } from "your-package";
+
+const validator = (ctx) => {
+  if (!ctx.data.url || typeof ctx.data.url !== "string") {
+    return false;
+  }
+
+  return true;
+};
+
+export const middleware = () => [myCustomValidator(validator)];
+```
+
+---
+
 <ApiExample.Footer since="v1-beta" />
 
 </ApiExample>

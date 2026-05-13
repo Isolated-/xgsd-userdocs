@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '762'),
+    component: ComponentCreator('/', 'cd6'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '644'),
+        component: ComponentCreator('/', '064'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', 'bf2'),
+            component: ComponentCreator('/', '21d'),
             routes: [
               {
                 path: '/api/',
@@ -104,8 +104,8 @@ export default [
                 sidebar: "workersSidebar"
               },
               {
-                path: '/workers/docker',
-                component: ComponentCreator('/workers/docker', 'b45'),
+                path: '/workers/Examples/axios',
+                component: ComponentCreator('/workers/Examples/axios', '877'),
                 exact: true,
                 sidebar: "workersSidebar"
               },

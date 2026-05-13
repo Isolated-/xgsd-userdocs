@@ -27,7 +27,50 @@ Without introducing hidden lifecycle hooks or plugin orchestration.
 
 ---
 
-## Retry()
+## Transformer example
+
+Here's an example of a transformer:
+
+```js
+const transformer = async (ctx, next) => {
+  await next();
+
+  const { current_weather, current_weather_units } = ctx.result.data;
+  const temperature = current_weather.temperature;
+  const unit = current_weather_units.temperature;
+
+  ctx.result = {
+    temperature,
+    unit,
+    message: `It's ${temperature}${unit} in London`,
+  };
+};
+
+export const middleware = () => [transformer];
+```
+
+This is taken from [**our Axios example**](/workers/Examples/axios).
+
+---
+
+## Validator example
+
+```js
+// you could use something like Joi
+// or valibot here
+const validator = async (ctx, next) => {
+  if (!ctx.data.url) {
+    throw new Error("expected url");
+  }
+
+  // call the next middleware in the pipeline
+  await next();
+};
+```
+
+---
+
+## Retry example
 
 Here's how you can re-create the retry logic from **Workers.js** predecessor — _xGSD_.
 

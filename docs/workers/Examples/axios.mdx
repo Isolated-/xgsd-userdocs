@@ -1,0 +1,162 @@
+---
+title: Axios
+---
+
+This example demonstrates the following:
+
+- Third party dependencies (Axios in this case).
+- Validating data before it reaches your worker.
+- Transforming a response using middleware.
+
+---
+
+## Dependencies
+
+If you're using this example you'll need:
+
+- `axios`
+- `@xgsd/workers`
+
+Install them with:
+
+```bash
+yarn add axios @xgsd/workers
+```
+
+---
+
+## Worker.js
+
+First define the worker:
+
+```js
+import axios from "axios";
+
+// middleware allows your worker function
+// to remain simple
+export default async function worker(data) {
+  return axios.get(data.url);
+}
+```
+
+Here's the transformer middleware:
+
+```js
+const transformer = async (ctx, next) => {
+  await next();
+
+  const { current_weather, current_weather_units } = ctx.result.data;
+  const temperature = current_weather.temperature;
+  const unit = current_weather_units.temperature;
+
+  ctx.result = {
+    temperature,
+    unit,
+    message: `It's ${temperature}${unit} in London`,
+  };
+};
+```
+
+And the validator:
+
+```js
+// you could use something like Joi
+// or valibot here
+const validator = async (ctx, next) => {
+  if (!ctx.data.url) {
+    throw new Error("expected url");
+  }
+
+  // call the next middleware in the pipeline
+  await next();
+};
+```
+
+Putting everything together you get:
+
+```js title="worker.js"
+import axios from "axios";
+
+// middleware allows your worker function
+// to remain simple
+export default async function worker(data) {
+  return axios.get(data.url);
+}
+
+// you could use something like Joi
+// or valibot here
+const validator = async (ctx, next) => {
+  if (!ctx.data.url) {
+    throw new Error("expected url");
+  }
+
+  // call the next middleware in the pipeline
+  await next();
+};
+
+const transformer = async (ctx, next) => {
+  await next();
+
+  const { current_weather, current_weather_units } = ctx.result.data;
+  const temperature = current_weather.temperature;
+  const unit = current_weather_units.temperature;
+
+  ctx.result = {
+    temperature,
+    unit,
+    message: `It's ${temperature}${unit} in London`,
+  };
+};
+
+export const middleware = () => [validator, transformer];
+```
+
+---
+
+## Run.js
+
+You can skip this step if you already have some way of activating your worker.
+
+```js
+import { createTransport } from "@xgsd/workers";
+
+const transport = createTransport({
+  entry: "./worker.js",
+  stream: {
+    write: (chunk) => {},
+  },
+});
+
+const url = "https://api.open-meteo.com/v1/forecast";
+const lon = -0.18;
+const lat = 51.5;
+
+const base = `${url}?latitude=${lat}&longitude=${lon}&current_weather=true`;
+
+const result = await transport({ data: { url: base } });
+console.log(result);
+```
+
+---
+
+## Result
+
+Run the script with:
+
+```bash
+node run.js
+```
+
+You should see:
+
+```js
+{
+  version: 'v1',
+  ok: true,
+  result: { temperature: 9.2, unit: '°C', message: "It's 9.2°C in London" },
+  error: null,
+  duration: 1105.60816
+}
+```
+
+---

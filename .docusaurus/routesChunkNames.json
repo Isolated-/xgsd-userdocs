@@ -42,17 +42,17 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/-762": {
+  "/-cd6": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-644": {
+  "/-064": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-bf2": {
+  "/-21d": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/api/-fa3": {
@@ -91,9 +91,9 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---workers-benchmarks-benchmarking-0-e-5-55e"
   },
-  "/workers/docker-b45": {
+  "/workers/Examples/axios-877": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---workers-dockerbaa-10d"
+    "content": "content---workers-examples-axios-5-ee-10a"
   },
   "/workers/middleware-cf1": {
     "__comp": "__comp---theme-doc-item-178-a40",

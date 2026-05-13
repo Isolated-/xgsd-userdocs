@@ -56,8 +56,8 @@
               "sidebar": "workersSidebar"
             },
             {
-              "id": "workers/docker",
-              "path": "/workers/docker",
+              "id": "workers/Examples/axios",
+              "path": "/workers/Examples/axios",
               "sidebar": "workersSidebar"
             },
             {

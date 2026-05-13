@@ -17,7 +17,7 @@ They're a collection of:
 - **Metrics**
 - **System messages**
 
-By default signals are appended to `.xgsd/signals.jsonl` but you can override it by setting `stream` when calling `createHandler`.
+By default signals are appended to `process.stdout` but you can override it by setting `stream` when calling `createHandler`.
 
 :::tip
 When developing, `stream: process.stdout` can be very useful as it'll print information to your console vs file.

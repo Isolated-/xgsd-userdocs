@@ -87,9 +87,19 @@ export default {
       "hideOnScroll": false
     },
     "footer": {
+      "links": [
+        {
+          "title": "Misc",
+          "items": [
+            {
+              "label": "Background",
+              "to": "/misc/background"
+            }
+          ]
+        }
+      ],
       "style": "dark",
-      "copyright": "Copyright © 2026 xGSD",
-      "links": []
+      "copyright": "Copyright © 2026 xGSD"
     },
     "prism": {
       "theme": {

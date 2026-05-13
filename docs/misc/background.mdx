@@ -1,0 +1,174 @@
+---
+title: Background/Motivation
+---
+
+For the last 8 years I've been exploring ways to make code easier to write for hobbyist and beginner programmers.
+
+This usually means introducing new abstractions that I felt were missing at the time.
+
+I didn't want to introduce a new framework or heavy library — just simple wrappers around existing concepts.
+
+An example of this is EaseMQTT — a library I wrote that provides a RabbitMQ-like req/res layer on-top of a message queue (MQTT in this case).
+
+I eventually stopped maintaining EaseMQTT as better options became available (notably Nest.js).
+
+I didn't stop trying to make software more fun to write though.
+
+## EaseMQTT
+
+This library is really responsible for solidifying my knowledge of JavaScript, Node.js, and TypeScript as I needed to learn how to use callbacks correctly to allow code like this:
+
+```js
+import { connect, EaseMqtt } from "easemqtt";
+
+const client = connect("mqtt://localhost");
+const easemqtt = new EaseMqtt(client);
+
+// subscribe
+easemqtt.subscribe("some.topic", 2); // topic, optional qos (default 1)
+
+// publish
+easemqtt.publish("some.topic", "hello world"); // topic(s), content (string/object)
+
+easemqtt.on("some.topic", (req, res) => {
+  const body = req.body;
+  const replyTo = req.replyTo;
+
+  if (replyTo) return res.reply("all done"); // string or object
+});
+```
+
+to exist.
+
+It was essentially just a wrapper around an `EventEmitter2` instance with some glue code to bring everything together.
+
+## xGSD
+
+I've always built APIs pretty much since I started and first learnt about them. I've always loved creating them as they're usually pretty simple and just wrap a database with validation/auth.
+
+I find these days that in order to build an API you need to learn about Docker, Kubernetes, Auth0, AWS, GCS, and a bunch of other things before you can even write code — this usually leads to my projects burning out before they even materialise.
+
+xGSD tried to solve this problem. I created a local-first workflow runtime similar to GH Actions.
+
+With xGSD, you would write a config file + your code and then run everything using the CLI.
+
+A minimal example of the config:
+
+```yaml
+name: My workflow
+blocks:
+  - run: myFunction
+```
+
+And the function:
+
+```js
+export async function myFunction(data) {}
+```
+
+And then finally run it:
+
+```bash
+xgsd run
+```
+
+Each "block" or function would execute in isolation but there was an orchestration layer that managed async/chained workflows.
+
+It was very complex to design and think about even though I described it as simple (originally was so it _was_ true).
+
+I eventually refactored it into `@xgsd/engine` (core primitives), `@xgsd/runtime` (orchestration), and `@xgsd/cli` (app).
+
+The core mistake I made was **isolating everything except the project itself**.
+
+It wouldn't have been feasible to spawn a separate process for the project alongside _n_ isolated processes for blocks/tasks either.
+
+In hindsight, this created a poor security boundary. The project runtime always executed in the same process as the user's application, meaning plugins could access shared runtime state such as `process.env`.
+
+For example, a plugin could simply:
+
+```js
+console.log(process.env);
+```
+
+which would expose both application secrets and internal xGSD environment variables.
+
+This design also introduced far more complexity than was needed and ultimately made the architecture difficult to evolve safely.
+
+## Workers.js
+
+One thing that worked very well for xGSD was how functions/blocks/tasks are isolated. These execution units work very well when there's a process boundary between them as it isolates crashes/failures and makes secrets more secure.
+
+Workers.js was designed to do just that — provide predictable execution of a unit in isolation.
+
+And it does it _very_ well.
+
+| xGSD                           | Workers.js                   | Note                                                                                                                                    |
+| ------------------------------ | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Heavy plugin based**         | **Lightweight middleware**   | `Plugin`, `Executor`, and `Orchestrator` interfaces were never needed.                                                                  |
+| **Hard-coded transport**       | **No transport assumptions** | this allows for `createTransport` to be used however needed                                                                             |
+| **Project orchestration**      | **None**                     | already tested and working with `BullMQ` providing a complimentry solution vs trying to replace                                         |
+| **Near zero documentation**    | **Near complete**            | Workers.js is easier to document as the concepts are clearer                                                                            |
+| **Event-driven design**        | **Stream-driven design**     | Instead of heavy event emitters, everything is sent to a `stream`                                                                       |
+| **Hard-coded execution rules** | **No hard-coded rules**      | xGSD explored many ideas that ultimately proved too complex for the problem space.                                                      |
+| **Flexible isolation models**  | **Fixed isolation model**    | the only isolation method that makes sense is child process. The other methods explored by xGSD didn't work well and lead to divergence |
+
+The user flow looks like:
+
+```js
+export default async function worker() {
+  console.log("my worker has been called");
+}
+```
+
+And then in their app/transport logic:
+
+```js
+import { createTransport } from "@xgsd/workers";
+
+const transport = createTransport({
+  entry: "./worker.js",
+});
+
+await transport();
+```
+
+Which is much cleaner as it allows the worker and transport to be separate.
+
+I built `@xgsd/transport-bullmq` to demonstrate this principle:
+
+```ts
+export function createWorkerTransport(opts: WorkerTransportOpts) {
+  const {
+    queue,
+    worker: Worker,
+    workerConfig,
+    transport: transportConfig,
+  } = opts;
+
+  const transport = createTransport(transportConfig);
+
+  return new Worker(
+    queue,
+    async (job) => {
+      const res = await transport({
+        id: String(job.id),
+        data: job.data,
+        env: transportConfig.env,
+      });
+
+      if (res.error) throw res.error;
+
+      return res.result;
+    },
+    workerConfig,
+  );
+}
+```
+
+It's _very_ lightweight which is exactly what you want in your transport layer. This could be repeated for Nest.js, Express, other queues, etc.
+
+## Conclusion
+
+Workers.js wouldn't exist without these projects.
+
+Thank you if you use this — it's my way of giving back to an ecosystem that's supported me for nearly two decades.

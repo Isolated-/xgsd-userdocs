@@ -51,6 +51,10 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "misc/background",
+              "path": "/misc/background"
+            },
+            {
               "id": "workers/Benchmarks/benchmarking",
               "path": "/workers/Benchmarks/benchmarking",
               "sidebar": "workersSidebar"

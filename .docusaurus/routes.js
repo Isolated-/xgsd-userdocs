@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'cd6'),
+    component: ComponentCreator('/', '30f'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '064'),
+        component: ComponentCreator('/', '9d1'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '21d'),
+            component: ComponentCreator('/', 'ec7'),
             routes: [
               {
                 path: '/api/',
@@ -96,6 +96,11 @@ export default [
                 component: ComponentCreator('/api/variables/version', '4c3'),
                 exact: true,
                 sidebar: "apiSidebar"
+              },
+              {
+                path: '/misc/background',
+                component: ComponentCreator('/misc/background', 'cca'),
+                exact: true
               },
               {
                 path: '/workers/Benchmarks/benchmarking',

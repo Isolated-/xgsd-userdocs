@@ -78,6 +78,18 @@ const config: Config = {
       ],
     },
     footer: {
+      links: [
+        {
+          title: "Misc",
+          items: [
+            {
+              label: "Background",
+              to: "/misc/background",
+            },
+          ],
+        },
+      ],
+
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} xGSD`,
     },

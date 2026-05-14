@@ -42,17 +42,17 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/-30f": {
+  "/-19b": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---aba-d70"
     }
   },
-  "/-9d1": {
+  "/-02e": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---22-d-307"
   },
-  "/-ec7": {
+  "/-b60": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/api/-fa3": {
@@ -71,17 +71,77 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-globals-2-b-9-f74"
   },
+  "/api/type-aliases/Activation-f61": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-activation-4-cc-b76"
+  },
+  "/api/type-aliases/ActivationHandler-1cd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-activation-handler-6-b-7-a57"
+  },
+  "/api/type-aliases/ActivationSignal-353": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-activation-signalf-59-45c"
+  },
+  "/api/type-aliases/Context-62d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-context-9-fb-72f"
+  },
+  "/api/type-aliases/ContextMetadata-0c0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-context-metadatae-76-813"
+  },
   "/api/type-aliases/CreateTransportOpts-188": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-type-aliases-create-transport-opts-2-dd-d50"
+  },
+  "/api/type-aliases/ErrorSignal-5ae": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-error-signal-29-b-8e3"
+  },
+  "/api/type-aliases/GenericSignal-447": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-generic-signal-0-bd-da8"
+  },
+  "/api/type-aliases/LogSignal-23b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-log-signalaaf-f5c"
+  },
+  "/api/type-aliases/Middleware-136": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-middlewareabb-549"
+  },
+  "/api/type-aliases/Next-f31": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-nextfba-a80"
+  },
+  "/api/type-aliases/Signal-6a5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-signal-978-aa6"
+  },
+  "/api/type-aliases/SignalType-a6f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-signal-type-9-a-8-e33"
   },
   "/api/type-aliases/StreamLike-c65": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-type-aliases-stream-likebdd-d2f"
   },
+  "/api/type-aliases/SystemSignal-4c9": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-system-signalb-8-b-bcd"
+  },
   "/api/type-aliases/WorkerError-5d2": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---api-type-aliases-worker-errorde-1-2da"
+  },
+  "/api/type-aliases/WorkerOutputMode-a90": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-worker-output-mode-17-e-b7b"
+  },
+  "/api/type-aliases/WorkerResult-6de": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-type-aliases-worker-resultd-06-dde"
   },
   "/api/variables/version-4c3": {
     "__comp": "__comp---theme-doc-item-178-a40",

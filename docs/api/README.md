@@ -1,7 +1,3 @@
----
-title: Workers.js
----
-
 # Workers.js
 
 [![Version](https://img.shields.io/npm/v/@xgsd/workers.svg)](https://npmjs.org/package/@xgsd/workers)  
@@ -9,7 +5,7 @@ title: Workers.js
 
 ---
 
-**Workers.js** runs your code in a container that handle most failures for you.
+**Workers.js** runs your code in isolation for predictable execution.
 
 ## Install
 
@@ -28,12 +24,12 @@ A **Worker** is a simple async function, usually exported from `worker.js`:
 ```javascript
 import axios from "axios";
 
-export default async function worker(data) {
+export default async (data) => {
   const url = "https://timeapi.io/api/Time/current/zone?timeZone=Europe/London";
 
   const json = (await axios.get(url)).data;
   return json;
-}
+};
 ```
 
 It also contains your middleware.
@@ -147,4 +143,4 @@ You are free to use, modify, distribute, and build on this project, including fo
 
 ## Documentation
 
-Read the [**Documentation**](https://isolated-.github.io/xgsd-userdocs/labs/Workers/overview).
+Read the [**Documentation**](https://docs.xgsd.io).

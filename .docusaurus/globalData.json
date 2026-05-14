@@ -31,8 +31,68 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "api/type-aliases/Activation",
+              "path": "/api/type-aliases/Activation",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/ActivationHandler",
+              "path": "/api/type-aliases/ActivationHandler",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/ActivationSignal",
+              "path": "/api/type-aliases/ActivationSignal",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/Context",
+              "path": "/api/type-aliases/Context",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/ContextMetadata",
+              "path": "/api/type-aliases/ContextMetadata",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "api/type-aliases/CreateTransportOpts",
               "path": "/api/type-aliases/CreateTransportOpts",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/ErrorSignal",
+              "path": "/api/type-aliases/ErrorSignal",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/GenericSignal",
+              "path": "/api/type-aliases/GenericSignal",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/LogSignal",
+              "path": "/api/type-aliases/LogSignal",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/Middleware",
+              "path": "/api/type-aliases/Middleware",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/Next",
+              "path": "/api/type-aliases/Next",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/Signal",
+              "path": "/api/type-aliases/Signal",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/SignalType",
+              "path": "/api/type-aliases/SignalType",
               "sidebar": "apiSidebar"
             },
             {
@@ -41,8 +101,23 @@
               "sidebar": "apiSidebar"
             },
             {
+              "id": "api/type-aliases/SystemSignal",
+              "path": "/api/type-aliases/SystemSignal",
+              "sidebar": "apiSidebar"
+            },
+            {
               "id": "api/type-aliases/WorkerError",
               "path": "/api/type-aliases/WorkerError",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/WorkerOutputMode",
+              "path": "/api/type-aliases/WorkerOutputMode",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/type-aliases/WorkerResult",
+              "path": "/api/type-aliases/WorkerResult",
               "sidebar": "apiSidebar"
             },
             {

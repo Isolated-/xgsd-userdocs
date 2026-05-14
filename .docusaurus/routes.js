@@ -39,15 +39,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '30f'),
+    component: ComponentCreator('/', '19b'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '9d1'),
+        component: ComponentCreator('/', '02e'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', 'ec7'),
+            component: ComponentCreator('/', 'b60'),
             routes: [
               {
                 path: '/api/',
@@ -74,8 +74,80 @@ export default [
                 sidebar: "apiSidebar"
               },
               {
+                path: '/api/type-aliases/Activation',
+                component: ComponentCreator('/api/type-aliases/Activation', 'f61'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/ActivationHandler',
+                component: ComponentCreator('/api/type-aliases/ActivationHandler', '1cd'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/ActivationSignal',
+                component: ComponentCreator('/api/type-aliases/ActivationSignal', '353'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/Context',
+                component: ComponentCreator('/api/type-aliases/Context', '62d'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/ContextMetadata',
+                component: ComponentCreator('/api/type-aliases/ContextMetadata', '0c0'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
                 path: '/api/type-aliases/CreateTransportOpts',
                 component: ComponentCreator('/api/type-aliases/CreateTransportOpts', '188'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/ErrorSignal',
+                component: ComponentCreator('/api/type-aliases/ErrorSignal', '5ae'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/GenericSignal',
+                component: ComponentCreator('/api/type-aliases/GenericSignal', '447'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/LogSignal',
+                component: ComponentCreator('/api/type-aliases/LogSignal', '23b'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/Middleware',
+                component: ComponentCreator('/api/type-aliases/Middleware', '136'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/Next',
+                component: ComponentCreator('/api/type-aliases/Next', 'f31'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/Signal',
+                component: ComponentCreator('/api/type-aliases/Signal', '6a5'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/SignalType',
+                component: ComponentCreator('/api/type-aliases/SignalType', 'a6f'),
                 exact: true,
                 sidebar: "apiSidebar"
               },
@@ -86,8 +158,26 @@ export default [
                 sidebar: "apiSidebar"
               },
               {
+                path: '/api/type-aliases/SystemSignal',
+                component: ComponentCreator('/api/type-aliases/SystemSignal', '4c9'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
                 path: '/api/type-aliases/WorkerError',
                 component: ComponentCreator('/api/type-aliases/WorkerError', '5d2'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/WorkerOutputMode',
+                component: ComponentCreator('/api/type-aliases/WorkerOutputMode', 'a90'),
+                exact: true,
+                sidebar: "apiSidebar"
+              },
+              {
+                path: '/api/type-aliases/WorkerResult',
+                component: ComponentCreator('/api/type-aliases/WorkerResult', '6de'),
                 exact: true,
                 sidebar: "apiSidebar"
               },

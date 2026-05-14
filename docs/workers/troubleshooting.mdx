@@ -7,17 +7,6 @@ import ApiExample from "@site/src/components/ApiExample.tsx";
 
 <ApiExample>
 
-Remember to **set cache to `never`** before you start troubleshooting.
-
-Seriously.
-
-A surprising amount of "xGSD is broken" moments turned out to be:
-
-- stale bundles
-- stale config
-- stale output
-- or me forgetting cache was enabled (usually this!)
-
 Please [**report any problems**](https://github.com/Isolated-/xgsd-workers/issues/new) that you find - I'll get them fixed ASAP.
 
 Include a brief summary of your problem and any error stack/trace info available.
@@ -63,7 +52,7 @@ If you're debugging middleware failures then register them in layers to isolate 
 
 See [**WorkerErrorCode**](/api/enumerations/WorkerErrorCode) for what errors are thrown and when.
 
-Most system errors result in a rejection so you should wrap `await transport()` in a try/catch block.
+All system errors result in a rejection (minus `CODE_WORKER_GUARD`) so you should wrap `await transport()` in a try/catch block.
 
 This is intentional as it prevents leaking system failures to users of your apps.
 
@@ -94,15 +83,105 @@ These will be untagged and instead make best effort to normalise and serialise t
 
 ---
 
-### ESM/CommonJS
+## CODE_INVALID_DATA
 
-We only test and build against ESM.
+Data cannot be safely serialised for transport.
 
-If you're using CommonJS consider updating your project to ESM.
+### Causes
 
-You _may_ be able to use CommonJS but it's not recommended.
+- Circular references
+- Non-serialisable values (e.g. `BigInt`, functions)
+- Structured clone incompatibility
 
-If you're having issues with ESM [**please report issues here**](https://github.com/Isolated-/xgsd-workers/issues/new).
+### Fixes
+
+To keep worker functions pure, you can transform any circular or non-serialisable values using a transformer:
+
+```js
+const transformer = async (ctx, next) => {
+  await next();
+
+  // here's how you'd do it for an Axios-like response
+  ctx.result = ctx.result?.data;
+};
+```
+
+---
+
+## CODE_INVALID_MIDDLEWARE_FUNCTION
+
+Middleware provided is not a valid function.
+
+A middleware function is defined as:
+
+```js
+const A = async (ctx, next) => {};
+```
+
+Your `middleware()` should look like:
+
+```js
+// make sure it's exported
+// name must be "middleware"
+export const middleware = () => [A, B, C];
+
+// or
+export const middleware = async () => [A, B, C];
+```
+
+### Causes
+
+- Non-callable middleware
+- Incorrect plugin shape
+- Exported `middleware()` function is not valid
+
+---
+
+## CODE_INVALID_ENTRY_FILE
+
+The entry file cannot be resolved, loaded, or parsed.
+
+Since **v1.0.2** — these errors now provide more information and the stack trace so you don't need to trace signals.
+
+### Causes
+
+- File does not exist
+- Syntax error in module
+- Unsupported module format (CJS/ESM mismatch)
+
+---
+
+## CODE_INVALID_DEFAULT_FUNCTION
+
+The module `default` export is not a function.
+
+A worker function is defined as:
+
+```ts
+export default async (data) => {};
+```
+
+### Invalid examples
+
+- Object export
+- `null` or `undefined`
+- Primitive values
+
+---
+
+## CODE_FATAL_ERROR
+
+If you see this error then you've probably just discovered an edge case Workers.js wasn't prepared for.
+
+Please [**report this problem**](https://github.com/Isolated-/xgsd-workers/issues/new).
+
+### Causes
+
+- Unhandled exceptions/rejections from within the worker process/container.
+
+### Note
+
+This typically won't be anything to do with your code or something you can fix.
 
 ---
 
@@ -120,6 +199,20 @@ If this is unexpected, the default limits are:
   }
 }
 ```
+
+Worker guard activations don't result in a fatal error (e.g. promise gets rejected), instead the return a normal response. This is designed to allow the transport to determine what to do.
+
+Since **v1.0.3** — you can override this:
+
+```js
+const transport = createTransport({
+  limits: {
+    on: "throw",
+  },
+});
+```
+
+which will result in the promise rejecting like other system errors.
 
 :::info
 By default **heap usage** is used when limiting memory.
@@ -164,6 +257,26 @@ The error code for these errors is `CODE_INVALID_DATA` and this is thrown if `re
 If you see this error you should ensure your worker and middleware functions aren't returning any non-serialisable values.
 
 ---
+
+## ESM/CommonJS
+
+We only test and build against ESM.
+
+If you're using CommonJS consider updating your project to ESM.
+
+You _may_ be able to use CommonJS but it's not recommended.
+
+If you're having issues with ESM [**please report issues here**](https://github.com/Isolated-/xgsd-workers/issues/new).
+
+---
+
+## TypeScript
+
+Until **v1.0.3** a number of important types were not exported.
+
+This might of made usage hard without resorting to `as any` everywhere.
+
+This has been addressed and will continue to be improved to ensure TypeScript is always correctly supported.
 
 <ApiExample.Footer since="v1-beta" />
 

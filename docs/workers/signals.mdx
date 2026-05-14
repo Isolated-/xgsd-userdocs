@@ -17,7 +17,7 @@ They're a collection of:
 - **Metrics**
 - **System messages**
 
-By default signals are appended to `process.stdout` but you can override it by setting `stream` when calling `createHandler`.
+By default signals are appended to `process.stdout` but you can override it by setting `stream` when calling `createTransport`.
 
 :::tip
 When developing, `stream: process.stdout` can be very useful as it'll print information to your console vs file.
@@ -26,9 +26,6 @@ It also provides:
 
 ```bash
 node run.js | grep "system"
-
-# output:
-{"ctx":"...","type":"system","message":"...","meta":null,"timestamp":123}
 ```
 
 :::
@@ -41,7 +38,9 @@ The format is consistent:
 
 ```json
 {
-  "ctx": "{id}",
+  "ctx": "{context_id}",
+  "act": "{activation_id}",
+  "pid": "{process_id}",
   "type": "log|error|activation|system|generic",
   "message": "{message}",
   "meta": {},
@@ -50,6 +49,10 @@ The format is consistent:
 ```
 
 for all **Signals** and `meta` reflects any signal-specific data.
+
+:::info
+`act` and `pid` were added in **V1.1**.
+:::
 
 ---
 

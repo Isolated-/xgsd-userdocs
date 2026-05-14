@@ -16,22 +16,27 @@ const stream = createWriteStream("output.jsonl");
 const transport = createTransport({
   // entry is the absolute path to your worker.js
   entry: "./worker.js",
+
+  // latest (or v1 for stable)
+  schemaVersion: "v1.1",
+
   limits: {
     // time to live in ms
     ttl: 15000,
     // memory heap usage in mb
     memory: 64,
+  },
 
-    // you can limit rss too:
-    memory: {
-      limitMB: 64,
-      strategy: "rss",
-    },
-  },
+  // control console behaviour
+  console: {
+    mode: "debug", // or "default", can be undefined
+  }, // or just console: debug
+
+  // control how data is returned
   output: {
-    // this can be wrapped or raw
     mode: "raw",
-  },
+  }, // or just output: raw
+
   stream,
 });
 ```
@@ -42,12 +47,13 @@ const transport = createTransport({
 
 You must provide an `entry` path - everything else is optional.
 
-| Property      | Type           | Default                     | Note                      |
-| ------------- | -------------- | --------------------------- | ------------------------- |
-| `entry`       | **string**     | `worker.js`                 | path to your worker.js    |
-| `stream`      | **StreamLike** | `process.stdout`            | this is where signals go  |
-| `limits`      | **see Limits** | `{ ttl: 5000, memory: 64 }` | controls the worker guard |
-| `output.mode` | **string**     | `wrapped`                   | can be `wrapped` or `raw` |
+| Property        | Type           | Default                     | Note                                            |
+| --------------- | -------------- | --------------------------- | ----------------------------------------------- |
+| `entry`         | **string**     | `worker.js`                 | path to your worker.js                          |
+| `schemaVersion` | `v1`, `v1.1`   | `v1`                        | used to maintain backward compatibility         |
+| `stream`        | **StreamLike** | `process.stdout`            | this is where signals go                        |
+| `limits`        | **see Limits** | `{ ttl: 5000, memory: 64 }` | controls the worker guard                       |
+| `output`        | **see Output** | `{ mode: 'wrapped'}`        | you can also set `output: {mode}` from **v1.1** |
 
 ---
 
@@ -55,16 +61,32 @@ You must provide an `entry` path - everything else is optional.
 
 The **Worker Guard** prevents a process exceeding limits.
 
-| Property | Type                      | Default | Note                                                                                                          |
-| -------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
-| `ttl`    | **number**                | `5000`  | the time-to-live (TTL) for your process/container                                                             |
-| `memory` | **number**/**MemoryType** | `64`    | memory usage limit, depending on `memory.strategy` either heap usage or rss is used. By default heap is used. |
+| Property          | Type                      | Default     | Note                                                                                                          |
+| ----------------- | ------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------- |
+| `ttl`             | **number**                | `5000`      | the time-to-live (TTL) for your process/container                                                             |
+| `memory`          | **number**/**MemoryType** | `64`        | memory usage limit, depending on `memory.strategy` either heap usage or rss is used. By default heap is used. |
+| `memory.limitMB`  | **number**                | `undefined` | alternative to setting `memory` to enable strategies (`rss` vs `heap`)                                        |
+| `memory.strategy` | `rss`, `heap`             | `heap`      | your app will determine which strategy you use                                                                |
+| `onError`         | `throw`                   | `throw`     | worker guard will reject vs resolve when `onError: throw`.                                                    |
+
+---
+
+## Output
+
+These options control how your worker returns data.
+
+| Property  | Type                     | Default   | Note                                                    |
+| --------- | ------------------------ | --------- | ------------------------------------------------------- |
+| `mode`    | `raw`, `wrapped`, `auto` | `wrapped` | when `raw` is used, then `result` = your workers output |
+| `onError` | `drop`, `throw`          | `throw`   | determines how to handle unserialisable data            |
 
 ---
 
 ## Stream
 
 Your stream must implement [`StreamLike`](/api/type-aliases/StreamLike.md).
+
+You can use `createWriteStream` or `process.stdout` to avoid implementing your own.
 
 You only need to implement `write` (unlike the full `Writeable` interface):
 

@@ -22,7 +22,7 @@ Create simple middleware like:
 ```js
 const debug = (ctx, next) => {
   // do something with ctx (before)
-  console.log('after', ctx);
+  console.log('before', ctx);
 
   await next()
 

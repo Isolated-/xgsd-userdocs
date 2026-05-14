@@ -1,6 +1,6 @@
 [**@xgsd/workers**](../README.md)
 
----
+***
 
 [@xgsd/workers](../globals.md) / CreateTransportOpts
 
@@ -8,7 +8,7 @@
 
 > **CreateTransportOpts**\<`Mode`\> = `object`
 
-Defined in: [index.ts:148](https://github.com/Isolated-/xgsd-workers/blob/ffaa37d2bc13390dde2e75b8a76cd89706066dc5/src/index.ts#L148)
+Defined in: [index.ts:197](https://github.com/Isolated-/xgsd-workers/blob/a748118556084352a015235e3506b18bf1c36f1b/src/index.ts#L197)
 
 Configuration options for `createTransport()`.
 
@@ -25,7 +25,7 @@ Workers should export a default async function:
 
 ```js
 export default async function worker(data) {
-  return data;
+  return data
 }
 ```
 
@@ -56,9 +56,9 @@ Example:
 
 ```ts
 createTransport({
-  entry: "./worker.js",
+  entry: './worker.js',
   stream: process.stdout,
-});
+})
 ```
 
 ---
@@ -73,11 +73,11 @@ Example:
 
 ```ts
 createTransport({
-  entry: "./worker.js",
+  entry: './worker.js',
   env: {
-    region: "eu-west-1",
+    region: 'eu-west-1',
   },
-});
+})
 ```
 
 ---
@@ -97,12 +97,12 @@ Example:
 
 ```ts
 createTransport({
-  entry: "./worker.js",
+  entry: './worker.js',
   limits: {
     ttl: 5000,
     memory: 128,
   },
-});
+})
 ```
 
 ---
@@ -131,9 +131,9 @@ Returns the worker result directly:
 ```ts
 createTransport({
   output: {
-    mode: "raw",
+    mode: 'raw',
   },
-});
+})
 ```
 
 Raw mode is useful when Workers.js is being integrated into
@@ -149,7 +149,7 @@ v1
 
 ### Mode
 
-`Mode` _extends_ `WorkerOutputMode` = `"wrapped"`
+`Mode` *extends* [`WorkerOutputMode`](WorkerOutputMode.md) = `"wrapped"`
 
 ## Properties
 
@@ -157,33 +157,33 @@ v1
 
 > **entry**: `string`
 
-Defined in: [index.ts:152](https://github.com/Isolated-/xgsd-workers/blob/ffaa37d2bc13390dde2e75b8a76cd89706066dc5/src/index.ts#L152)
+Defined in: [index.ts:201](https://github.com/Isolated-/xgsd-workers/blob/a748118556084352a015235e3506b18bf1c36f1b/src/index.ts#L201)
 
 Path to the worker entry file.
 
----
+***
 
 ### env?
 
 > `optional` **env?**: `Record`\<`string`, `unknown`\>
 
-Defined in: [index.ts:162](https://github.com/Isolated-/xgsd-workers/blob/ffaa37d2bc13390dde2e75b8a76cd89706066dc5/src/index.ts#L162)
+Defined in: [index.ts:211](https://github.com/Isolated-/xgsd-workers/blob/a748118556084352a015235e3506b18bf1c36f1b/src/index.ts#L211)
 
 Default activation environment variables.
 
----
+***
 
 ### limits?
 
 > `optional` **limits?**: `object`
 
-Defined in: [index.ts:167](https://github.com/Isolated-/xgsd-workers/blob/ffaa37d2bc13390dde2e75b8a76cd89706066dc5/src/index.ts#L167)
+Defined in: [index.ts:216](https://github.com/Isolated-/xgsd-workers/blob/a748118556084352a015235e3506b18bf1c36f1b/src/index.ts#L216)
 
 Runtime execution limits.
 
 #### Index Signature
 
-\[`key`: `string`\]: `MemoryType` \| `undefined`
+\[`key`: `string`\]: `unknown`
 
 #### memory?
 
@@ -191,21 +191,32 @@ Runtime execution limits.
 
 Maximum worker memory usage.
 
+#### onError?
+
+> `optional` **onError?**: `GuardErrorBehaviour`
+
+added in v1.0.3
+ when worker guard is triggered promise will be rejected vs resolved
+
 #### ttl?
 
 > `optional` **ttl?**: `number`
 
 Maximum activation runtime in milliseconds.
 
----
+***
 
 ### output?
 
 > `optional` **output?**: `object`
 
-Defined in: [index.ts:184](https://github.com/Isolated-/xgsd-workers/blob/ffaa37d2bc13390dde2e75b8a76cd89706066dc5/src/index.ts#L184)
+Defined in: [index.ts:239](https://github.com/Isolated-/xgsd-workers/blob/a748118556084352a015235e3506b18bf1c36f1b/src/index.ts#L239)
 
 Worker output configuration.
+
+#### Index Signature
+
+\[`key`: `string`\]: `unknown`
 
 #### mode?
 
@@ -216,12 +227,19 @@ Output mode.
 - `wrapped` → structured WorkerResult response
 - `raw` → returns worker result/error directly
 
----
+#### onError?
+
+> `optional` **onError?**: `ErrorBehaviour`
+
+added in v1.0.3
+ determines what to when data can't be serialised
+
+***
 
 ### stream?
 
 > `optional` **stream?**: [`StreamLike`](StreamLike.md)
 
-Defined in: [index.ts:157](https://github.com/Isolated-/xgsd-workers/blob/ffaa37d2bc13390dde2e75b8a76cd89706066dc5/src/index.ts#L157)
+Defined in: [index.ts:206](https://github.com/Isolated-/xgsd-workers/blob/a748118556084352a015235e3506b18bf1c36f1b/src/index.ts#L206)
 
 Writable stream used for runtime signals/logs.

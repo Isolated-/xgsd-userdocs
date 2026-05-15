@@ -66,11 +66,13 @@ const transport = createTransport({
 // this would usually be inside a callback
 // like Express/Koa/etc, really whatever you need
 // inside a script works perfectly too!
-const result = await transport({
-  data: {
-    name: "world",
-  },
-});
+const result = await transport({ name: "world" });
+```
+
+Then:
+
+```bash
+node app.js
 ```
 
 ---

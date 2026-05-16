@@ -175,6 +175,49 @@ See [**Middleware**](/workers/middleware) for more information.
 
 ---
 
+## Worker example
+
+There's an API running that exposes a worker that converts JSON strings or objects into the opposite form.
+
+You can call this API at `https://workers-test-api.xgsd.io`.
+
+Any request works but this section covers `POST`.
+
+In the body of your request send:
+
+```json
+{
+  "convert": {
+    "my": "object"
+  }
+}
+```
+
+Or:
+
+```json
+{
+  "convert": "{\"name\":\"my string\"}"
+}
+```
+
+Output:
+
+```json
+{
+  "activationId": "act_6f45be686c12",
+  "version": "v1.1",
+  "ok": true,
+  "result": {
+    "name": "my string"
+  },
+  "error": null,
+  "duration": 60.14
+}
+```
+
+---
+
 ## Terms
 
 Here's how we describe **Workers.js**:

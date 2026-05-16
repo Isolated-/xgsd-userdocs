@@ -65,11 +65,13 @@ Messages will be picked up and marked with `generic` unless you use the format a
 You can also define your own format using `generic` signals, for example:
 
 ```js
-console.log({
-  production: false,
-  name: "my worker",
-  description: "just started",
-});
+console.log(
+  JSON.stringify({
+    production: false,
+    name: "my worker",
+    description: "just started",
+  }),
+);
 ```
 
 This will result in a message like:

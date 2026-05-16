@@ -61,6 +61,7 @@ import { createTransport } from "@xgsd/workers";
 // you'd usually do this during app bootstrap
 const transport = createTransport({
   entry: "./worker.js",
+  contractVersion: "v1.1",
 });
 
 // this would usually be inside a callback
@@ -113,6 +114,8 @@ The format is consistent and `meta` reflects any signal-specific data.
 ```json
 {
   "ctx": "{id}",
+  "act": "{act}",
+  "pid": "{pid}",
   "type": "log|error|activation|system|generic",
   "message": "{message}",
   "meta": {},
@@ -121,6 +124,8 @@ The format is consistent and `meta` reflects any signal-specific data.
 ```
 
 Create your own **Signals** by logging to `stdout` or `stderr`.
+
+Make sure each log is a single line using `JSON.stringify` for objects.
 
 See [**Signals**](/workers/signals) to learn more.
 

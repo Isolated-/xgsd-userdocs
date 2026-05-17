@@ -177,73 +177,71 @@ See [**Middleware**](/workers/middleware) for more information.
 
 ## Worker example
 
-I made an API to demonstrate Workers.js in a real environment.
+Here's an API that you can use to hash data.
 
-You can call it at `https://workers-test-api.xgsd.io`.
+It's a simple working example of Workers.js in a cloud environment.
 
-It provides a single endpoint: `/hash`.
+- **Base url**: `https://workers-test-api.xgsd.io`.
+- **Endpoint**: `/hash`.
+- **Method**: `POST`.
 
-Send a `POST` request to `https://workers-test-api.xgsd.io/hash` with `data` in the request body:
+:::tip
+This is an API to demonstrate Workers.js in a real environment.
 
-```json
-{
-  "data": {
-    "hello": "world"
-  }
-}
-```
+Please **do not send sensitive data** as it's not designed for that.
 
-You can also set `alg` to `sha256` or `sha512` and `encoding` to `hex`, `base64`, `base64url`.
+It's designed for:
 
-Output:
+- measuring stability of **v1.1.0**.
+- showcasing the potentials of Workers.js.
+- giving users something to test/try to break.
 
-```json
-{
-  "activationId": "act_9fe4c5ea2604",
-  "version": "v1.1",
-  "ok": true,
-  "result": {
-    "hash": "k6I5cakU5erL8KjSUVTNownDwccvu5kU1Hxg88toFYg=",
-    "alg": "sha256",
-    "encoding": "base64"
-  },
-  "error": null,
-  "duration": 44.8
-}
-```
+:::
 
-If you provide a `hash`, you'll get an `equal` property in the response:
+---
+
+### Request
+
+You only need to send `data` in your request. Everything else is optional.
 
 ```json
 {
-  "activationId": "act_12a96f87aae5",
-  "version": "v1.1",
-  "ok": true,
-  "result": {
-    "hash": "k6I5cakU5erL8KjSUVTNownDwccvu5kU1Hxg88toFYg=",
-    "alg": "sha256",
-    "encoding": "base64",
-    "equal": true
-  },
-  "error": null,
-  "duration": 46.88
-}
-```
-
-All options:
-
-```json
-{
-  "data": {
-    "hello": "world"
-  },
+  "data": "hello world",
+  "alg": "sha256",
   "encoding": "hex",
-  "alg": "sha512",
-  "hash": "k6I5cakU5erL8KjSUVTNownDwccvu5kU1Hxg88toFYg="
+  "hash": "..."
 }
 ```
 
-`data` can be any stringifyable value like `"data": 1` or `"data": "hello world"`.
+**Defaults**:
+
+- `alg` - `sha256`
+- `encoding` - `base64`
+- `hash` - `undefined`
+
+---
+
+### Response
+
+Here's an example response:
+
+```json
+{
+  "activationId": "act_a72908cd1e4f",
+  "version": "v1.1",
+  "ok": true,
+  "result": {
+    "hash": "9ddefe4435b21d901439e546d54a14a175a3493b9fd8fbf38d9ea6d3cbf70826",
+    "alg": "sha256",
+    "encoding": "hex",
+    "equal": false
+  },
+  "error": null,
+  "duration": 69.68
+}
+```
+
+If you provide a `hash` then it will be compared and `equal` will contain the result.
 
 ---
 

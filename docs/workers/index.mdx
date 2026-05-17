@@ -177,50 +177,73 @@ See [**Middleware**](/workers/middleware) for more information.
 
 ## Worker example
 
-There's an API running that exposes a worker that converts JSON strings or objects into the opposite form.
+I made an API to demonstrate Workers.js in a real environment.
 
-You can call this API at `https://workers-test-api.xgsd.io/json`.
+You can call it at `https://workers-test-api.xgsd.io`.
 
-Any request works but this section covers `POST`.
+It provides a single endpoint: `/hash`.
 
-In the body of your request send:
+Send a `POST` request to `https://workers-test-api.xgsd.io/hash` with `data` in the request body:
 
 ```json
 {
-  "convert": {
-    "my": "object"
+  "data": {
+    "hello": "world"
   }
 }
 ```
 
-Or:
-
-```json
-{
-  "convert": "{\"name\":\"my string\"}"
-}
-```
+You can also set `alg` to `sha256` or `sha512` and `encoding` to `hex`, `base64`, `base64url`.
 
 Output:
 
 ```json
 {
-  "activationId": "act_6f45be686c12",
+  "activationId": "act_9fe4c5ea2604",
   "version": "v1.1",
   "ok": true,
   "result": {
-    "name": "my string"
+    "hash": "k6I5cakU5erL8KjSUVTNownDwccvu5kU1Hxg88toFYg=",
+    "alg": "sha256",
+    "encoding": "base64"
   },
   "error": null,
-  "duration": 60.14
+  "duration": 44.8
 }
 ```
 
-:::tip
-This demonstrates Workers.js **v1.1.0-rc2** and will be used to measure Workers.js stability so please consider sending as many requests as you want/can.
+If you provide a `hash`, you'll get an `equal` property in the response:
 
-We use this API for our tests and will continue to build things that depend on it.
-:::
+```json
+{
+  "activationId": "act_12a96f87aae5",
+  "version": "v1.1",
+  "ok": true,
+  "result": {
+    "hash": "k6I5cakU5erL8KjSUVTNownDwccvu5kU1Hxg88toFYg=",
+    "alg": "sha256",
+    "encoding": "base64",
+    "equal": true
+  },
+  "error": null,
+  "duration": 46.88
+}
+```
+
+All options:
+
+```json
+{
+  "data": {
+    "hello": "world"
+  },
+  "encoding": "hex",
+  "alg": "sha512",
+  "hash": "k6I5cakU5erL8KjSUVTNownDwccvu5kU1Hxg88toFYg="
+}
+```
+
+`data` can be any stringifyable value like `"data": 1` or `"data": "hello world"`.
 
 ---
 
